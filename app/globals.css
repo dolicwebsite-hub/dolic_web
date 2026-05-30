@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f2f5f8;
+  --fg: #0d1b2a;
+  --brand: #0d1b2a;
+  --brand-2: #00a7b5;
+  --steel: #8c949e;
+  --card: #ffffff;
+  --muted: #5f6975;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 0 0, #d8e1ea 0, transparent 52%), var(--bg);
+  color: var(--fg);
+  font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}

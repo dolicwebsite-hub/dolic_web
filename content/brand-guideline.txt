@@ -1,0 +1,659 @@
+
+DOLIC
+BRAND GUIDELINE
+Thương hiệu của sự an tâm
+Phiên bản 1.0 — 2026
+Tài liệu nội bộ — chia sẻ với agency, freelancer, đối tác
+
+MỞ ĐẦU · INTRODUCTION
+Brand Guidelines là bộ cẩm nang thương hiệu cung cấp các quy chuẩn logo cần tuân thủ như tỷ lệ kích thước, các định dạng màu, mã màu trong in ấn, hướng dẫn người sử dụng cách sắp đặt vị trí logo, cách kết hợp logo với các thành phần khác trong một mẫu thiết kế như hình ảnh mảng màu… từ đó hình ảnh thương hiệu của doanh nghiệp có sự thống nhất và đồng bộ khi xuất hiện trên mọi ấn phẩm thiết kế.
+Brand Guidelines is a set of brand handbooks that provide logo standards that need to be followed such as size ratios, color formats, color codes in printing, and instructions for users on how to position the logo and how to combine logos with other components in a design such as color array images. From there, the business's brand image is unified and synchronized when appearing on all design publications.
+Tài liệu này được sử dụng để thống nhất quy cách về nhận diện hình ảnh cho thương hiệu Dolic. Tất cả các ấn phẩm có sử dụng logo của Dolic cần bám sát Guideline này để tránh việc sử dụng sai lệch, ảnh hưởng đến hình ảnh thương hiệu.
+This document is used to unify the visual identity specifications for the Dolic brand. All publications using the Dolic logo need to adhere to this Guideline to avoid misleading use and affecting the brand image.
+
+MỤC LỤC · TABLE OF CONTENTS
+
+01. VỀ CHÚNG TÔI · ABOUT US
+1.1  Về chúng tôi · About us
+1.2  Tầm nhìn & Sứ mệnh · Mission & Vision
+1.3  Đối tượng khách hàng · Target Customers
+1.4  Giá trị cốt lõi · Core Values
+1.5  Giải pháp cung cấp · Our Solutions
+1.6  Hệ thống thực địa · Our Field Network
+02. QUY CHUẨN THIẾT KẾ · DESIGN GUIDELINE
+I. Logo
+2.1  Các phiên bản logo · Logo Variants
+2.2  Cấu trúc logo · Logo Structure
+2.3  Khoảng cách an toàn · Clear Space
+2.4  Kích thước tối thiểu · Minimum Sizes
+2.5  Màu sắc logo · Logo Colors
+2.6  Logo hiển thị · Logo Display (Do/Don't)
+2.7  Logo trên nền · Logo on Background
+II. Key Visual
+II.1  Phông chữ · Typography
+II.2  Màu sắc thương hiệu · Brand Colors
+II.3  Yếu tố đồ họa · Graphic Elements
+II.4  Hệ thống hình ảnh · Imagery
+II.5  Biểu tượng phụ · Iconography
+03. ỨNG DỤNG · APPLICATIONS
+III.1  Stationery · Bộ nhận diện văn phòng
+III.2  PowerPoint Template
+
+
+01
+VỀ CHÚNG TÔI
+ABOUT US
+
+1.1   VỀ CHÚNG TÔI
+About Us
+
+"Người nuôi hiểu người nuôi · Farmer to Farmer"
+Body
+Dolic là thương hiệu giải pháp toàn diện cho ngành nuôi trồng thuỷ sản Việt Nam, cung cấp thiết bị, hệ thống giám sát và vi sinh dưới dạng combo tích hợp. Mọi giải pháp được kiểm chứng tại trang trại thử nghiệm thực địa trước khi phân phối qua mạng lưới đại lý chuyên gia. Dolic đã là cái tên quen thuộc với bà con nông dân ba miền — gắn liền với sự tin cậy, thân thiện và chuyên môn cao trong nghề.
+Dolic is a comprehensive solutions brand for Vietnam's aquaculture industry, offering integrated combos of equipment, monitoring systems, and microbial products. Every solution is verified at our pilot farm before distribution through our network of specialist dealers. Dolic has become a familiar name to farmers across all three regions of Vietnam — synonymous with trust, friendliness, and deep expertise in the trade.
+
+1.2   TẦM NHÌN & SỨ MỆNH
+Mission & Vision
+
+TẦM NHÌN · VISION
+SỨ MỆNH · MISSION
+Trở thành mảnh ghép tin cậy của mỗi trang trại Việt Nam, sau đó là vươn ra các nước Đông Nam Á.
+To become a trusted piece of every Vietnamese farm, then expand to countries across Southeast Asia.
+Kiểm chứng từng giải pháp tại trang trại thử nghiệm, đào tạo từng đại lý thành chuyên gia chuyên ngành, đồng hành cùng từng người nuôi Việt đến tận ao.
+Verify every solution at our pilot farm, train every distributor to become a specialist, and walk alongside every Vietnamese farmer to the pond.
+
+Kiểm chứng. Đào tạo. Đồng hành.  ·  Verify. Train. Walk Alongside.
+
+1.3   ĐỐI TƯỢNG KHÁCH HÀNG
+Target Customers
+
+PERSONA A — CHỦ TRANG TRẠI
+PERSONA B — ĐẠI LÝ PHÂN PHỐI
+"Anh Bảy Tôm"
+Chủ trang trại nuôi tôm/cá quy mô trung 2–10ha. Nam, 30–55 tuổi, trọng tâm miền Nam (Cà Mau, Bạc Liêu, Sóc Trăng, Trà Vinh, Bến Tre, Khánh Hoà).
+Quan tâm:
+Giảm rủi ro vụ nuôi · tiết kiệm điện · đo nước chính xác · bảo hành tận nơi · case study trong vùng.
+Mid-scale shrimp/fish farm owner (2–10ha). Male, 30–55, primarily Southern Vietnam.
+Cares about: yield risk, electricity cost, water monitoring, on-site warranty, local case studies.
+"Anh Hùng Phân Phối"
+Chủ đại lý / cửa hàng thiết bị thuỷ sản. Chia hai thế hệ: B1 trẻ bán online 28–40 tuổi (60–80% doanh số) và B2 truyền thống bán vùng 45–60 tuổi.
+Quan tâm:
+Sản phẩm khác biệt · tài liệu marketing chuẩn · hỗ trợ kỹ thuật · chính sách giá ổn định · bảo hành tận nơi.
+Aquaculture equipment dealer. Two generations: B1 young online sellers (28–40, 60–80% of revenue) and B2 traditional regional dealers (45–60).
+Cares about: differentiated products, marketing materials, technical support, stable pricing, on-site warranty.
+
+1.4   GIÁ TRỊ CỐT LÕI
+Core Values
+
+HIỆU NĂNG CAO
+High Performance
+Thiết bị vận hành tối ưu, tiết kiệm điện, tăng năng suất vụ nuôi
+ỔN ĐỊNH
+Reliable
+Vận hành ổn định, đáng tin cậy trong môi trường thuỷ sản khắc nghiệt
+ĐỒNG HÀNH
+Companion
+Đứng bên người nuôi từ tư vấn đến vận hành — Mentor, không phải Hero
+GẦN GŨI
+Friendly
+Thân thiện với bà con nông dân — không khoảng cách doanh nghiệp – khách hàng
+KIỂM CHỨNG THỰC ĐỊA
+Field-Verified
+Mọi giải pháp được kiểm chứng tại trang trại thử nghiệm trước khi đến tay người nuôi
+BỀN VỮNG
+Sustainable
+Vì người nuôi hôm nay, vì môi trường ngày mai
+
+1.5   GIẢI PHÁP CUNG CẤP
+Our Solutions
+
+Giải pháp trọn bộ cho trang trại thuỷ sản
+Complete solutions for aquaculture farms
+Dolic tập trung cung cấp giải pháp trọn bộ và đa dạng, phù hợp với từng đối tượng khách hàng và quy mô trang trại.
+Dolic focuses on delivering comprehensive and diverse solutions, tailored to each customer segment and farm scale.
+
+Thiết bị   ·   Giám sát   ·   Vi sinh
+Equipment · Monitoring · Microbial
+
+1.6   HỆ THỐNG THỰC ĐỊA
+Our Field Network
+
+Mạng lưới Dolic gồm trang trại thử nghiệm thực địa và hệ thống đại lý chuyên gia chuyên ngành trải dài ba miền Việt Nam.
+Dolic's network consists of a pilot farm and a network of specialist dealers across all three regions of Vietnam.
+
+TRANG TRẠI THỬ NGHIỆM
+MẠNG LƯỚI ĐẠI LÝ
+Pilot Farm
+Nơi kiểm chứng mọi giải pháp trước khi đến tay người nuôi.
+Where every solution is verified before reaching farmers.
+Dealer Network
+Đại lý chuyên gia chuyên ngành thuỷ sản — trọng tâm miền Nam.
+Specialist aquaculture dealers — focused on Southern Vietnam.
+
+
+02
+QUY CHUẨN THIẾT KẾ
+DESIGN GUIDELINE
+
+
+I.  LOGO
+
+2.1   CÁC PHIÊN BẢN LOGO
+Logo Variants
+
+Logo Dolic có nhiều phiên bản phù hợp với từng ứng dụng và bối cảnh sử dụng khác nhau.
+The Dolic logo comes in multiple variants suited for different applications and contexts.
+Phiên bản
+Mô tả
+Khi dùng
+PRIMARY · Logo chính
+Logo đầy đủ với tagline "Thương hiệu của sự an tâm"
+Mặc định — name card, brochure, biển hiệu, header web
+ICON ONLY
+Chỉ phần biểu tượng D oval
+Avatar social, watermark, vị trí nhỏ
+FAVICON / APP ICON
+D trong khung bo tròn nền Navy
+Tab trình duyệt, icon app, profile picture
+
+2.2   CẤU TRÚC LOGO
+Logo Structure
+
+Logo Dolic được quy chuẩn theo tỷ lệ và kích thước tương ứng với đơn vị quy chuẩn là x.
+The Dolic logo is standardized according to proportions and sizes corresponding to the standard unit x.
+Đơn vị x = chiều cao wordmark "DOLIC"
+Phần tử
+Tỷ lệ
+Chiều cao wordmark "DOLIC"
+1x (đơn vị gốc)
+Chiều rộng wordmark
+4.8x
+Chiều rộng biểu tượng (D oval)
+1.8x
+Chiều cao biểu tượng
+1.1x
+Chiều rộng tagline
+3.6x
+Khoảng cách wordmark ↔ tagline
+0.35x
+⚠ Cần freelancer thiết kế render annotation tỷ lệ trên file logo vector gốc.
+
+2.3   KHOẢNG CÁCH AN TOÀN
+Clear Space
+
+Khoảng cách an toàn quanh logo Dolic được tính theo đơn vị x (chiều cao wordmark).
+The clear space around the Dolic logo is measured in units of x (wordmark height).
+Vị trí
+Khoảng cách
+Trên
+1x
+Dưới
+1x
+Trái
+1.5x
+Phải
+1x
+Lý do: swoosh bên trái cần nhiều "breathing room" hơn nên left clear space lớn hơn 3 cạnh còn lại.
+⚠ Clear space bất đối xứng — cần diagram minh hoạ rõ ràng và cảnh báo để tránh áp dụng sai.
+
+2.4   KÍCH THƯỚC TỐI THIỂU
+Minimum Sizes
+
+Để đảm bảo logo Dolic hiển thị rõ ràng, cần tuân thủ kích thước tối thiểu sau cho mỗi phiên bản.
+To ensure the Dolic logo displays clearly, the following minimum sizes must be observed for each version.
+Phiên bản
+Print
+Digital
+Có slogan (Primary đầy đủ)
+35mm
+180px
+Không slogan
+20mm
+90px
+Icon only
+—
+24px
+
+2.5   MÀU SẮC LOGO
+Logo Colors
+
+Logo Dolic chỉ sử dụng các phiên bản màu chính thức sau, theo thứ tự ưu tiên.
+The Dolic logo uses only the following official color versions, in priority order.
+1. PRIMARY — Deep Ocean Navy trên nền trắng
+HEX
+#0D1B2A
+RGB
+13 / 27 / 42
+CMYK
+69 / 36 / 0 / 84
+Pantone
+2965 C
+Ý nghĩa: Trust · Stability · Engineering · Corporate Confidence
+2. REVERSE — Logo trắng trên nền Navy
+	•	Logo: White #FFFFFF
+	•	Background: Deep Ocean Navy #0D1B2A
+3. MONOCHROME — In ấn 1 màu
+	•	Black only: #000000 · Pantone Black C
+	•	White only: #FFFFFF
+	•	Dùng khi điều kiện in hạn chế (fax, photocopy, in 1 màu)
+PRINTING NOTE — Offset
+Ưu tiên dùng Pantone 2965 C (spot color) cho logo vì navy ổn định hơn · sang hơn · ít lệch màu so với CMYK process.
+DIGITAL NOTE — Web-safe
+Primary Navy #0D1B2A — mạnh cho: website · proposal · PowerPoint · signage · uniform.
+
+2.6   LOGO HIỂN THỊ — DO / DON'T
+Logo Display
+
+Để giữ tính nhất quán của thương hiệu, logo Dolic phải được sử dụng đúng cách. Dưới đây là các trường hợp KHÔNG ĐƯỢC dùng.
+To maintain brand consistency, the Dolic logo must be used correctly. Below are examples of incorrect usage.
+DON'T — 8 cách dùng SAI
+#
+Lỗi
+Mô tả
+1
+Bóp méo / kéo dãn
+Không thay đổi tỷ lệ chiều ngang/dọc
+2
+Xoay logo
+Logo luôn nằm ngang, không nghiêng/xoay
+3
+Đổi màu sai
+Không dùng màu ngoài Navy/White/Black đã quy định
+4
+Thêm gradient
+Không phủ gradient lên logo
+5
+Thêm hiệu ứng
+Không thêm shadow, glow, outline, bevel
+6
+Tách rời yếu tố
+Không tách swoosh khỏi wordmark hoặc tagline
+7
+Nền mất tương phản
+Không đặt logo lên ảnh/nền khiến logo khó đọc
+8
+Thêm chữ/icon
+Không gắn thêm text, ngày tháng, biểu tượng vào logo
+DO — Nguyên tắc đúng
+	•	Giữ nguyên tỷ lệ gốc của logo
+	•	Chỉ dùng 3 phiên bản màu chính thức (Primary Navy / Reverse / Monochrome)
+	•	Đặt logo trên nền có độ tương phản đủ
+	•	Tôn trọng khoảng cách an toàn (Clear Space 1x · 1x · 1.5x · 1x)
+	•	Tuân thủ kích thước tối thiểu (Print 35mm / Digital 180px)
+
+2.7   LOGO TRÊN NỀN
+Logo on Background
+
+Logo Dolic được đặt trên các loại nền khác nhau với phiên bản phù hợp để đảm bảo độ tương phản và nhận diện rõ ràng.
+The Dolic logo is placed on different backgrounds using the appropriate version to ensure contrast and clear recognition.
+Loại nền
+Phiên bản logo
+Ghi chú
+Trắng #FFFFFF
+Primary Navy
+Mặc định, ưu tiên cao nhất
+Cream / Light
+Primary Navy
+Phải đủ độ tương phản
+Navy #0D1B2A
+Reverse White
+Hero tối, footer
+Black #000000
+Reverse White
+Khi không thể dùng Navy
+Steel Gray #8C949E
+Primary Navy hoặc Reverse
+Test contrast trước khi áp dụng
+Aqua Accent #00A7B5
+Reverse White
+KHÔNG dùng Navy (mất tương phản)
+Ảnh tối
+Reverse White
+Thêm gradient overlay nếu cần
+Ảnh sáng / phức tạp
+Primary Navy + plate trắng
+Đảm bảo logo rõ ràng
+Quy tắc cứng
+	•	Không đặt Logo Navy lên nền tối → logo sẽ chìm
+	•	Không đặt Logo trắng lên nền sáng → logo sẽ mờ
+	•	Không đặt logo lên ảnh phức tạp mà không có overlay hoặc plate trắng
+	•	Khi nghi ngờ độ tương phản: dùng plate trắng bo góc để bảo vệ logo
+
+
+II.  KEY VISUAL
+
+II.1   PHÔNG CHỮ
+Typography
+
+Dolic sử dụng hai phông chữ chính thức cho mọi ấn phẩm: Manrope cho tiêu đề và Inter cho nội dung.
+Dolic uses two official fonts for all materials: Manrope for headings and Inter for body text.
+Font hệ thống
+Vai trò
+Font
+Weights
+Đặc điểm
+Heading
+Manrope
+700 (Bold), 600 (Semibold)
+Geometric sans, hiện đại
+Body
+Inter
+400 (Regular), 500 (Medium)
+Tối ưu khả năng đọc
+Cả 2 font đều miễn phí trên Google Fonts — không cần mua bản quyền.
+Hierarchy kích thước
+Cấp
+Desktop
+Mobile
+H1
+48–64px
+32–40px
+H2
+36–44px
+28–32px
+H3
+24–28px
+22–24px
+Body
+16px
+15–16px
+Button
+16–18px
+15–16px
+Quy tắc cứng
+	•	KHÔNG dùng font khác ngoài Manrope + Inter
+	•	Line-height body tối thiểu 1.6
+	•	Italic dùng tiết kiệm
+	•	All-caps chỉ cho LABEL NGẮN, tracking +0.05em
+Logo Wordmark (ngoại lệ)
+Phông chữ "DOLIC" trong logo là Custom Geometric Sans đã cố định trong file logo gốc. KHÔNG tạo lại bằng Manrope/Inter cho logo.
+
+II.2   MÀU SẮC THƯƠNG HIỆU
+Brand Colors
+
+Hệ thống màu Dolic gồm 1 màu chính, 1 màu trung tính phụ, 1 màu accent tùy chọn và hệ đen-trắng.
+The Dolic color system consists of one primary color, one secondary neutral, one optional accent, and a black-and-white system.
+1. PRIMARY — Deep Ocean Navy
+HEX
+#0D1B2A
+RGB
+13 / 27 / 42
+CMYK
+69 / 36 / 0 / 84
+Pantone
+2965 C
+Ý nghĩa: Trust · Stability · Engineering · Corporate Confidence
+2. SECONDARY NEUTRAL — Steel Gray
+HEX
+#8C949E
+RGB
+140 / 148 / 158
+CMYK
+11 / 6 / 0 / 38
+Pantone
+Cool Gray 8 C
+Vai trò: Technical documents · Charts · Tables · Neutral balance
+3. OPTIONAL ACCENT — Aqua Accent
+HEX
+#00A7B5
+RGB
+0 / 167 / 181
+CMYK
+100 / 8 / 0 / 29
+Pantone
+7710 C
+Vai trò: UI accent · Motion graphic · Technical highlight · Dashboard · Digital interaction
+⚠ KHÔNG dùng Aqua Accent cho logo chính.
+4. BLACK & WHITE SYSTEM
+Màu
+HEX
+Pantone
+Black
+#000000
+Black C
+White
+#FFFFFF
+—
+
+II.3   YẾU TỐ ĐỒ HỌA
+Graphic Elements
+
+Hệ thống yếu tố đồ họa Dolic lấy cảm hứng từ swoosh logo và phong cách "marine engineering" — kết hợp giữa kỹ thuật và dòng chảy nước.
+The Dolic graphic element system is inspired by the logo's swoosh and the "marine engineering" aesthetic — blending technical precision with water flow.
+4 yếu tố chính
+#
+Tên
+Mô tả
+Ứng dụng
+1
+Flow Arc
+Đường cong lấy từ swoosh logo
+Header web · banner · ấn phẩm chính
+2
+Technical Grid
+Hệ lưới kỹ thuật
+Background block · slide · technical doc
+3
+Aqua Flow Texture
+Texture dòng chảy nước (Aqua)
+Motion graphic · dashboard · digital
+4
+Shield Frame
+Khung bảo chứng / an tâm
+Block testimonial · certification · trust badge
+Định hướng phong cách
+	•	Industrial motion — kỹ thuật, công nghiệp, chuyển động có chủ ý
+	•	KHÔNG dùng visual thuỷ sản truyền thống — không vẽ tôm cá cartoon, sóng cong tay, hoa văn nông thôn
+⚠ Cần freelancer: 4 file vector cho 4 yếu tố — design trên Illustrator/Figma để bàn giao file gốc + PNG đen + PNG trắng.
+
+II.4   HỆ THỐNG HÌNH ẢNH
+Imagery
+
+Hệ thống hình ảnh Dolic thể hiện sự kết hợp giữa đời sống nuôi trồng thực địa và kỹ thuật chuyên nghiệp — chân thực nhưng không thô, kỹ thuật nhưng không vô cảm.
+Dolic's imagery blends authentic field life with professional engineering — real but refined, technical but human.
+5 nguyên tắc cứng
+#
+Nguyên tắc
+Ý nghĩa
+1
+REAL > Stock
+Người thật, trang trại thật — không stock photo
+2
+THỰC ĐỊA > Studio
+Documentary style — không setup glamour
+3
+HANDS-ON > Polished
+Tay chai cầm thiết bị, áo lao động, equipment đang chạy
+4
+TỰ NHIÊN
+Ánh sáng tự nhiên — ưu tiên golden hour
+5
+VIETNAMESE LANDSCAPE
+Cảnh quan ao tôm/cá Việt — không tropical resort
+DO
+	•	Closeup bàn tay chai cầm quạt nước, đo DO/pH
+	•	Wide shot ao tôm với cảnh quan Việt Nam
+	•	Người nuôi + kỹ sư trao đổi tại trang trại
+	•	Equipment đang chạy trên ao (không tĩnh)
+	•	Nón lá, áo lao động — VN markers thật
+DON'T
+	•	Stock photo nông trại Tây
+	•	Glamour portrait / business headshot studio
+	•	Tech viễn tưởng — server room, code, robot
+	•	Người mặc vest, cravat tại trang trại
+	•	Logos overlay lên photos
+	•	Bắt tay corporate cliché
+Reference style
+Brand
+Học gì
+John Deere
+Workers in field — kỹ thuật + người làm thật
+Patagonia
+Documentary authentic — không filter, không setup
+TH True Milk
+Vietnamese landscape — cảnh quan VN có hồn
+
+II.5   BIỂU TƯỢNG PHỤ
+Iconography
+
+Bộ icon Dolic thiết kế theo phong cách line/stroke tối giản, đồng bộ với tone "marine engineering" của thương hiệu.
+The Dolic icon set follows a minimal line/stroke style, consistent with the brand's marine engineering tone.
+Spec kỹ thuật
+Thuộc tính
+Giá trị
+Style
+Line / Stroke (không filled)
+Stroke weight
+1.5–2px @ 24px base
+Line cap
+Rounded
+Grid
+24×24px base
+Default color
+Steel Gray #8C949E
+Active color
+Aqua Accent #00A7B5
+Thư viện gợi ý
+Phosphor Icons (phosphoricons.com) — 6 weight options, rounded by default, 1,500+ icons miễn phí.
+7 custom icons cần thiết kế riêng
+#
+Tên icon
+Ý nghĩa
+1
+Water System
+Hệ thống nước, xử lý nước
+2
+Oxygen / Aeration
+Sục khí, quạt nước
+3
+Energy Saving
+Tiết kiệm điện, hiệu năng cao
+4
+Bio / Microbe
+Vi sinh, men vi sinh
+5
+Engineering Solution
+Giải pháp kỹ thuật, combo
+6
+Trust / Shield
+Bảo hành, kiểm chứng, an tâm
+7
+Smart Farm
+Giám sát từ xa, app, smart farm
+⚠ Cần freelancer: 7 file SVG cho 7 custom icons — thiết kế theo spec trên + đồng bộ visual với Phosphor library.
+
+
+03
+ỨNG DỤNG
+APPLICATIONS
+
+III.1   STATIONERY
+Bộ nhận diện văn phòng
+
+Bộ nhận diện văn phòng Dolic theo phong cách "premium marine engineering" — navy chủ đạo, typography tối giản, finishing cao cấp.
+Dolic's office stationery follows the premium marine engineering style — navy as the dominant color, minimal typography, premium finishing.
+4 hạng mục Stationery
+#
+Hạng mục
+Spec
+Đặc điểm thiết kế
+1
+Business Card
+90×55mm
+Mặt trước navy premium · mặt sau white minimal typography
+2
+Letterhead
+A4 (210×297mm)
+Technical clean layout · logo góc trên · footer info
+3
+Envelope
+DL (220×110mm)
+Navy flap system · logo + tagline
+4
+Corporate Folder
+A4+ với pocket
+Flow Arc graphics · pocket cho catalog/document
+Spec in ấn
+	•	Giấy: Soft-touch coated 300gsm (card) · Uncoated 100gsm (letterhead)
+	•	Finishing: Spot UV cho logo (tùy chọn) · Embossed cho premium card
+	•	In màu: Pantone 2965 C spot color cho navy → đảm bảo navy chuẩn, không lệch
+	•	Typography: Manrope (heading) + Inter (body) — chỉ 2 font, đúng spec II.1
+⚠ Yêu cầu freelancer giao lại
+	•	Dùng FILE LOGO GỐC Dolic (D oval + wordmark + tagline đầy đủ)
+	•	Tagline đúng dấu: "THƯƠNG HIỆU CỦA SỰ AN TÂM"
+	•	Business card: layout 2 mặt với placeholder [Họ tên] [Chức danh] [SĐT] [Email] [Website] [Địa chỉ]
+	•	Letterhead: vùng viết thư trống, footer đầy đủ info
+	•	Envelope: mặt trước + mặt sau (flap) tách biệt
+	•	Folder: bản phẳng cắt + dán + pocket
+	•	File deliverables: AI source · PDF/X-1a print-ready · PNG preview mockup 3D
+	•	Spec print: bleed 3mm · crop marks · CMYK · 300dpi · Pantone 2965 C
+
+III.2   POWERPOINT TEMPLATE
+Mẫu trình chiếu
+
+Mẫu PowerPoint Dolic theo phong cách "marine engineering" — navy chủ đạo, typography sạch, đồ họa kỹ thuật, không trang trí thừa.
+Dolic's PowerPoint template follows the marine engineering style — navy-dominant, clean typography, technical graphics, no unnecessary decoration.
+Direction tổng quan
+Yếu tố
+Spec
+Tone
+Corporate marine engineering · industrial · trusted
+Color
+Navy + White (primary) · Steel Gray · Aqua highlight
+Typography
+Manrope (heading) + Inter (body) · Fallback Calibri/Arial
+Layout
+Master slides có cấu trúc · technical grid · minimal chart
+Storytelling
+Vấn đề → Dữ liệu → Giải pháp
+10 Master slides cần có
+#
+Loại slide
+Mục đích
+1
+Cover
+Bìa: logo + tiêu đề + author + ngày
+2
+Section Divider
+Chuyển mục lớn (navy block + số section)
+3
+Content - Text
+Heading + bullets
+4
+Content - 2 cột
+Hai mục đặt cạnh
+5
+Data / Chart
+Biểu đồ — Aqua highlight cho số liệu quan trọng
+6
+Image full-bleed
+Ảnh thực địa full slide + caption
+7
+Quote / Highlight
+Trích dẫn, key insight
+8
+Table
+Bảng so sánh, technical spec
+9
+Roadmap / Timeline
+Lộ trình theo thời gian
+10
+Closing
+Thank you + CTA + liên hệ
+Quy tắc trình bày
+	•	Tối đa 3 ý/slide — không nhồi nhét
+	•	Chart: bar/line minimal · KHÔNG 3D · KHÔNG gradient
+	•	Image theo nguyên tắc Imagery II.4 — không stock photo
+	•	Body font tối thiểu 18pt (đọc được khi present)
+	•	Khoảng trắng nhiều — không sát mép
+⚠ Cần freelancer giao
+	•	File .pptx master template với 10 layouts
+	•	File .potx template để team tạo file mới dễ dàng
+	•	File .key cho Keynote (nếu Dolic dùng Mac)
+	•	1 trang hướng dẫn cách dùng template
+
+
+DOLIC
+Thương hiệu của sự an tâm
+Brand Guideline · Phiên bản 1.0
+© 2026 Dolic. Tài liệu nội bộ.
