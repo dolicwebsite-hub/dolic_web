@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -22,7 +23,28 @@ body {
   margin: 0;
   background: radial-gradient(circle at 0 0, #d8e1ea 0, transparent 52%), var(--bg);
   color: var(--fg);
-  font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+button,
+.font-bold,
+.font-semibold,
+.font-extrabold,
+.font-black {
+  font-family: "Manrope", "Inter", Arial, sans-serif;
+}
+
+.font-black,
+.font-extrabold {
+  font-weight: 700;
 }
 
 pre {

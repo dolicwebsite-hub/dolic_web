@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, Check, Leaf, ShieldCheck, Zap } from "lucide-react";
+import { FarmActivityRings } from "@/components/farm-activity-rings";
 import { allProducts, productCategories } from "@/lib/site-data";
 import { PageFrame, PrimaryButton } from "@/components/site-chrome";
 
@@ -61,7 +62,7 @@ const strategicProducts = [
 export default function HomePage() {
   return (
     <PageFrame>
-      <section className="relative min-h-[720px] overflow-hidden bg-[#082A52] text-white">
+      <section className="relative min-h-[620px] overflow-hidden bg-[#082A52] text-white md:min-h-[720px]">
         <Image
           src="/assets/aquaculture-hero.png"
           alt="Kỹ thuật viên kiểm tra hệ thống sục khí tại trang trại thuỷ sản"
@@ -69,19 +70,19 @@ export default function HomePage() {
           className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,42,82,0.94)_0%,rgba(8,42,82,0.78)_36%,rgba(8,42,82,0.18)_72%)]" />
-        <div className="relative mx-auto flex min-h-[720px] max-w-7xl items-center px-4 py-14 md:px-8">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,42,82,0.92)_0%,rgba(8,42,82,0.82)_46%,rgba(8,42,82,0.46)_100%)] md:bg-[linear-gradient(90deg,rgba(8,42,82,0.94)_0%,rgba(8,42,82,0.78)_36%,rgba(8,42,82,0.18)_72%)]" />
+        <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-4 py-10 md:min-h-[720px] md:px-8 md:py-14">
           <div className="max-w-2xl">
-            <p className="inline-flex rounded-full border border-cyan-200/25 bg-cyan-300/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
+            <p className="inline-flex max-w-full rounded-full border border-cyan-200/25 bg-cyan-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-cyan-100 sm:text-xs sm:tracking-[0.18em]">
               Người nuôi hiểu người nuôi
             </p>
-            <h1 className="mt-5 text-4xl font-bold leading-tight tracking-normal md:text-6xl">
+            <h1 className="mt-5 text-3xl font-bold leading-tight tracking-normal sm:text-4xl md:text-6xl">
               Giải pháp trọn bộ cho trang trại thuỷ sản Việt Nam
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-8 text-cyan-50/88 md:text-lg">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-cyan-50/88 sm:text-base md:text-lg md:leading-8">
               Dolic tư vấn thiết bị, hệ thống giám sát và combo vận hành được kiểm chứng tại thực địa trước khi đồng hành cùng người nuôi đến tận ao.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <PrimaryButton href="/lien-he">
                 Khảo sát trang trại miễn phí
                 <ArrowRight className="h-4 w-4" />
@@ -90,15 +91,15 @@ export default function HomePage() {
                 Xem sản phẩm
               </PrimaryButton>
             </div>
-            <div className="mt-10 grid max-w-xl grid-cols-3 gap-3">
+            <div className="mt-8 grid max-w-xl grid-cols-3 gap-2 sm:gap-3 md:mt-10">
               {[
                 [`${allProducts.length}+`, "sản phẩm"],
                 [String(productCategories.length), "danh mục"],
                 ["12 tháng", "bảo hành"],
               ].map(([value, label]) => (
-                <div key={label} className="rounded-lg border border-white/14 bg-white/10 p-3 backdrop-blur">
-                  <p className="text-2xl font-black text-white">{value}</p>
-                  <p className="mt-1 text-xs font-medium text-cyan-50/72">{label}</p>
+                <div key={label} className="rounded-lg border border-white/14 bg-white/10 p-2.5 backdrop-blur sm:p-3">
+                  <p className="text-xl font-black text-white sm:text-2xl">{value}</p>
+                  <p className="mt-1 text-[11px] font-medium leading-4 text-cyan-50/72 sm:text-xs">{label}</p>
                 </div>
               ))}
             </div>
@@ -122,20 +123,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,#ffffff_0%,#eef8fb_100%)] px-4 py-16 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+      <FarmActivityRings />
+
+      <section className="bg-[linear-gradient(180deg,#ffffff_0%,#eef8fb_100%)] px-4 py-12 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-700">Hiệu năng cao & tiết kiệm điện</p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight tracking-normal text-slate-950 md:text-4xl">
+            <h2 className="mt-3 text-2xl font-bold leading-tight tracking-normal text-slate-950 sm:text-3xl md:text-4xl">
               Không chỉ bán thiết bị, Dolic tập trung vào hiệu quả vận hành của trang trại
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600">
+            <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
               Khi chi phí điện, vật tư và nhân công tăng, việc chọn đúng thiết bị quyết định trực tiếp đến lợi nhuận mỗi vụ nuôi. Dolic ưu tiên các cấu hình sục khí, bơm và đo nước giúp trang trại giảm hao phí, vận hành ổn định và dễ mở rộng.
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
               {efficiencyStats.map(([value, label, desc]) => (
                 <div key={label} className="rounded-lg border border-cyan-100 bg-white p-4 shadow-sm">
-                  <p className="text-3xl font-black text-[#0A2E5C]">{value}</p>
+                  <p className="text-2xl font-black text-[#0A2E5C] sm:text-3xl">{value}</p>
                   <p className="mt-1 text-sm font-bold text-cyan-800">{label}</p>
                   <p className="mt-3 text-xs leading-5 text-slate-500">{desc}</p>
                 </div>
@@ -144,12 +147,12 @@ export default function HomePage() {
           </div>
           <div className="grid gap-4">
             {missionPoints.map(({ title, desc, icon: Icon }) => (
-              <article key={title} className="flex gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-cyan-50 text-cyan-700">
-                  <Icon className="h-6 w-6" />
+              <article key={title} className="flex gap-3 rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:gap-4 sm:p-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-cyan-50 text-cyan-700 sm:h-12 sm:w-12">
+                  <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-950">{title}</h3>
+                  <h3 className="text-base font-bold text-slate-950 sm:text-lg">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">{desc}</p>
                 </div>
               </article>
@@ -158,12 +161,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 md:px-8 md:py-24">
+      <section className="bg-white px-4 py-12 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-700">Bộ 3 sản phẩm chiến lược</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-normal text-slate-950 md:text-4xl">Nhóm thiết bị cốt lõi để trang trại vận hành trơn tru</h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
+            <h2 className="mt-3 text-2xl font-bold tracking-normal text-slate-950 sm:text-3xl md:text-4xl">Nhóm thiết bị cốt lõi để trang trại vận hành trơn tru</h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
               Dolic tập trung vào các nhóm máy tạo oxy, cấp thoát nước và kiểm soát môi trường ao để giảm chi phí vận hành thay vì chỉ bán từng máy lẻ.
             </p>
           </div>

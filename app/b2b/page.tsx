@@ -9,9 +9,7 @@ import {
   HandCoins,
   Handshake,
   Headphones,
-  MapPin,
   PackageCheck,
-  Phone,
   ShieldCheck,
   Truck,
   Wrench,
@@ -431,14 +429,6 @@ export default function B2BPage() {
         </div>
       </section>
 
-      <div className="fixed bottom-5 left-3 z-50 flex flex-col gap-2 sm:bottom-6 sm:left-4 sm:gap-3 md:bottom-8 md:left-6">
-        <Link href="tel:0397581028" aria-label="Gọi điện" className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500 text-slate-950 shadow-[0_16px_35px_-18px_rgba(8,145,178,0.75)] transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-400 sm:h-14 sm:w-14">
-          <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
-        </Link>
-        <Link href="/lien-he" aria-label="Liên hệ" className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A2E5C] text-white shadow-[0_16px_35px_-18px_rgba(8,42,82,0.75)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#123b6f] sm:h-14 sm:w-14">
-          <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
-        </Link>
-      </div>
     </PageFrame>
   );
 }
