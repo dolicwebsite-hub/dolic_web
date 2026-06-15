@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MaintenancePage } from "@/components/maintenance-page";
 import { BackToTopButton, SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { VerticalMenu } from "@/components/vertical-menu";
 import { isMaintenanceMode } from "@/lib/maintenance";
@@ -20,12 +21,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="vi" data-scroll-behavior="smooth">
       <body>
-        {!maintenanceMode && <SiteHeader />}
-        {!maintenanceMode && <div id="top" />}
-        {children}
-        {!maintenanceMode && <SiteFooter />}
-        {!maintenanceMode && <VerticalMenu />}
-        {!maintenanceMode && <BackToTopButton />}
+        {maintenanceMode ? (
+          <MaintenancePage />
+        ) : (
+          <>
+            <SiteHeader />
+            <div id="top" />
+            {children}
+            <SiteFooter />
+            <VerticalMenu />
+            <BackToTopButton />
+          </>
+        )}
       </body>
     </html>
   );

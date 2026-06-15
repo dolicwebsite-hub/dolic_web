@@ -3,8 +3,6 @@ import { ArrowRight, BookOpen, Camera, Check, Gauge, MessageSquareQuote, Newspap
 import { allProducts, productCategories } from "@/lib/site-data";
 import { PageFrame, PrimaryButton } from "@/components/site-chrome";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
-import { MaintenancePage } from "@/components/maintenance-page";
-import { isMaintenanceMode } from "@/lib/maintenance";
 
 const brandPages = [
   {
@@ -64,10 +62,6 @@ const libraryItems = [
 ];
 
 export default function HomePage() {
-  if (isMaintenanceMode()) {
-    return <MaintenancePage />;
-  }
-
   return (
     <PageFrame>
       <section className="relative min-h-[100svh] overflow-hidden bg-[#061B35] text-white">
