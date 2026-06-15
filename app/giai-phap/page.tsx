@@ -14,6 +14,7 @@ import {
   Zap,
 } from "lucide-react";
 import { PageFrame, PrimaryButton } from "@/components/site-chrome";
+import { RevealOnScroll } from "@/components/reveal-on-scroll";
 
 const platformBenefits = [
   ["20-50%", "mục tiêu tiết kiệm điện", "Tư vấn lại công suất, số lượng máy và lịch vận hành theo ao thực tế."],
@@ -99,16 +100,16 @@ export default function SolutionsPage() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,42,82,0.94)_0%,rgba(8,42,82,0.82)_50%,rgba(8,42,82,0.62)_100%)] md:bg-[linear-gradient(90deg,rgba(8,42,82,0.96)_0%,rgba(8,42,82,0.82)_42%,rgba(8,42,82,0.28)_78%)]" />
         <div className="relative mx-auto grid min-h-[680px] max-w-7xl gap-8 px-4 py-12 md:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="inline-flex rounded-full border border-cyan-200/25 bg-cyan-300/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-cyan-100">
+            <p className="hero-enter inline-flex rounded-full border border-cyan-200/25 bg-cyan-300/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-cyan-100">
               Dolic Solution Platform
             </p>
-            <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-normal sm:text-5xl md:text-6xl">
+            <h1 className="hero-enter hero-enter-1 mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-normal sm:text-5xl md:text-6xl">
               Nền tảng cấu hình giải pháp cho trang trại thủy sản
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-cyan-50/88 md:text-lg">
+            <p className="hero-enter hero-enter-2 mt-5 max-w-2xl text-base leading-8 text-cyan-50/88 md:text-lg">
               Từ mô hình ao, điện áp và mục tiêu vận hành, Dolic đề xuất combo thiết bị sục khí, bơm, đo nước và hỗ trợ sau bán để người nuôi đầu tư đúng ngay từ đầu.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="hero-enter hero-enter-3 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <PrimaryButton href="/lien-he">
                 Đăng ký khảo sát
                 <ArrowRight className="h-4 w-4" />
@@ -119,7 +120,7 @@ export default function SolutionsPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-white/15 bg-white/12 p-4 shadow-[0_34px_90px_-48px_rgba(0,0,0,0.78)] backdrop-blur-md sm:p-5">
+          <div className="hero-enter hero-enter-2 rounded-lg border border-white/15 bg-white/12 p-4 shadow-[0_34px_90px_-48px_rgba(0,0,0,0.78)] backdrop-blur-md sm:p-5">
             <div className="rounded-lg bg-white p-4 text-slate-950 sm:p-5">
               <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
                 <div>
@@ -141,7 +142,7 @@ export default function SolutionsPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/lien-he" className="mt-5 flex min-h-12 items-center justify-center rounded-md bg-cyan-500 px-5 text-sm font-bold text-slate-950 transition hover:bg-cyan-400">
+              <Link href="/lien-he" className="motion-interactive pressable lift-hover mt-5 flex min-h-12 items-center justify-center rounded-md bg-cyan-500 px-5 text-sm font-bold text-slate-950 hover:bg-cyan-400">
                 Nhận cấu hình chi tiết
               </Link>
             </div>
@@ -149,10 +150,11 @@ export default function SolutionsPage() {
         </div>
       </section>
 
+      <RevealOnScroll>
       <section className="border-b border-slate-200 bg-white px-4 py-5 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-3 md:grid-cols-3">
-          {platformBenefits.map(([value, label, desc]) => (
-            <div key={label} className="grid grid-cols-[82px_minmax(0,1fr)] gap-4 rounded-lg border border-cyan-100 bg-cyan-50/50 p-4">
+          {platformBenefits.map(([value, label, desc], index) => (
+            <div key={label} className="motion-interactive lift-hover grid grid-cols-[82px_minmax(0,1fr)] gap-4 rounded-lg border border-cyan-100 bg-cyan-50/50 p-4" style={{ transitionDelay: `${index * 40}ms` }}>
               <div>
                 <p className="text-2xl font-bold text-[#0A2E5C]">{value}</p>
                 <p className="mt-1 text-xs font-bold uppercase tracking-[0.08em] text-cyan-700">{label}</p>
@@ -162,7 +164,9 @@ export default function SolutionsPage() {
           ))}
         </div>
       </section>
+      </RevealOnScroll>
 
+      <RevealOnScroll delay={40}>
       <section className="bg-[linear-gradient(180deg,#f7fbfc_0%,#ffffff_100%)] px-4 py-14 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -181,10 +185,10 @@ export default function SolutionsPage() {
           </div>
 
           <div className="grid gap-5 lg:grid-cols-3">
-            {solutionPackages.map(({ title, subtitle, desc, image, icon: Icon, tags, href }) => (
-              <Link key={title} href={href} className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-[0_28px_70px_-42px_rgba(8,145,178,0.38)]">
+            {solutionPackages.map(({ title, subtitle, desc, image, icon: Icon, tags, href }, index) => (
+              <Link key={title} href={href} className="motion-interactive pressable lift-hover group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm hover:border-cyan-300 hover:shadow-[0_28px_70px_-42px_rgba(8,145,178,0.38)]" style={{ transitionDelay: `${index * 50}ms` }}>
                 <div className="relative h-64 bg-slate-100">
-                  <Image src={image} alt={title} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.04]" />
+                  <Image src={image} alt={title} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover transition duration-300 group-hover:scale-[1.04]" />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,42,82,0.08)_0%,rgba(8,42,82,0.62)_100%)]" />
                   <div className="absolute bottom-4 left-4 right-4 text-white">
                     <p className="text-xs font-bold uppercase tracking-[0.08em] text-cyan-100">{title}</p>
@@ -198,12 +202,12 @@ export default function SolutionsPage() {
                   <p className="mt-4 text-sm leading-7 text-slate-600">{desc}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700">
+                      <span key={tag} className="motion-interactive rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-cyan-700">
+                  <span className="motion-interactive mt-5 inline-flex items-center gap-2 text-sm font-bold text-cyan-700 group-hover:gap-3">
                     Tìm hiểu gói
                     <ArrowRight className="h-4 w-4" />
                   </span>
@@ -213,7 +217,9 @@ export default function SolutionsPage() {
           </div>
         </div>
       </section>
+      </RevealOnScroll>
 
+      <RevealOnScroll delay={60}>
       <section className="bg-white px-4 py-14 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="sticky top-28">
@@ -236,8 +242,8 @@ export default function SolutionsPage() {
           </div>
 
           <div className="grid gap-4">
-            {operatingSystems.map(({ title, desc, metric, metricLabel, image, icon: Icon }) => (
-              <article key={title} className="grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm md:grid-cols-[220px_minmax(0,1fr)]">
+            {operatingSystems.map(({ title, desc, metric, metricLabel, image, icon: Icon }, index) => (
+              <article key={title} className="motion-interactive lift-hover grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm md:grid-cols-[220px_minmax(0,1fr)]" style={{ transitionDelay: `${index * 50}ms` }}>
                 <div className="relative min-h-52 bg-slate-100">
                   <Image src={image} alt={title} fill sizes="(min-width: 768px) 220px, 100vw" className="object-contain p-5" />
                 </div>
@@ -259,7 +265,9 @@ export default function SolutionsPage() {
           </div>
         </div>
       </section>
+      </RevealOnScroll>
 
+      <RevealOnScroll delay={80}>
       <section className="bg-[linear-gradient(180deg,#eef8fb_0%,#ffffff_100%)] px-4 py-14 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 max-w-3xl">
@@ -269,8 +277,8 @@ export default function SolutionsPage() {
             </h2>
           </div>
           <div className="grid gap-4 md:grid-cols-4">
-            {processSteps.map(([step, title, desc]) => (
-              <article key={step} className="rounded-lg border border-cyan-100 bg-white p-5 shadow-sm">
+            {processSteps.map(([step, title, desc], index) => (
+              <article key={step} className="motion-interactive lift-hover rounded-lg border border-cyan-100 bg-white p-5 shadow-sm" style={{ transitionDelay: `${index * 35}ms` }}>
                 <p className="text-4xl font-bold text-cyan-700">{step}</p>
                 <h3 className="mt-5 text-lg font-bold text-slate-950">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{desc}</p>
@@ -299,6 +307,7 @@ export default function SolutionsPage() {
           </div>
         </div>
       </section>
+      </RevealOnScroll>
     </PageFrame>
   );
 }

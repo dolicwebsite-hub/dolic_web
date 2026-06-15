@@ -60,12 +60,12 @@ export function AboutLinearShowcase() {
     <section className="bg-[#f6f8fb] px-4 py-12 md:px-8 md:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 max-w-3xl md:mb-10">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">About us</p>
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Về chúng tôi</p>
           <h1 className="mt-3 text-3xl font-black leading-tight tracking-normal text-slate-950 md:text-5xl">
             Công ty TNHH Thủy Sản Dolic
           </h1>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            Dolic cung cấp thiết bị và giải pháp vận hành cho trang trại thủy sản Việt Nam, tập trung vào sục khí, bơm nước, đo môi trường và cấu hình thiết bị phù hợp từng mô hình nuôi.
+            Dolic cung cấp thiết bị vận hành cho trang trại thủy sản Việt Nam, tập trung vào sục khí, bơm nước, đo môi trường và cấu hình máy móc phù hợp từng mô hình nuôi.
           </p>
         </div>
 

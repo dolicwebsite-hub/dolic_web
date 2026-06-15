@@ -28,7 +28,7 @@ export function PrimaryButton({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-bold transition sm:w-auto ${classes[variant]}`}
+      className={`motion-interactive pressable lift-hover inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-bold sm:w-auto ${classes[variant]}`}
     >
       {children}
     </Link>
@@ -55,14 +55,14 @@ export function SectionHeader({
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#082A52]/92 text-white backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-3 sm:px-4 md:px-8">
-        <Link href="/" className="flex h-10 w-32 shrink-0 items-center justify-center rounded-md bg-white px-2.5 shadow-sm ring-1 ring-white/30 sm:h-11 sm:w-40 sm:px-3">
-          <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain" priority />
+    <header className="fixed inset-x-0 top-0 z-50 text-white">
+      <div className="motion-interactive mx-auto mt-3 flex h-14 max-w-7xl items-center justify-between gap-3 rounded-none border border-white/12 bg-[#061B35]/58 px-3 shadow-[0_18px_55px_-34px_rgba(0,0,0,0.75)] backdrop-blur-xl sm:px-4 md:px-6">
+        <Link href="/" className="flex h-10 w-32 shrink-0 items-center sm:w-40">
+          <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain brightness-0 invert" priority />
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-semibold text-cyan-50/85 lg:flex">
+        <nav className="hidden items-center gap-7 text-sm font-semibold text-cyan-50/88 lg:flex">
           {navItems.map(([label, href]) => (
-            <Link key={href} href={href} className="transition hover:text-white">
+            <Link key={href} href={href} className="motion-interactive nav-link hover:text-white">
               {label}
             </Link>
           ))}
@@ -74,22 +74,22 @@ export function SiteHeader() {
           </PrimaryButton>
         </div>
         <div className="flex items-center gap-2 lg:hidden">
-          <Link href="tel:0397581028" aria-label="Gọi Dolic" className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 bg-white/10 text-cyan-50 md:hidden">
+          <Link href="tel:0397581028" aria-label="Gọi Dolic" className="motion-interactive pressable inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 bg-white/10 text-cyan-50 md:hidden">
             <Phone className="h-4 w-4" />
           </Link>
           <details className="group relative">
-            <summary className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md bg-cyan-400 text-slate-950 marker:hidden">
+            <summary className="motion-interactive pressable flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md bg-cyan-400 text-slate-950 marker:hidden">
               <Menu className="h-5 w-5" />
             </summary>
-            <div className="absolute right-0 top-12 w-[min(88vw,320px)] overflow-hidden rounded-lg border border-white/10 bg-[#071F3E] p-2 shadow-2xl">
+            <div className="motion-interactive absolute right-0 top-12 w-[min(88vw,320px)] overflow-hidden rounded-lg border border-white/10 bg-[#071F3E] p-2 shadow-2xl">
               <nav className="grid">
                 {navItems.map(([label, href]) => (
-                  <Link key={href} href={href} className="rounded-md px-3 py-3 text-sm font-bold text-cyan-50/90 transition hover:bg-white/10 hover:text-white">
+                  <Link key={href} href={href} className="motion-interactive rounded-md px-3 py-3 text-sm font-bold text-cyan-50/90 hover:bg-white/10 hover:text-white">
                     {label}
                   </Link>
                 ))}
               </nav>
-              <Link href="/lien-he" className="mt-2 flex min-h-11 items-center justify-center rounded-md bg-cyan-400 px-3 text-sm font-black text-slate-950">
+            <Link href="/lien-he" className="motion-interactive pressable mt-2 flex min-h-11 items-center justify-center rounded-md bg-cyan-400 px-3 text-sm font-black text-slate-950">
                 Nhận tư vấn
               </Link>
             </div>
@@ -106,11 +106,11 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 border-b border-white/10 pb-8 lg:grid-cols-[1.2fr_0.8fr_1fr_1.05fr]">
           <div>
-            <Link href="/" className="flex h-12 w-36 items-center justify-center rounded-md bg-white px-3 shadow-sm">
-              <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain" />
+            <Link href="/" className="flex h-12 w-36 items-center">
+              <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain brightness-0 invert" />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-7">
-              Dolic cung cấp giải pháp thiết bị thủy sản hiệu năng cao cho trang trại, đại lý và dự án cần vận hành ổn định, tiết kiệm điện và dễ mở rộng.
+              Dolic cung cấp máy móc thiết bị thủy sản hiệu năng cao cho trang trại, đại lý và dự án cần vận hành ổn định, tiết kiệm điện và dễ mở rộng.
             </p>
             <div className="mt-5 grid grid-cols-3 gap-2">
               {[
@@ -161,8 +161,20 @@ export function SiteFooter() {
               </Link>
               <div className="flex items-start gap-3 rounded-md border border-white/10 bg-white/5 p-3 font-semibold leading-6 text-cyan-50/78">
                 <MapPin className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
-                Thôn Dĩnh Bạn, xã Bảo Đài, tỉnh Bắc Ninh, Việt Nam
+                CN1: Thôn Dĩnh Bạn, xã Bảo Đài, tỉnh Bắc Ninh, Việt Nam
               </div>
+              <div className="flex items-start gap-3 rounded-md border border-white/10 bg-white/5 p-3 font-semibold leading-6 text-cyan-50/78">
+                <MapPin className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
+                CN2: Đang cập nhật địa chỉ chính thức
+              </div>
+            </div>
+            <div className="mt-4 flex gap-2">
+              <Link href="https://zalo.me/0397581028" aria-label="Zalo Dolic" className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/5 text-xs font-black text-cyan-100 transition hover:bg-white/10">
+                Z
+              </Link>
+              <Link href="https://facebook.com" aria-label="Facebook Dolic" className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/5 text-cyan-100 transition hover:bg-white/10">
+                <span className="text-xs font-black">FB</span>
+              </Link>
             </div>
             <Link href="/lien-he" className="mt-4 flex min-h-11 items-center justify-center rounded-md bg-cyan-400 px-4 text-sm font-black text-slate-950 transition hover:bg-cyan-300">
               Nhận tư vấn cấu hình
@@ -180,7 +192,7 @@ export function SiteFooter() {
 }
 
 export function PageFrame({ children }: { children: React.ReactNode }) {
-  return <main className="min-h-screen bg-slate-50 pt-16 text-slate-950">{children}</main>;
+  return <main className="min-h-screen bg-slate-50 text-slate-950">{children}</main>;
 }
 
 export function BackToTopButton() {
@@ -189,7 +201,7 @@ export function BackToTopButton() {
       href="#top"
       aria-label="Quay lại đầu trang"
       title="Quay lại đầu trang"
-      className="fixed bottom-20 right-3 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-cyan-100 bg-cyan-500 text-slate-950 shadow-[0_16px_35px_-18px_rgba(8,145,178,0.75)] transition hover:-translate-y-1 hover:bg-cyan-400 sm:h-12 sm:w-12 md:bottom-6 md:right-6"
+      className="motion-interactive pressable lift-hover fixed bottom-20 right-3 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-cyan-100 bg-cyan-500 text-slate-950 shadow-[0_16px_35px_-18px_rgba(8,145,178,0.75)] hover:bg-cyan-400 sm:h-12 sm:w-12 md:bottom-6 md:right-6"
     >
       <ChevronUp className="h-5 w-5 sm:h-6 sm:w-6" />
     </Link>

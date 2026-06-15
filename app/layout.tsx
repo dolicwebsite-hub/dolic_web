@@ -4,8 +4,8 @@ import { VerticalMenu } from "@/components/vertical-menu";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Dolic - Giải pháp trọn bộ cho trang trại thuỷ sản",
-  description: "Dolic cung cấp thiết bị, giám sát và vi sinh theo combo giải pháp cho trang trại thuỷ sản Việt Nam",
+  title: "Dolic - Giải pháp tối ưu điện năng cho nuôi trồng thuỷ sản",
+  description: "Dolic cung cấp máy móc, thiết bị và cấu hình vận hành giúp trang trại thuỷ sản tối ưu điện năng, chi phí và độ bền.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi">
+    <html lang="vi" data-scroll-behavior="smooth">
       <body>
         <SiteHeader />
         <div id="top" />

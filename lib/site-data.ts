@@ -18,13 +18,9 @@ export type ProductCategory = {
 };
 
 export const navItems = [
-  ["Giải pháp", "/giai-phap"],
+  ["Về chúng tôi", "/about-us"],
   ["Sản phẩm", "/san-pham"],
-  ["B2B", "/b2b"],
-  ["About us", "/about-us"],
-  ["Trang trại", "/trang-trai"],
   ["Đại lý", "/dai-ly"],
-  ["Thư viện", "/thu-vien"],
   ["Liên hệ", "/lien-he"],
 ];
 
@@ -106,10 +102,10 @@ export const productCategories: ProductCategory[] = [
     ],
   },
   {
-    id: "vi-sinh-che-pham",
-    name: "Vi sinh & chế phẩm",
-    summary: "Danh mục sắp ra mắt, sẽ bổ sung sản phẩm khi có dữ liệu chính thức.",
-    image: "/assets/aquaculture-hero.png",
+    id: "combo-thiet-bi",
+    name: "Combo thiết bị tối ưu điện",
+    summary: "Ô chờ cho các combo máy theo mô hình ao, diện tích và mục tiêu tiết kiệm điện.",
+    image: "/assets/products/air-blower-treo-khi-nen.jpg",
     products: [],
   },
 ];

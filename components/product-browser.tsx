@@ -208,7 +208,7 @@ export function ProductBrowser() {
               </div>
             ) : (
               <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-6 text-sm leading-6 text-slate-600">
-                Nhóm vi sinh và chế phẩm đang ở trạng thái sắp ra mắt trong file danh mục. Khi có mã sản phẩm chính thức, phần này có thể thêm sản phẩm ngay theo cùng cấu trúc.
+                Nhóm combo thiết bị đang được chừa sẵn để thêm cấu hình theo mô hình ao, diện tích và mục tiêu tiết kiệm điện khi có dữ liệu chính thức.
               </div>
             )}
           </section>
