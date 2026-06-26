@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { MaintenanceBackground } from "@/components/MaintenanceBackground";
+import { SocialLinks } from "@/components/social-links";
+import { contactInfo } from "@/lib/site-data";
 
 export function MaintenancePage() {
   return (
@@ -25,19 +27,22 @@ export function MaintenancePage() {
 
         <div className="mt-8 grid gap-3 md:grid-cols-2">
           <a
-            href="tel:0377575597"
+            href={`tel:${contactInfo.offices[0].hotline}`}
             className="rounded-xl bg-[var(--brand)] px-4 py-3 text-base font-semibold text-white transition hover:opacity-90"
           >
-            Hotline: 037 757 5597
+            Hotline: {contactInfo.offices[0].displayHotline}
           </a>
           <a
-            href="https://www.facebook.com/share/1EmHbXzC78/?mibextid=wwXIfr"
+            href={contactInfo.socials.facebook}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="rounded-xl border border-[var(--brand-2)] bg-cyan-50 px-4 py-3 text-base font-semibold text-[var(--brand)] transition hover:bg-cyan-100"
           >
-            Fanpage Dolic
+            {contactInfo.fanpage}
           </a>
+        </div>
+        <div className="mt-6 flex justify-center">
+          <SocialLinks tone="dark" />
         </div>
       </div>
     </main>

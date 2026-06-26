@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { CookiePolicyBanner } from "@/components/cookie-policy-banner";
 import { MaintenancePage } from "@/components/maintenance-page";
-import { BackToTopButton, SiteFooter, SiteHeader } from "@/components/site-chrome";
+import { SiteHeader } from "@/components/site-header";
+import { BackToTopButton, SiteFooter } from "@/components/site-chrome";
+import { SiteLoader } from "@/components/site-loader";
 import { VerticalMenu } from "@/components/vertical-menu";
 import { isMaintenanceMode } from "@/lib/maintenance";
 import "./globals.css";
@@ -25,12 +28,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MaintenancePage />
         ) : (
           <>
+            <SiteLoader />
             <SiteHeader />
             <div id="top" />
             {children}
             <SiteFooter />
             <VerticalMenu />
             <BackToTopButton />
+            <CookiePolicyBanner />
           </>
         )}
       </body>

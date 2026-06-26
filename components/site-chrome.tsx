@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronUp, Mail, MapPin, Menu, Phone } from "lucide-react";
-import { navItems } from "@/lib/site-data";
+import { BriefcaseBusiness, ChevronUp, Mail, MapPin, Phone, ShoppingCart } from "lucide-react";
+import { HomeMenuButton } from "@/components/home-menu-button";
+import { SocialLinks } from "@/components/social-links";
+import { contactInfo, navItems } from "@/lib/site-data";
 
 const footerProductLinks = [
   ["Máy sục khí / Quạt nước", "/san-pham#may-suc-khi-quat-nuoc"],
@@ -54,47 +56,38 @@ export function SectionHeader({
 }
 
 export function SiteHeader() {
+  const primaryOffice = contactInfo.offices[0];
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 text-white">
-      <div className="motion-interactive mx-auto mt-3 flex h-14 max-w-7xl items-center justify-between gap-3 rounded-none border border-white/12 bg-[#061B35]/58 px-3 shadow-[0_18px_55px_-34px_rgba(0,0,0,0.75)] backdrop-blur-xl sm:px-4 md:px-6">
-        <Link href="/" className="flex h-10 w-32 shrink-0 items-center sm:w-40">
-          <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain brightness-0 invert" priority />
+    <header className="site-global-header fixed inset-x-0 top-0 z-[90] px-5 py-6 text-white md:px-10">
+      <div className="flex items-center justify-between gap-6">
+        <Link href="/" className="flex items-center gap-4">
+          <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} priority className="h-auto w-36 brightness-0 invert md:w-44" />
+          <span className="hidden text-xs font-bold uppercase tracking-[0.24em] text-white/78 sm:inline">Vietnam</span>
         </Link>
-        <nav className="hidden items-center gap-7 text-sm font-semibold text-cyan-50/88 lg:flex">
-          {navItems.map(([label, href]) => (
-            <Link key={href} href={href} className="motion-interactive nav-link hover:text-white">
-              {label}
-            </Link>
-          ))}
-        </nav>
-        <div className="hidden items-center gap-2 md:flex">
-          <PrimaryButton href="tel:0397581028" variant="light">
-            <Phone className="h-4 w-4" />
-            0397 581 028
-          </PrimaryButton>
-        </div>
-        <div className="flex items-center gap-2 lg:hidden">
-          <Link href="tel:0397581028" aria-label="Gọi Dolic" className="motion-interactive pressable inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 bg-white/10 text-cyan-50 md:hidden">
-            <Phone className="h-4 w-4" />
+
+        <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-[0.1em] text-white/88 lg:flex">
+          <Link className="transition hover:text-white" href="/about-us">
+            Về chúng tôi
           </Link>
-          <details className="group relative">
-            <summary className="motion-interactive pressable flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md bg-cyan-400 text-slate-950 marker:hidden">
-              <Menu className="h-5 w-5" />
-            </summary>
-            <div className="motion-interactive absolute right-0 top-12 w-[min(88vw,320px)] overflow-hidden rounded-lg border border-white/10 bg-[#071F3E] p-2 shadow-2xl">
-              <nav className="grid">
-                {navItems.map(([label, href]) => (
-                  <Link key={href} href={href} className="motion-interactive rounded-md px-3 py-3 text-sm font-bold text-cyan-50/90 hover:bg-white/10 hover:text-white">
-                    {label}
-                  </Link>
-                ))}
-              </nav>
-            <Link href="/lien-he" className="motion-interactive pressable mt-2 flex min-h-11 items-center justify-center rounded-md bg-cyan-400 px-3 text-sm font-black text-slate-950">
-                Nhận tư vấn
-              </Link>
-            </div>
-          </details>
-        </div>
+          <Link className="inline-flex items-center gap-2 transition hover:text-white" href="/lien-he">
+            <Phone className="h-4 w-4" />
+            Tư vấn
+          </Link>
+          <Link className="inline-flex items-center gap-2 transition hover:text-white" href="/san-pham">
+            <ShoppingCart className="h-4 w-4" />
+            Sản phẩm
+          </Link>
+          <Link className="inline-flex items-center gap-2 transition hover:text-white" href="/dai-ly">
+            <BriefcaseBusiness className="h-4 w-4" />
+            Đại lý
+          </Link>
+          <Link className="transition hover:text-white" href={`tel:${primaryOffice.hotline}`}>
+            {primaryOffice.displayHotline}
+          </Link>
+        </nav>
+
+        <HomeMenuButton />
       </div>
     </header>
   );
@@ -102,89 +95,81 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#071F3E] px-4 pb-8 pt-10 text-sm text-cyan-50/72 md:px-8 md:pb-10 md:pt-14">
+    <footer className="bg-[#071F3E] px-5 py-8 text-sm text-cyan-50/70 md:px-10 md:py-10">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 border-b border-white/10 pb-8 lg:grid-cols-[1.2fr_0.8fr_1fr_1.05fr]">
+        <div className="grid gap-8 border-b border-white/10 pb-7 md:grid-cols-[1.05fr_0.85fr_0.9fr] lg:gap-14">
           <div>
-            <Link href="/" className="flex h-12 w-36 items-center">
+            <Link href="/" className="flex h-12 w-36 items-center md:w-40">
               <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain brightness-0 invert" />
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-7">
-              Dolic cung cấp máy móc thiết bị thủy sản hiệu năng cao cho trang trại, đại lý và dự án cần vận hành ổn định, tiết kiệm điện và dễ mở rộng.
+            <p className="mt-4 max-w-sm text-sm font-semibold leading-6 text-cyan-50/70">
+              Thiết bị thủy sản hiệu năng cao, kiểm chứng thực địa trước khi đến tay người nuôi.
             </p>
-            <div className="mt-5 grid grid-cols-3 gap-2">
-              {[
-                ["20-50%", "tiết kiệm điện"],
-                ["24/7", "vận hành"],
-                ["12 tháng", "bảo hành"],
-              ].map(([value, label]) => (
-                <div key={label} className="rounded-md border border-white/10 bg-white/5 p-3">
-                  <p className="text-base font-black text-cyan-200">{value}</p>
-                  <p className="mt-1 text-[11px] font-semibold leading-4 text-cyan-50/58">{label}</p>
-                </div>
-              ))}
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">Người nuôi hiểu người nuôi</p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-1">
+            <div>
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">Liên kết nhanh</h2>
+              <nav className="mt-4 grid gap-2">
+                {navItems.map(([label, href]) => (
+                  <Link key={href} href={href} className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
+                    {label}
+                  </Link>
+                ))}
+                <Link href="/chinh-sach-cookie" className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
+                  Cookie Policy
+                </Link>
+              </nav>
+            </div>
+
+            <div>
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">Sản phẩm</h2>
+              <nav className="mt-4 grid gap-2">
+                {footerProductLinks.slice(0, 3).map(([label, href]) => (
+                  <Link key={href} href={href} className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
+                    {label}
+                  </Link>
+                ))}
+              </nav>
             </div>
           </div>
 
           <div>
-            <h2 className="text-sm font-black uppercase tracking-[0.18em] text-white">Điều hướng</h2>
-            <nav className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-1">
-              {navItems.map(([label, href]) => (
-                <Link key={href} href={href} className="rounded-md px-0 py-1.5 font-semibold text-cyan-50/72 transition hover:text-white">
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          <div>
-            <h2 className="text-sm font-black uppercase tracking-[0.18em] text-white">Sản phẩm chính</h2>
-            <nav className="mt-4 grid gap-2">
-              {footerProductLinks.map(([label, href]) => (
-                <Link key={href} href={href} className="rounded-md py-1.5 font-semibold text-cyan-50/72 transition hover:text-white">
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          <div>
-            <h2 className="text-sm font-black uppercase tracking-[0.18em] text-white">Liên hệ</h2>
-            <div className="mt-4 grid gap-3">
-              <Link href="tel:0397581028" className="flex items-center gap-3 rounded-md border border-white/10 bg-white/5 p-3 font-bold text-cyan-50 transition hover:bg-white/10">
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">Liên hệ</h2>
+            <div className="mt-4 grid gap-2.5">
+              <Link href={`tel:${contactInfo.offices[0].hotline}`} className="inline-flex w-fit items-center gap-3 font-bold text-cyan-50 transition hover:text-cyan-200">
                 <Phone className="h-4 w-4 shrink-0 text-cyan-300" />
-                0397 581 028
+                {contactInfo.offices.map((office) => office.displayHotline).join(" - ")}
               </Link>
-              <Link href="mailto:congtytnhhthuysandolic@gmail.com" className="flex items-center gap-3 rounded-md border border-white/10 bg-white/5 p-3 font-bold text-cyan-50 transition hover:bg-white/10">
+              <Link href={`mailto:${contactInfo.email}`} className="inline-flex w-fit max-w-full items-center gap-3 font-bold text-cyan-50 transition hover:text-cyan-200">
                 <Mail className="h-4 w-4 shrink-0 text-cyan-300" />
-                <span className="min-w-0 break-words">congtytnhhthuysandolic@gmail.com</span>
+                <span className="min-w-0 break-words">{contactInfo.email}</span>
               </Link>
-              <div className="flex items-start gap-3 rounded-md border border-white/10 bg-white/5 p-3 font-semibold leading-6 text-cyan-50/78">
+              <p className="flex items-start gap-3 pt-1 text-sm font-semibold leading-6 text-cyan-50/70">
                 <MapPin className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
-                CN1: Thôn Dĩnh Bạn, xã Bảo Đài, tỉnh Bắc Ninh, Việt Nam
-              </div>
-              <div className="flex items-start gap-3 rounded-md border border-white/10 bg-white/5 p-3 font-semibold leading-6 text-cyan-50/78">
-                <MapPin className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
-                CN2: Đang cập nhật địa chỉ chính thức
-              </div>
+                <span>
+                  Miền Nam: {contactInfo.offices[0].address}
+                  <br />
+                  Miền Bắc: {contactInfo.offices[1].address}
+                </span>
+              </p>
             </div>
-            <div className="mt-4 flex gap-2">
-              <Link href="https://zalo.me/0397581028" aria-label="Zalo Dolic" className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/5 text-xs font-black text-cyan-100 transition hover:bg-white/10">
-                Z
-              </Link>
-              <Link href="https://facebook.com" aria-label="Facebook Dolic" className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/5 text-cyan-100 transition hover:bg-white/10">
-                <span className="text-xs font-black">FB</span>
-              </Link>
+
+            <div className="mt-5">
+              <p className="mb-3 font-serif text-xl text-white">Follow Us!</p>
+              <SocialLinks variant="footer" tone="light" />
             </div>
-            <Link href="/lien-he" className="mt-4 flex min-h-11 items-center justify-center rounded-md bg-cyan-400 px-4 text-sm font-black text-slate-950 transition hover:bg-cyan-300">
-              Nhận tư vấn cấu hình
-            </Link>
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 pt-5 text-xs leading-5 text-cyan-50/54 sm:flex-row sm:items-center sm:justify-between">
-          <p>Dolic Vietnam - Thương hiệu của sự an tâm.</p>
-          <p>Thiết bị thủy sản, giải pháp trang trại và hợp tác B2B.</p>
+        <div className="grid gap-4 pt-5 text-xs font-semibold leading-5 text-cyan-50/50 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <span>Website: {contactInfo.website}</span>
+            <span>Fanpage: {contactInfo.fanpage}</span>
+            <span>Tiktok: {contactInfo.tiktok}</span>
+          </div>
+          <p className="md:text-right">© 2026 Dolic Vietnam</p>
         </div>
       </div>
     </footer>

@@ -138,6 +138,144 @@ pre {
   }
 }
 
+@keyframes dolic-loader-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes dolic-loader-bar {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(210%);
+  }
+}
+
+body:has(.home-pizza-style) > nav,
+body:has(.home-pizza-style) footer,
+body:has(.home-pizza-style) a[aria-label="Quay lại đầu trang"] {
+  display: none;
+}
+
+body:has(.home-pizza-style) > .site-global-header {
+  display: block !important;
+}
+
+.home-pizza-style {
+  min-height: 100vh;
+}
+
+.home-menu-trigger {
+  position: relative;
+}
+
+.home-menu-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.home-menu-icon {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: 1.25px solid currentColor;
+  border-radius: 999px;
+  transition:
+    color 220ms var(--ease-standard),
+    transform 420ms var(--ease-out);
+}
+
+.home-menu-line,
+.home-menu-spoke {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: currentColor;
+  transform-origin: center;
+  transition:
+    opacity 220ms var(--ease-standard),
+    transform 320ms var(--ease-out);
+}
+
+.home-menu-line {
+  width: 31px;
+  height: 1.25px;
+  margin-left: -15.5px;
+}
+
+.home-menu-line-top {
+  transform: translateY(-8px);
+}
+
+.home-menu-line-mid {
+  transform: translateY(-1px);
+}
+
+.home-menu-line-bot {
+  transform: translateY(6px);
+}
+
+.home-menu-spoke {
+  width: 1.25px;
+  height: 22px;
+  margin-left: -0.625px;
+  margin-top: -22px;
+  opacity: 0;
+  transform-origin: 50% 100%;
+}
+
+@media (min-width: 768px) {
+  .home-menu-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .home-menu-line {
+    width: 39px;
+    margin-left: -19.5px;
+  }
+
+  .home-menu-line-top {
+    transform: translateY(-10px);
+  }
+
+  .home-menu-line-bot {
+    transform: translateY(8px);
+  }
+
+  .home-menu-spoke {
+    height: 27px;
+    margin-top: -27px;
+  }
+}
+
+.home-menu-trigger:hover .home-menu-icon {
+  animation: home-menu-wheel-spin 1.2s linear infinite;
+}
+
+.home-menu-trigger:hover .home-menu-line {
+  opacity: 0;
+  transform: translateY(0) scaleX(0.18);
+}
+
+.home-menu-trigger:hover .home-menu-spoke {
+  opacity: 1;
+}
+
+@keyframes home-menu-wheel-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .motion-reveal {
   opacity: 0;
   transform: translateY(14px);
