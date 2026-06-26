@@ -29,12 +29,32 @@ export function ProductBrowser() {
   const selectedSpecs = selectedProduct?.specs.split(" - ").filter(Boolean) ?? [];
   const selectedFeatures = selectedProduct
     ? [
+        ...(selectedProduct.englishName
+          ? [
+              {
+                id: "englishName",
+                title: "Tên tiếng Anh",
+                description: selectedProduct.englishName,
+                icon: Info,
+              },
+            ]
+          : []),
         {
           id: "specs",
           title: "Thông số vận hành",
           description: selectedProduct.specs,
           icon: Gauge,
         },
+        ...(selectedProduct.details
+          ? [
+              {
+                id: "details",
+                title: "Chi tiết sản phẩm",
+                description: selectedProduct.details,
+                icon: PackageCheck,
+              },
+            ]
+          : []),
         {
           id: "origin",
           title: "Model & xuất xứ",
@@ -43,7 +63,7 @@ export function ProductBrowser() {
         },
         {
           id: "status",
-          title: "Dữ liệu sản phẩm",
+          title: "Tình trạng sản phẩm",
           description: selectedProduct.status,
           icon: BadgeCheck,
         },
@@ -191,6 +211,7 @@ export function ProductBrowser() {
                       </div>
                       <div className="p-4 sm:p-5">
                         <h3 className="text-base font-black leading-6 text-slate-950 sm:min-h-14 sm:leading-7">{product.name}</h3>
+                        {product.englishName ? <p className="mt-1 line-clamp-1 text-xs font-semibold text-cyan-700">{product.englishName}</p> : null}
                         <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">{product.specs}</p>
                         <div className="mt-4 flex items-end justify-between gap-3">
                           <div>
@@ -234,6 +255,7 @@ export function ProductBrowser() {
               <aside className="relative z-10 border-b border-white/10 bg-[#101723] p-4 sm:p-6 lg:min-h-[680px] lg:border-b-0 lg:border-r lg:p-7">
                 <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-300">Dolic product</p>
                 <h2 className="mt-3 text-2xl font-black leading-tight tracking-normal text-white sm:text-3xl">{selectedProduct.name}</h2>
+                {selectedProduct.englishName ? <p className="mt-2 text-sm font-semibold leading-6 text-cyan-200">{selectedProduct.englishName}</p> : null}
                 <p className="mt-3 text-sm leading-6 text-slate-300">
                   {selectedProduct.model} | {selectedProduct.origin}
                 </p>
@@ -287,6 +309,20 @@ export function ProductBrowser() {
                         <p className="text-sm font-black text-cyan-50">{spec}</p>
                       </div>
                     ))}
+                  </div>
+                ) : null}
+
+                {selectedProduct.usp?.length ? (
+                  <div className="mt-5 rounded-[24px] border border-cyan-300/20 bg-cyan-300/[0.08] p-4">
+                    <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">USP chính</p>
+                    <ul className="mt-3 space-y-2">
+                      {selectedProduct.usp.map((item) => (
+                        <li key={item} className="flex gap-2 text-sm leading-6 text-slate-200">
+                          <BadgeCheck className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ) : null}
 
