@@ -22,12 +22,18 @@ const platformBenefits = [
   ["24/7", "đồng hành vận hành", "Hỗ trợ ca vận hành, xử lý rủi ro oxy, bơm và đo nước."],
 ];
 
+const energyComparison = [
+  ["Thiết bị", "Máy nén khí"],
+  ["Hiệu quả ghi nhận", "Giảm điện năng tiêu thụ lên đến 30%"],
+  ["Cơ sở so sánh", "So sánh thực tế trong file page 5 tại drive"],
+];
+
 const solutionPackages = [
   {
     title: "Dolic Farm",
     subtitle: "Gói trang trại và cụm ao",
     desc: "Dành cho chủ trại cần cấu hình thiết bị theo diện tích ao, mật độ nuôi, điện áp và mục tiêu tiết kiệm chi phí.",
-    image: "/assets/aquaculture-hero.png",
+    image: "/assets/drive/experimental-farm/dolic-farm-real.png",
     icon: Droplets,
     tags: ["Khảo sát tận ao", "Combo oxy", "Bơm nước", "Đo DO"],
     href: "/lien-he",
@@ -36,7 +42,7 @@ const solutionPackages = [
     title: "Dolic Dealer",
     subtitle: "Gói đại lý thiết bị thủy sản",
     desc: "Dành cho cửa hàng vật tư, đại lý vùng nuôi và đối tác muốn phân phối nhóm thiết bị có tài liệu bán hàng rõ ràng.",
-    image: "/assets/products/aerator-6-canh-15kw-hop-so-b.png",
+    image: "/assets/drive/exhibition/IMG_6001.PNG",
     icon: Handshake,
     tags: ["Chính sách khu vực", "Đào tạo kỹ thuật", "Tài liệu bán hàng", "Hỗ trợ sau bán"],
     href: "/dai-ly",
@@ -45,7 +51,7 @@ const solutionPackages = [
     title: "Dolic Support",
     subtitle: "Gói hỗ trợ khách đang vận hành",
     desc: "Dành cho khách đã dùng thiết bị Dolic cần tra cứu bảo hành, hỏi kỹ thuật hoặc nâng cấp cấu hình.",
-    image: "/assets/products/meter-do-oxy-2001.jpg",
+    image: "/assets/drive/customer-farm/customer-aerator-installed.jpg",
     icon: Headphones,
     tags: ["Hotline kỹ thuật", "Bảo hành", "Nâng cấp thiết bị", "Hướng dẫn vận hành"],
     href: "/lien-he",
@@ -91,22 +97,22 @@ export default function SolutionsPage() {
     <PageFrame>
       <section className="relative overflow-hidden bg-[#082A52] text-white">
         <Image
-          src="/assets/aquaculture-hero.png"
+          src="/assets/drive/customer-farm/customer-aerator-installed.jpg"
           alt="Trang trại thủy sản sử dụng giải pháp Dolic"
           fill
           className="object-cover object-center"
           priority
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,42,82,0.94)_0%,rgba(8,42,82,0.82)_50%,rgba(8,42,82,0.62)_100%)] md:bg-[linear-gradient(90deg,rgba(8,42,82,0.96)_0%,rgba(8,42,82,0.82)_42%,rgba(8,42,82,0.28)_78%)]" />
-        <div className="relative mx-auto grid min-h-[680px] max-w-7xl gap-8 px-4 py-12 md:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div className="relative mx-auto grid min-h-[100svh] max-w-7xl gap-8 px-5 pb-14 pt-36 md:min-h-[680px] md:px-8 md:py-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="hero-enter inline-flex rounded-full border border-cyan-200/25 bg-cyan-300/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-cyan-100">
+            <p className="hero-enter inline-flex max-w-full rounded-full border border-cyan-200/25 bg-cyan-300/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] text-cyan-100">
               Dolic Solution Platform
             </p>
-            <h1 className="hero-enter hero-enter-1 mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-normal sm:text-5xl md:text-6xl">
+            <h1 className="hero-enter hero-enter-1 mt-5 max-w-3xl text-[2.55rem] font-bold leading-[1.12] tracking-normal sm:text-5xl md:text-6xl">
               Nền tảng cấu hình giải pháp cho trang trại thủy sản
             </h1>
-            <p className="hero-enter hero-enter-2 mt-5 max-w-2xl text-base leading-8 text-cyan-50/88 md:text-lg">
+            <p className="hero-enter hero-enter-2 mt-5 max-w-2xl text-base leading-8 text-cyan-50/88">
               Từ mô hình ao, điện áp và mục tiêu vận hành, Dolic đề xuất combo thiết bị sục khí, bơm, đo nước và hỗ trợ sau bán để người nuôi đầu tư đúng ngay từ đầu.
             </p>
             <div className="hero-enter hero-enter-3 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -120,12 +126,12 @@ export default function SolutionsPage() {
             </div>
           </div>
 
-          <div className="hero-enter hero-enter-2 rounded-lg border border-white/15 bg-white/12 p-4 shadow-[0_34px_90px_-48px_rgba(0,0,0,0.78)] backdrop-blur-md sm:p-5">
+          <div className="hero-enter hero-enter-2 rounded-lg border border-white/15 bg-white/12 p-3 shadow-[0_34px_90px_-48px_rgba(0,0,0,0.78)] backdrop-blur-md sm:p-5">
             <div className="rounded-lg bg-white p-4 text-slate-950 sm:p-5">
               <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.08em] text-cyan-700">Bảng cấu hình nhanh</p>
-                  <h2 className="mt-2 text-2xl font-bold">Ao tôm/cá thương phẩm</h2>
+                  <h2 className="mt-2 text-xl font-bold sm:text-2xl">Ao tôm/cá thương phẩm</h2>
                 </div>
                 <Calculator className="h-8 w-8 text-cyan-600" />
               </div>
@@ -162,6 +168,33 @@ export default function SolutionsPage() {
               <p className="text-sm leading-6 text-slate-600">{desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+      </RevealOnScroll>
+
+      <RevealOnScroll delay={30}>
+      <section className="bg-[#071F3E] px-4 py-14 text-white md:px-8 md:py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">Bằng chứng hiệu quả</p>
+            <h2 className="mt-4 text-3xl font-bold leading-tight md:text-5xl">
+              Giảm điện năng tiêu thụ lên đến 30% cho sản phẩm máy nén khí.
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-cyan-50/74 md:text-base md:leading-8">
+              Kết quả được trình bày dưới dạng bảng so sánh thực tế trong file page 5 tại drive, dùng làm cơ sở tư vấn giải pháp tiết kiệm điện cho người nuôi.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-lg border border-white/12 bg-white/8">
+            <div className="relative aspect-[16/9] border-b border-white/12 bg-white">
+              <Image src="/assets/drive/performance/1JRKM8T8D_5FLBM0.jpg" alt="Bảng so sánh hiệu quả giảm điện năng Dolic" fill sizes="(min-width: 1024px) 48vw, 100vw" className="object-cover" />
+            </div>
+            {energyComparison.map(([label, value]) => (
+              <div key={label} className="grid gap-2 border-b border-white/12 p-5 last:border-b-0 md:grid-cols-[190px_minmax(0,1fr)] md:p-6">
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-cyan-200">{label}</p>
+                <p className="text-lg font-bold leading-7 text-white">{value}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       </RevealOnScroll>
@@ -220,14 +253,14 @@ export default function SolutionsPage() {
       </RevealOnScroll>
 
       <RevealOnScroll delay={60}>
-      <section className="bg-white px-4 py-14 md:px-8 md:py-24">
+      <section className="bg-white px-5 py-14 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="sticky top-28">
+          <div className="relative lg:sticky lg:top-28">
             <p className="text-xs font-bold uppercase tracking-[0.08em] text-cyan-700">Hệ thống vận hành</p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight tracking-normal text-slate-950 md:text-4xl">
+            <h2 className="mt-3 text-2xl font-bold leading-tight tracking-normal text-slate-950 sm:text-3xl md:text-4xl">
               Từ một ao đến cả cụm trang trại
             </h2>
-            <p className="mt-4 text-base leading-8 text-slate-600">
+            <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
               Mỗi nhóm thiết bị được xem như một module. Dolic ghép module theo mục tiêu: tạo oxy, cấp thoát nước, đo môi trường và giảm chi phí vận hành.
             </p>
             <div className="mt-6 rounded-lg bg-[#0A2E5C] p-5 text-white">
@@ -243,22 +276,22 @@ export default function SolutionsPage() {
 
           <div className="grid gap-4">
             {operatingSystems.map(({ title, desc, metric, metricLabel, image, icon: Icon }, index) => (
-              <article key={title} className="motion-interactive lift-hover grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm md:grid-cols-[220px_minmax(0,1fr)]" style={{ transitionDelay: `${index * 50}ms` }}>
-                <div className="relative min-h-52 bg-slate-100">
+              <article key={title} className="motion-interactive lift-hover grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm sm:grid-cols-[180px_minmax(0,1fr)] md:grid-cols-[220px_minmax(0,1fr)]" style={{ transitionDelay: `${index * 50}ms` }}>
+                <div className="relative h-48 bg-slate-100 sm:h-auto sm:min-h-52">
                   <Image src={image} alt={title} fill sizes="(min-width: 768px) 220px, 100vw" className="object-contain p-5" />
                 </div>
-                <div className="p-5">
-                  <div className="flex items-start justify-between gap-4">
+                <div className="p-4 sm:p-5">
+                  <div className="grid grid-cols-[44px_minmax(0,1fr)] items-start gap-3 sm:flex sm:items-start sm:justify-between sm:gap-4">
                     <div className="flex h-11 w-11 items-center justify-center rounded-md bg-cyan-50 text-cyan-700">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <div className="text-right">
-                      <p className="text-2xl font-bold text-[#0A2E5C]">{metric}</p>
+                    <div className="min-w-0 text-left sm:text-right">
+                      <p className="text-2xl font-bold leading-none text-[#0A2E5C]">{metric}</p>
                       <p className="text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{metricLabel}</p>
                     </div>
                   </div>
-                  <h3 className="mt-5 text-xl font-bold text-slate-950">{title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{desc}</p>
+                  <h3 className="mt-4 text-lg font-bold leading-6 text-slate-950 sm:mt-5 sm:text-xl">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 sm:mt-3 sm:leading-7">{desc}</p>
                 </div>
               </article>
             ))}

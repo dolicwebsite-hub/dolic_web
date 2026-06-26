@@ -1,176 +1,326 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
-import { BadgeCheck, Factory, MapPin, PackageCheck, ShieldCheck } from "lucide-react";
-import { PrimaryButton } from "@/components/site-chrome";
+import Link from "next/link";
+import type { LucideIcon } from "lucide-react";
+import { ArrowRight, BadgeCheck, HeartHandshake, Leaf, Network, ShieldCheck, UsersRound } from "lucide-react";
 
-const aboutCards = [
+const timeline = [
   {
-    id: "operation",
-    label: "Vận hành",
-    title: "Thiết bị thủy sản bám sát mô hình ao Việt Nam",
-    description:
-      "Dolic tập trung vào các nhóm thiết bị tác động trực tiếp đến oxy, cấp thoát nước, đo môi trường và nhịp vận hành hằng ngày của trang trại.",
-    metric: "6+",
-    metricLabel: "nhóm thiết bị",
-    image: "/assets/aquaculture-hero.png",
-    icon: Factory,
+    year: "1996",
+    title: "Hai bàn tay trắng",
+    image: "/assets/drive/experimental-farm/warehouse.png",
+    fit: "cover",
+    text:
+      "Từ câu hỏi trăn trở của tuổi đôi mươi, ông Bùi Văn Tới cùng người vợ tảo tần đồng lòng gây dựng cơ nghiệp từ hai bàn tay trắng. Những viên gạch đầu tiên của Dolic được đặt bằng bản lĩnh của người cha, sự kiên trung của người mẹ và niềm tin mãnh liệt của tuổi trẻ.",
   },
   {
-    id: "catalog",
-    label: "Danh mục",
-    title: "Sản phẩm có mã, thông số và giá tham khảo rõ ràng",
-    description:
-      "Danh mục được tổ chức theo nhóm quạt nước, bơm, đo nước, máy cho ăn và thiết bị sục khí để đội bán hàng tư vấn nhanh hơn.",
-    metric: "28+",
-    metricLabel: "mã sản phẩm",
-    image: "/assets/products/aerator-6-canh-15kw-hop-so-b.png",
-    icon: PackageCheck,
+    year: "1997",
+    title: "Trang trại đầu tiên tại Bắc Giang",
+    image: "/assets/drive/customer-farm/customer-farm-4.jpg",
+    fit: "cover",
+    text:
+      "Với số vốn vay hoàn toàn bằng tín chấp từ những người họ hàng tin vào ý chí của ông, trang trại đầu tiên được dựng lên trên mảnh đất quê hương Bắc Giang. Không có gì ngoài đôi tay, lòng tin và một lời hứa với chính mình.",
   },
   {
-    id: "support",
-    label: "Hỗ trợ",
-    title: "Tư vấn cấu hình theo điện áp, diện tích ao và mục tiêu nuôi",
-    description:
-      "Mỗi cấu hình được gắn với nhu cầu thực tế: tăng oxy, cấp thoát nước, kiểm tra DO hoặc tối ưu chi phí vận hành cho từng vùng nuôi.",
-    metric: "12",
-    metricLabel: "tháng bảo hành",
-    image: "/assets/products/pump-75kw-380v.png",
-    icon: ShieldCheck,
+    year: "2016",
+    title: "Trang trại 12ha",
+    image: "/assets/drive/customer-farm/customer-farm-2.jpg",
+    fit: "cover",
+    text:
+      "Sau hai mươi năm bền bỉ, trang trại nuôi trồng thuỷ sản rộng 12ha trở thành gốc rễ tri thức của Dolic: nơi hiểu tận cùng những khó khăn của người nuôi và về sau trở thành trang trại thực nghiệm.",
   },
   {
-    id: "location",
-    label: "Địa chỉ",
-    title: "Điểm liên hệ tại Bắc Ninh cho đại lý và trang trại",
-    description:
-      "Dolic tiếp nhận tư vấn, báo giá và hỗ trợ sau bán qua hotline, email và địa chỉ công ty để khách hàng dễ kết nối.",
-    metric: "0397",
-    metricLabel: "hotline chính",
-    image: "/Logo-Dolic.png",
-    icon: MapPin,
+    year: "2019",
+    title: "Ứng dụng vi sinh và máy móc trên ao",
+    image: "/assets/drive/experimental-farm/device-on-pond.jpg",
+    fit: "cover",
+    text:
+      "Sau nhiều mùa vụ thất thoát vì dịch bệnh, nguồn nước khó kiểm soát và chi phí điện năng chưa tối ưu, trang trại Dolic đi tìm lời giải bằng công nghệ vi sinh, máy móc hiện đại và dữ liệu vận hành thực tế.",
+  },
+  {
+    year: "2020",
+    title: "Thiết bị đã qua kiểm chứng",
+    image: "/assets/drive/experimental-farm/comparison-aerator-1.jpg",
+    fit: "cover",
+    text:
+      "Hiểu rõ trên ao thật sự cần gì, Dolic tuyển chọn và đưa những thiết bị đã được kiểm chứng trên chính trại nuôi của mình đến với bà con các vùng lân cận.",
+  },
+  {
+    year: "2024",
+    title: "Thế hệ kế cận",
+    image: "/assets/drive/exhibition/IMG_6009.PNG",
+    fit: "cover",
+    text:
+      "Công ty TNHH Thuỷ sản Dolic chính thức thành lập. Tên thương hiệu được ghép từ tên của ba anh em trong gia đình, biểu trưng cho tinh thần đoàn kết, lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.",
+  },
+  {
+    year: "2025",
+    title: "Mạng lưới đại lý và vùng nuôi",
+    image: "/assets/drive/customer-farm/customer-aerator-installed.jpg",
+    fit: "cover",
+    text:
+      "Từ gốc Bắc Giang, Dolic đưa tinh thần người nuôi hiểu người nuôi đến thị trường Nam - Bắc, phục vụ khoảng 15.000+ đối tác và khách hàng tại 34 tỉnh thành Việt Nam.",
+  },
+  {
+    year: "2026",
+    title: "Từ sản phẩm đến giải pháp",
+    image: "/assets/drive/exhibition/IMG_6001.PNG",
+    fit: "cover",
+    text:
+      "Dolic hiện diện tại các triển lãm công nghệ quốc tế đầu ngành và nâng cấp từ bán sản phẩm hoàn thiện sang bán giải pháp tối ưu chi phí, vận hành ổn định và bền vững cho ngành nuôi trồng thuỷ sản.",
   },
 ];
 
-export function AboutLinearShowcase() {
-  const [activeCardId, setActiveCardId] = useState(aboutCards[0].id);
-  const activeCard = aboutCards.find((card) => card.id === activeCardId) ?? aboutCards[0];
+const systems = [
+  {
+    title: "Nền tảng gia đình",
+    image: "/assets/drive/experimental-farm/warehouse.png",
+    fit: "cover",
+    text:
+      "Dolic hình thành từ sự đồng lòng của một gia đình làm nghề nuôi thực địa, nơi lòng biết ơn và tinh thần đoàn kết trở thành gốc rễ cho mọi quyết định.",
+    href: "#tam-nhin",
+  },
+  {
+    title: "Trang trại thực nghiệm",
+    image: "/assets/drive/customer-farm/customer-farm-2.jpg",
+    fit: "cover",
+    text:
+      "120.000m2 ao nuôi là nơi thiết bị được chạy thử, đo đạc và hiệu chỉnh trong điều kiện thật trước khi được tư vấn rộng rãi.",
+    href: "/trang-trai",
+  },
+  {
+    title: "Mạng lưới người nuôi",
+    image: "/assets/drive/customer-farm/customer-farm-2.jpg",
+    fit: "cover",
+    text:
+      "Từ đại lý đến hộ nuôi, Dolic chọn đồng hành bằng đào tạo, quy trình và sự gần gũi của người đã trải qua khó khăn ngoài ao.",
+    href: "/dai-ly",
+  },
+];
 
+type Principle = {
+  number: string;
+  title: string;
+  headline: string;
+  desc: string;
+  icon: LucideIcon;
+};
+
+const principles: Principle[] = [
+  { number: "01", title: "Với gia đình", headline: "Lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.", desc: "Mọi quyết định bắt đầu từ sự đoàn kết và lòng biết ơn.", icon: UsersRound },
+  { number: "02", title: "Với người nuôi", headline: "Người nuôi hiểu người nuôi.", desc: "Là người bạn nghề, không phải người bán hàng; không khoảng cách giữa doanh nghiệp và bà con.", icon: HeartHandshake },
+  { number: "03", title: "Với đại lý", headline: "Đào tạo từng đại lý thành chuyên gia, cùng nhau lớn.", desc: "Không xem đại lý là kênh bán, mà là đối tác cùng phát triển và cùng giữ uy tín.", icon: Network },
+  { number: "04", title: "Với đội ngũ", headline: "Coi đồng đội như người trong nhà.", desc: "Lớn lên cùng nhau, trân trọng từng người góp sức dựng nên Dolic.", icon: BadgeCheck },
+  { number: "05", title: "Với mỗi giải pháp", headline: "Kiểm chứng thực địa trước khi đưa đến khách hàng.", desc: "Mọi sản phẩm đi qua trang trại thực nghiệm trước khi đến tay người nuôi.", icon: ShieldCheck },
+  { number: "06", title: "Với môi trường", headline: "Vì người nuôi hôm nay, vì môi trường ngày mai.", desc: "Nuôi trồng bền vững là trách nhiệm, không phải khẩu hiệu.", icon: Leaf },
+];
+
+const commitments = [
+  ["Hiệu năng cao", "Thiết bị vận hành tối ưu, tiết kiệm điện, tăng năng suất vụ nuôi."],
+  ["Ổn định", "Vận hành đáng tin cậy trong nhiều điều kiện môi trường thuỷ sản khắc nghiệt."],
+  ["Kiểm chứng", "Không mang đến khách hàng những sản phẩm chưa được thực nghiệm."],
+  ["Đồng hành", "Đào tạo đại lý và hỗ trợ người nuôi đến tận ao."],
+];
+
+function Divider() {
   return (
-    <section className="bg-[#f6f8fb] px-4 py-12 md:px-8 md:py-20">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-8 max-w-3xl md:mb-10">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Về chúng tôi</p>
-          <h1 className="mt-3 text-3xl font-black leading-tight tracking-normal text-slate-950 md:text-5xl">
-            Công ty TNHH Thủy Sản Dolic
-          </h1>
-          <p className="mt-4 text-base leading-8 text-slate-600">
-            Dolic cung cấp thiết bị vận hành cho trang trại thủy sản Việt Nam, tập trung vào sục khí, bơm nước, đo môi trường và cấu hình máy móc phù hợp từng mô hình nuôi.
-          </p>
-        </div>
+    <div className="mx-auto my-8 flex max-w-5xl items-center gap-5 text-cyan-700" aria-hidden="true">
+      <span className="h-px flex-1 bg-slate-300" />
+      <span className="h-2 w-2 rotate-45 bg-current" />
+      <span className="h-px flex-1 bg-slate-300" />
+    </div>
+  );
+}
 
-        <div className="grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_28px_80px_-52px_rgba(15,23,42,0.42)] lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="relative min-h-[360px] overflow-hidden bg-slate-950 md:min-h-[560px]">
-            <Image
-              key={activeCard.id}
-              src={activeCard.image}
-              alt={activeCard.title}
-              fill
-              sizes="(min-width: 1024px) 720px, 100vw"
-              className={`object-cover transition duration-500 ${activeCard.id === "location" ? "object-contain p-10" : "scale-[1.02]"}`}
-              priority
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,7,18,0.1)_0%,rgba(3,7,18,0.72)_100%)]" />
-            <div className="absolute left-4 top-4 flex h-16 w-52 items-center justify-center rounded-md bg-white px-4 shadow-sm sm:left-6 sm:top-6">
-              <Image src="/Logo-Dolic.png" alt="Logo Dolic" width={2867} height={842} className="h-auto w-full object-contain" />
-            </div>
-            <div className="absolute inset-x-4 bottom-4 rounded-md border border-white/15 bg-slate-950/58 p-4 text-white backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-5">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-cyan-200">{activeCard.label}</p>
-              <h2 className="mt-2 text-2xl font-black leading-tight tracking-normal md:text-3xl">{activeCard.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-200">{activeCard.description}</p>
-            </div>
-          </div>
+function LearnMoreLink({ href }: { href: string }) {
+  return (
+    <Link href={href} className="mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.14em] text-cyan-700 transition hover:text-cyan-950">
+      Tìm hiểu thêm
+      <ArrowRight className="h-4 w-4" />
+    </Link>
+  );
+}
 
-          <div className="bg-white p-4 sm:p-6 lg:p-7">
-            <div className="mb-5 flex items-end justify-between gap-4">
-              <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-700">Dolic profile</p>
-                <h2 className="mt-2 text-2xl font-black tracking-normal text-slate-950">Nền tảng công ty</h2>
-              </div>
-              <BadgeCheck className="h-7 w-7 shrink-0 text-cyan-600" />
-            </div>
-
-            <div className="space-y-3">
-              {aboutCards.map((card, index) => {
-                const Icon = card.icon;
-                const isActive = activeCardId === card.id;
-
-                return (
-                  <button
-                    key={card.id}
-                    type="button"
-                    onClick={() => setActiveCardId(card.id)}
-                    className={`group grid w-full grid-cols-[44px_minmax(0,1fr)_auto] gap-3 rounded-md border p-3 text-left transition duration-300 sm:p-4 ${
-                      isActive
-                        ? "border-cyan-300 bg-cyan-50 shadow-[0_20px_50px_-36px_rgba(8,145,178,0.7)]"
-                        : "border-slate-200 bg-white hover:border-cyan-200 hover:bg-slate-50"
-                    }`}
-                  >
-                    <span className={`flex h-11 w-11 items-center justify-center rounded-md transition ${isActive ? "bg-cyan-500 text-white" : "bg-slate-100 text-slate-600 group-hover:text-cyan-700"}`}>
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block text-xs font-black uppercase tracking-[0.16em] text-cyan-700">
-                        0{index + 1} / {card.label}
-                      </span>
-                      <span className="mt-1 block text-base font-black leading-6 text-slate-950">{card.title}</span>
-                      <span className={`grid transition-all duration-300 ease-out ${isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                        <span className="overflow-hidden">
-                          <span className="block pt-2 text-sm leading-6 text-slate-600">{card.description}</span>
-                        </span>
-                      </span>
-                    </span>
-                    <span className="text-right">
-                      <span className="block text-xl font-black text-[#0A2E5C]">{card.metric}</span>
-                      <span className="mt-1 block max-w-20 text-xs font-bold leading-4 text-slate-500">{card.metricLabel}</span>
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="mt-5 grid grid-cols-4 gap-2">
-              {aboutCards.map((card) => (
-                <button
-                  key={card.id}
-                  type="button"
-                  aria-label={card.label}
-                  onClick={() => setActiveCardId(card.id)}
-                  className={`h-1.5 rounded-full transition ${activeCardId === card.id ? "bg-cyan-500" : "bg-slate-200 hover:bg-slate-300"}`}
-                />
-              ))}
-            </div>
-
-            <div className="mt-7 grid gap-3 text-sm leading-6 text-slate-600 sm:grid-cols-2">
-              <div className="rounded-md border border-slate-200 bg-slate-50 p-4">
-                <p className="font-black text-slate-950">Hotline</p>
-                <p className="mt-1">0397 581 028 - 0352 495 893</p>
-              </div>
-              <div className="rounded-md border border-slate-200 bg-slate-50 p-4">
-                <p className="font-black text-slate-950">Email</p>
-                <p className="mt-1 break-words">congtytnhhthuysandolic@gmail.com</p>
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <PrimaryButton href="/san-pham">Xem sản phẩm</PrimaryButton>
-              <PrimaryButton href="/lien-he" variant="outline">
-                Nhận tư vấn
-              </PrimaryButton>
-            </div>
+export function AboutLinearShowcase() {
+  return (
+    <>
+      <section className="relative min-h-[86svh] overflow-hidden bg-[#061B35] text-white">
+        <Image src="/assets/drive/customer-farm/customer-farm-2.jpg" alt="Trang trại thực nghiệm Dolic" fill className="object-cover object-center" priority />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,27,53,0.18)_0%,rgba(6,27,53,0.38)_44%,rgba(6,27,53,0.88)_100%)]" />
+        <div className="relative mx-auto flex min-h-[86svh] max-w-7xl items-end justify-center px-4 pb-16 pt-28 text-center md:px-8 md:pb-24">
+          <div className="max-w-5xl">
+            <p className="text-xs font-bold uppercase tracking-[0.32em] text-cyan-100">Dolic Vietnam</p>
+            <h1 className="mt-5 font-serif text-5xl font-bold uppercase leading-[0.95] tracking-normal sm:text-7xl md:text-8xl">
+              Người nuôi hiểu người nuôi
+            </h1>
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-cyan-50/86 md:text-xl md:leading-9">
+              Từ ao nuôi gia đình đến giải pháp bền vững, Dolic được hình thành bằng trải nghiệm thực địa, lòng biết ơn và khát vọng tối ưu chi phí cho người nuôi Việt.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="bg-[#f7f6f2] px-4 py-16 text-slate-950 md:px-8 md:py-24">
+        <div className="mx-auto max-w-5xl text-center">
+          <Image src="/favicon-32x32.png" alt="Dolic icon" width={42} height={42} className="mx-auto h-10 w-10" />
+          <Divider />
+          <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal md:text-5xl">Câu chuyện hình thành Dolic</h2>
+          <Divider />
+          <div className="mx-auto grid max-w-4xl gap-5 text-left text-base leading-8 text-slate-700 md:text-center md:text-lg md:leading-9">
+            <p>
+              Dolic không bắt đầu từ một bản giới thiệu doanh nghiệp, mà bắt đầu từ những ao nuôi thật: nguồn nước khó kiểm soát, dịch bệnh, chi phí điện và nỗi lo của người nuôi sau mỗi mùa vụ.
+            </p>
+            <p>
+              Từ nền tảng gia đình, Dolic chọn đi bằng con đường kiểm chứng: thử nghiệm tại trang trại, đào tạo đại lý theo quy trình và đồng hành với người nuôi bằng sự thấu hiểu của người trong nghề.
+            </p>
+            <p>
+              Điều Dolic theo đuổi không chỉ là bán một thiết bị, mà là đưa đến một cấu hình vận hành ổn định, tiết kiệm điện và có trách nhiệm với môi trường ngày mai.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-16 md:px-8 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <Divider />
+            <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal text-slate-950 md:text-5xl">Ba nền tảng Dolic</h2>
+            <Divider />
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {systems.map((item) => (
+              <article key={item.title} className="text-center">
+                <div className={`relative mx-auto aspect-[4/3] w-full overflow-hidden bg-[#f3f5f5] ${item.fit === "contain" ? "p-10 md:p-14" : ""}`}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className={item.fit === "contain" ? "object-contain p-10" : "object-cover"}
+                  />
+                </div>
+                <h3 className="mt-6 text-2xl font-bold uppercase leading-tight text-slate-950">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base md:leading-8">{item.text}</p>
+                <LearnMoreLink href={item.href} />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="tam-nhin" className="bg-[#f7f6f2] px-4 py-16 md:px-8 md:py-24">
+        <div className="mx-auto max-w-6xl text-center">
+          <Divider />
+          <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal text-slate-950 md:text-5xl">Tầm nhìn - Sứ mệnh - Giá trị cốt lõi</h2>
+          <Divider />
+          <div className="grid gap-10 border-y border-slate-300 py-10">
+            <article>
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-700">Tầm nhìn</p>
+              <h3 className="mx-auto mt-4 max-w-5xl font-serif text-4xl font-bold leading-tight text-[#0A2E5C] md:text-6xl">
+                Trở thành mảnh ghép tin cậy trong mỗi vụ nuôi của người Việt.
+              </h3>
+              <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600">
+                Và mang giải pháp nuôi trồng bền vững của Việt Nam vươn ra Đông Nam Á.
+              </p>
+            </article>
+            <article className="border-t border-slate-300 pt-10">
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-700">Sứ mệnh</p>
+              <h3 className="mx-auto mt-4 max-w-5xl font-serif text-4xl font-bold leading-tight text-slate-950 md:text-6xl">
+                Kiểm chứng. Đào tạo. Đồng hành.
+              </h3>
+              <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600">
+                Kiểm chứng từng giải pháp tại trang trại thực nghiệm, đào tạo từng đại lý theo đúng quy trình chuẩn, đồng hành cùng từng người nuôi Việt đến tận ao.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-16 md:px-8 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <Divider />
+            <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal text-slate-950 md:text-5xl">Nguyên tắc cốt lõi</h2>
+            <Divider />
+          </div>
+          <div className="grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+            {principles.map(({ number, title, headline, desc, icon: Icon }) => (
+              <article key={title} className="text-center">
+                <Icon className="mx-auto h-9 w-9 text-cyan-700" />
+                <p className="mt-5 text-sm font-black uppercase tracking-[0.24em] text-slate-400">{number}</p>
+                <h3 className="mt-3 text-xl font-bold uppercase leading-tight text-slate-950">{title}</h3>
+                <p className="mt-4 text-lg font-bold leading-7 text-[#0A2E5C]">{headline}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="lich-su" className="bg-[#061B35] px-4 py-16 text-white md:px-8 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center">
+            <Divider />
+            <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal md:text-5xl">Lịch sử hình thành</h2>
+            <Divider />
+          </div>
+          <div className="grid gap-12">
+            {timeline.map((item, index) => (
+              <article key={item.year} className="grid gap-8 border-b border-white/14 pb-12 last:border-b-0 md:grid-cols-2 md:items-center">
+                <div className={`relative aspect-[4/3] overflow-hidden bg-white/6 ${item.fit === "contain" ? "p-10 md:p-16" : ""} ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className={item.fit === "contain" ? "object-contain p-10 brightness-0 invert" : "object-cover"}
+                  />
+                </div>
+                <div className={index % 2 === 1 ? "md:order-1 md:text-right" : ""}>
+                  <p className="font-serif text-7xl leading-none text-cyan-200 md:text-8xl">{item.year}</p>
+                  <h3 className="mt-5 text-3xl font-bold uppercase leading-tight md:text-4xl">{item.title}</h3>
+                  <p className="mt-5 text-sm leading-7 text-cyan-50/76 md:text-base md:leading-8">{item.text}</p>
+                  <LearnMoreLink href="/about-us#lich-su" />
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7f6f2] px-4 py-16 md:px-8 md:py-24">
+        <div className="mx-auto max-w-6xl text-center">
+          <Divider />
+          <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal text-slate-950 md:text-5xl">Cam kết sản phẩm</h2>
+          <Divider />
+          <div className="grid gap-6 md:grid-cols-2">
+            {commitments.map(([title, desc]) => (
+              <article key={title} className="bg-white p-8 shadow-[0_22px_70px_-52px_rgba(15,23,42,0.75)]">
+                <h3 className="font-serif text-3xl font-bold text-[#0A2E5C]">{title}</h3>
+                <p className="mt-4 text-base leading-8 text-slate-600">{desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[#061B35] px-4 py-20 text-white md:px-8 md:py-28">
+        <Image src="/assets/drive/customer-farm/customer-aerator-installed.jpg" alt="Thiết bị Dolic vận hành trên ao" fill className="object-cover object-right opacity-24" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,#061B35_0%,rgba(6,27,53,0.94)_46%,rgba(6,27,53,0.58)_100%)]" />
+        <div className="relative mx-auto max-w-5xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-cyan-200">Từ bán sản phẩm đến bán giải pháp</p>
+          <h2 className="mt-5 font-serif text-4xl font-bold uppercase leading-tight md:text-6xl">
+            Một vụ nuôi bền vững bắt đầu từ thiết bị được chọn đúng.
+          </h2>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link href="/san-pham" className="inline-flex min-h-12 items-center justify-center bg-white px-6 text-sm font-black uppercase tracking-[0.12em] text-[#061B35] transition hover:bg-cyan-100">
+              Xem sản phẩm
+            </Link>
+            <Link href="/lien-he" className="inline-flex min-h-12 items-center justify-center border border-white/30 px-6 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-white/10">
+              Nhận tư vấn
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

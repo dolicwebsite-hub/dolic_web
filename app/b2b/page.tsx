@@ -15,14 +15,14 @@ import {
   Wrench,
 } from "lucide-react";
 import { PageFrame } from "@/components/site-chrome";
-import { productCategories } from "@/lib/site-data";
+import { contactInfo, productCategories } from "@/lib/site-data";
 
 const packages = [
   {
     eyebrow: "DOLIC DEALER",
     title: "Gói đại lý thiết bị thủy sản",
     desc: "Dành cho cửa hàng vật tư thủy sản, đại lý vùng nuôi và đối tác muốn phân phối nhóm thiết bị sục khí, bơm nước, đo môi trường.",
-    image: "/assets/products/aerator-6-canh-15kw-hop-so-b.png",
+    image: "/assets/drive/exhibition/IMG_6001.PNG",
     tags: ["Chính sách theo khu vực", "Tài liệu bán hàng", "Đào tạo kỹ thuật"],
     details: [
       "Tư vấn bộ sản phẩm ưu tiên theo vùng nuôi và phân khúc khách hàng.",
@@ -34,7 +34,7 @@ const packages = [
     eyebrow: "DOLIC FARM",
     title: "Gói trang trại và cụm ao quy mô lớn",
     desc: "Dành cho chủ trại cần cấu hình thiết bị theo diện tích ao, mật độ nuôi, điện áp, lưu lượng nước và mục tiêu vận hành.",
-    image: "/assets/products/pump-75kw-380v.png",
+    image: "/assets/drive/customer-farm/customer-aerator-installed.jpg",
     tags: ["Khảo sát tận ao", "Combo thiết bị", "Bảo hành 12 tháng"],
     details: [
       "Khảo sát hiện trạng ao, thiết bị đang dùng và điểm nghẽn oxy hoặc cấp thoát nước.",
@@ -46,7 +46,7 @@ const packages = [
     eyebrow: "DOLIC PROJECT",
     title: "Gói dự án và nhà thầu tích hợp",
     desc: "Dành cho đơn vị setup trại mới, cải tạo ao hoặc tích hợp thiết bị cần báo giá, thông số và phương án triển khai rõ ràng.",
-    image: "/assets/products/air-blower-treo-khi-nen.jpg",
+    image: "/assets/drive/experimental-farm/warehouse.png",
     tags: ["Báo giá dự án", "Thông số kỹ thuật", "Hỗ trợ nghiệm thu"],
     details: [
       "Cung cấp danh mục thiết bị, model, công suất và giá tham khảo để lập phương án.",
@@ -108,7 +108,7 @@ export default function B2BPage() {
       <section className="relative w-full overflow-hidden bg-white">
         <div className="relative h-[220px] md:h-[340px]">
           <Image
-            src="/assets/aquaculture-hero.png"
+            src="/assets/drive/customer-farm/customer-aerator-installed.jpg"
             alt="Dolic B2B banner"
             fill
             priority
@@ -161,7 +161,7 @@ export default function B2BPage() {
             <div className="relative mx-auto w-full max-w-[520px]">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.96)_0%,rgba(207,250,254,0.72)_44%,rgba(34,211,238,0.22)_70%,transparent_100%)] blur-3xl" />
               <Image
-                src="/assets/products/aerator-6-canh-15kw-hop-so-b.png"
+                src="/assets/drive/customer-farm/customer-aerator-installed.jpg"
                 alt="Thiết bị sục khí Dolic"
                 width={1537}
                 height={1023}
@@ -325,7 +325,7 @@ export default function B2BPage() {
                   </div>
                 ))}
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-white">
-                  <Image src="/assets/products/meter-do-oxy-2001.jpg" alt="Máy đo oxy Dolic" fill sizes="420px" className="object-contain p-5" />
+                  <Image src="/assets/drive/experimental-farm/device-on-pond.jpg" alt="Thiết bị Dolic vận hành trên ao" fill sizes="420px" className="object-cover" />
                 </div>
               </div>
             </div>
@@ -373,7 +373,7 @@ export default function B2BPage() {
 
       <section id="booking-b2b" className="bg-gradient-to-b from-white via-cyan-50 to-white px-4 py-20 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <a href="tel:0397581028" className="flex h-14 w-full items-center justify-center rounded-[14px] bg-cyan-500 px-6 text-center text-lg font-extrabold text-slate-950 transition-opacity hover:opacity-90 md:h-16 md:px-8 md:text-[1.65rem]">
+          <a href={`tel:${contactInfo.offices[0].hotline}`} className="flex h-14 w-full items-center justify-center rounded-[14px] bg-cyan-500 px-6 text-center text-lg font-extrabold text-slate-950 transition-opacity hover:opacity-90 md:h-16 md:px-8 md:text-[1.65rem]">
             Liên hệ để nhận báo giá B2B
           </a>
           <h2 className="mb-4 pt-5 text-xl font-bold text-black md:text-3xl">Đối tác của bạn đã sẵn sàng chưa?</h2>
@@ -395,7 +395,7 @@ export default function B2BPage() {
       </section>
 
       <section id="faq-b2b" className="relative overflow-hidden py-20">
-        <Image src="/assets/aquaculture-hero.png" alt="" fill sizes="100vw" className="pointer-events-none select-none object-cover object-center" />
+        <Image src="/assets/drive/experimental-farm/dolic-farm-real.png" alt="" fill sizes="100vw" className="pointer-events-none select-none object-cover object-center" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(240,253,255,0.84),rgba(236,254,255,0.76))]" />
         <div className="container relative mx-auto px-4">
           <div className="mx-auto mb-14 max-w-3xl text-center">
