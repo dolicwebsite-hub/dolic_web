@@ -34,7 +34,7 @@ export const contactInfo = {
   tiktok: "THUỶ SẢN DOLIC",
   socials: {
     zalo: "https://zalo.me/0397581028",
-    facebook: "https://www.facebook.com/search/pages/?q=C%C3%94NG%20TY%20TNHH%20THU%E1%BB%B6%20S%E1%BA%A2N%20DOLIC",
+    facebook: "https://www.facebook.com/share/1EmHbXzC78/?mibextid=wwXIfr",
     tiktok: "https://www.tiktok.com/search/user?q=THU%E1%BB%B6%20S%E1%BA%A2N%20DOLIC",
   },
   offices: [
