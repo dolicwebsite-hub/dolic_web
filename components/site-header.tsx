@@ -5,15 +5,41 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BriefcaseBusiness, Phone, ShoppingCart } from "lucide-react";
+import { LanguageToggle } from "@/components/language-toggle";
 import { HomeMenuButton } from "@/components/home-menu-button";
+import { getLocaleFromPath } from "@/lib/i18n";
 import { contactInfo } from "@/lib/site-data";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const primaryOffice = contactInfo.offices[0];
-  const solidAtTopPages = ["/san-pham", "/trang-trai", "/thu-vien"];
+  const solidAtTopPages = ["/san-pham", "/trang-trai", "/thu-vien", "/en/products", "/en/farm", "/en/library"];
   const solidHeader = scrolled || solidAtTopPages.includes(pathname);
+  const locale = getLocaleFromPath(pathname);
+  const homeHref = locale === "en" ? "/en" : "/";
+  const navCopy =
+    locale === "en"
+      ? {
+          about: "About",
+          consult: "Consulting",
+          products: "Products",
+          dealer: "Dealer",
+          aboutHref: "/en/about-us",
+          consultHref: "/en/contact",
+          productsHref: "/en/products",
+          dealerHref: "/en/dealer",
+        }
+      : {
+          about: "Về chúng tôi",
+          consult: "Tư vấn",
+          products: "Sản phẩm",
+          dealer: "Đại lý",
+          aboutHref: "/about-us",
+          consultHref: "/lien-he",
+          productsHref: "/san-pham",
+          dealerHref: "/dai-ly",
+        };
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > window.innerHeight - 120);
@@ -34,7 +60,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-4">
+        <Link href={homeHref} className="flex items-center gap-4">
           <Image
             src="/Logo-Dolic.png"
             alt="Dolic"
@@ -47,24 +73,25 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-[0.1em] opacity-88 lg:flex">
-          <Link className="transition hover:opacity-70" href="/about-us">
-            Về chúng tôi
+          <Link className="transition hover:opacity-70" href={navCopy.aboutHref}>
+            {navCopy.about}
           </Link>
-          <Link className="inline-flex items-center gap-2 transition hover:opacity-70" href="/lien-he">
+          <Link className="inline-flex items-center gap-2 transition hover:opacity-70" href={navCopy.consultHref}>
             <Phone className="h-4 w-4" />
-            Tư vấn
+            {navCopy.consult}
           </Link>
-          <Link className="inline-flex items-center gap-2 transition hover:opacity-70" href="/san-pham">
+          <Link className="inline-flex items-center gap-2 transition hover:opacity-70" href={navCopy.productsHref}>
             <ShoppingCart className="h-4 w-4" />
-            Sản phẩm
+            {navCopy.products}
           </Link>
-          <Link className="inline-flex items-center gap-2 transition hover:opacity-70" href="/dai-ly">
+          <Link className="inline-flex items-center gap-2 transition hover:opacity-70" href={navCopy.dealerHref}>
             <BriefcaseBusiness className="h-4 w-4" />
-            Đại lý
+            {navCopy.dealer}
           </Link>
           <Link className="transition hover:opacity-70" href={`tel:${primaryOffice.hotline}`}>
             {primaryOffice.displayHotline}
           </Link>
+          <LanguageToggle className="text-xs" />
         </nav>
 
         <HomeMenuButton tone={solidHeader ? "dark" : "light"} />

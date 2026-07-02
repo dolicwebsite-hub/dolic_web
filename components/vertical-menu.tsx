@@ -4,22 +4,32 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Bell, Handshake, Sprout, Tractor } from "lucide-react";
 import { SocialLinks } from "@/components/social-links";
+import { getLocaleFromPath } from "@/lib/i18n";
 
-const menuItems = [
+const viMenuItems = [
   { label: "Giải pháp", href: "/giai-phap", icon: Sprout },
   { label: "B2B", href: "/b2b", icon: Handshake },
   { label: "Trang trại", href: "/trang-trai", icon: Tractor },
   { label: "Thư viện", href: "/thu-vien", icon: Bell },
 ];
 
+const enMenuItems = [
+  { label: "Solutions", href: "/en/solutions", icon: Sprout },
+  { label: "B2B", href: "/en/b2b", icon: Handshake },
+  { label: "Farm", href: "/en/farm", icon: Tractor },
+  { label: "Library", href: "/en/library", icon: Bell },
+];
+
 export function VerticalMenu() {
   const pathname = usePathname();
-  const hideMobileQuickNav = pathname.startsWith("/giai-phap");
+  const isEnglish = getLocaleFromPath(pathname) === "en";
+  const menuItems = isEnglish ? enMenuItems : viMenuItems;
+  const hideMobileQuickNav = pathname.startsWith("/giai-phap") || pathname.startsWith("/en/solutions");
 
   return (
     <>
       <nav
-        aria-label="Điều hướng nhanh"
+        aria-label={isEnglish ? "Quick navigation" : "Điều hướng nhanh"}
         className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 rounded-[18px] bg-[#1E2A39] px-3 py-4 shadow-[0_24px_55px_-28px_rgba(15,23,42,0.85)] ring-1 ring-white/10 md:flex md:flex-col md:gap-3"
       >
         {menuItems.map(({ label, href, icon: Icon }) => {
@@ -50,7 +60,7 @@ export function VerticalMenu() {
 
       {hideMobileQuickNav ? null : (
         <nav
-          aria-label="Điều hướng nhanh mobile"
+          aria-label={isEnglish ? "Quick navigation mobile" : "Điều hướng nhanh mobile"}
           className="fixed bottom-3 left-1/2 z-40 flex -translate-x-1/2 gap-1 rounded-[18px] bg-[#1E2A39]/96 p-1.5 shadow-[0_18px_42px_-24px_rgba(15,23,42,0.9)] ring-1 ring-white/10 backdrop-blur md:hidden"
         >
           {menuItems.map(({ label, href, icon: Icon }) => {

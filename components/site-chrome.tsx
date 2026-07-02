@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { BriefcaseBusiness, ChevronUp, Mail, MapPin, Phone, ShoppingCart } from "lucide-react";
 import { HomeMenuButton } from "@/components/home-menu-button";
 import { SocialLinks } from "@/components/social-links";
+import { getLocaleFromPath } from "@/lib/i18n";
 import { contactInfo, navItems } from "@/lib/site-data";
 
 const footerProductLinks = [
@@ -94,39 +98,61 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPath(pathname);
+  const isEnglish = locale === "en";
+  const homeHref = isEnglish ? "/en" : "/";
+  const quickLinks = isEnglish
+    ? [
+        ["About", "/en/about-us"],
+        ["Products", "/en/products"],
+        ["Dealer", "/en/dealer"],
+        ["Contact", "/en/contact"],
+      ]
+    : navItems;
+  const productLinks = isEnglish
+    ? [
+        ["Aerators / paddle wheels", "/en/products"],
+        ["Air blower systems", "/en/products"],
+        ["Pumps and water treatment", "/en/products"],
+      ]
+    : footerProductLinks.slice(0, 3);
+
   return (
     <footer className="bg-[#071F3E] px-5 py-8 text-sm text-cyan-50/70 md:px-10 md:py-10">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 border-b border-white/10 pb-7 md:grid-cols-[1.05fr_0.85fr_0.9fr] lg:gap-14">
           <div>
-            <Link href="/" className="flex h-12 w-36 items-center md:w-40">
+            <Link href={homeHref} className="flex h-12 w-36 items-center md:w-40">
               <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain brightness-0 invert" />
             </Link>
             <p className="mt-4 max-w-sm text-sm font-semibold leading-6 text-cyan-50/70">
-              Thiết bị thủy sản hiệu năng cao, kiểm chứng thực địa trước khi đến tay người nuôi.
+              {isEnglish ? "High-performance aquaculture equipment verified in real farm conditions before reaching farmers." : "Thiết bị thủy sản hiệu năng cao, kiểm chứng thực địa trước khi đến tay người nuôi."}
             </p>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">Người nuôi hiểu người nuôi</p>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">{isEnglish ? "Farmers understand farmers" : "Người nuôi hiểu người nuôi"}</p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-1">
             <div>
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">Liên kết nhanh</h2>
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">{isEnglish ? "Quick links" : "Liên kết nhanh"}</h2>
               <nav className="mt-4 grid gap-2">
-                {navItems.map(([label, href]) => (
+                {quickLinks.map(([label, href]) => (
                   <Link key={href} href={href} className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
                     {label}
                   </Link>
                 ))}
-                <Link href="/chinh-sach-cookie" className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
-                  Cookie Policy
-                </Link>
+                {isEnglish ? null : (
+                  <Link href="/chinh-sach-cookie" className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
+                    Cookie Policy
+                  </Link>
+                )}
               </nav>
             </div>
 
             <div>
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">Sản phẩm</h2>
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">{isEnglish ? "Products" : "Sản phẩm"}</h2>
               <nav className="mt-4 grid gap-2">
-                {footerProductLinks.slice(0, 3).map(([label, href]) => (
+                {productLinks.map(([label, href]) => (
                   <Link key={href} href={href} className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
                     {label}
                   </Link>
@@ -136,7 +162,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">Liên hệ</h2>
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">{isEnglish ? "Contact" : "Liên hệ"}</h2>
             <div className="mt-4 grid gap-2.5">
               <Link href={`tel:${contactInfo.offices[0].hotline}`} className="inline-flex w-fit items-center gap-3 font-bold text-cyan-50 transition hover:text-cyan-200">
                 <Phone className="h-4 w-4 shrink-0 text-cyan-300" />
@@ -149,9 +175,9 @@ export function SiteFooter() {
               <p className="flex items-start gap-3 pt-1 text-sm font-semibold leading-6 text-cyan-50/70">
                 <MapPin className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
                 <span>
-                  Miền Nam: {contactInfo.offices[0].address}
+                  {isEnglish ? "South" : "Miền Nam"}: {contactInfo.offices[0].address}
                   <br />
-                  Miền Bắc: {contactInfo.offices[1].address}
+                  {isEnglish ? "North" : "Miền Bắc"}: {contactInfo.offices[1].address}
                 </span>
               </p>
             </div>
@@ -181,11 +207,14 @@ export function PageFrame({ children }: { children: React.ReactNode }) {
 }
 
 export function BackToTopButton() {
+  const pathname = usePathname();
+  const isEnglish = getLocaleFromPath(pathname) === "en";
+
   return (
     <Link
       href="#top"
-      aria-label="Quay lại đầu trang"
-      title="Quay lại đầu trang"
+      aria-label={isEnglish ? "Back to top" : "Quay lại đầu trang"}
+      title={isEnglish ? "Back to top" : "Quay lại đầu trang"}
       className="motion-interactive pressable lift-hover fixed bottom-20 right-3 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-cyan-100 bg-cyan-500 text-slate-950 shadow-[0_16px_35px_-18px_rgba(8,145,178,0.75)] hover:bg-cyan-400 sm:h-12 sm:w-12 md:bottom-6 md:right-6"
     >
       <ChevronUp className="h-5 w-5 sm:h-6 sm:w-6" />

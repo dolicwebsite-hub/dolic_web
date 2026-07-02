@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BriefcaseBusiness, Phone, ShoppingCart, X } from "lucide-react";
+import { LanguageToggle } from "@/components/language-toggle";
 import { SocialLinks } from "@/components/social-links";
+import { getLocaleFromPath } from "@/lib/i18n";
 import { contactInfo } from "@/lib/site-data";
 
-const menuColumns = [
+const viMenuColumns = [
   [
     ["Trang trại", "/trang-trai"],
     ["Sản phẩm", "/san-pham"],
@@ -21,7 +24,7 @@ const menuColumns = [
   ],
 ];
 
-const smallLinks = [
+const viSmallLinks = [
   ["Cookie Policy", "/chinh-sach-cookie"],
   ["Sản phẩm", "/san-pham"],
   ["Đại lý", "/dai-ly"],
@@ -29,7 +32,49 @@ const smallLinks = [
 
 export function HomeMenuButton({ tone = "light" }: { tone?: "light" | "dark" }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const locale = getLocaleFromPath(pathname);
   const primaryOffice = contactInfo.offices[0];
+  const homeHref = locale === "en" ? "/en" : "/";
+  const navCopy =
+    locale === "en"
+      ? {
+          about: "About",
+          consult: "Consulting",
+          products: "Products",
+          dealer: "Dealer",
+          aboutHref: "/en/about-us",
+          consultHref: "/en/contact",
+          productsHref: "/en/products",
+          dealerHref: "/en/dealer",
+        }
+      : {
+          about: "Về chúng tôi",
+          consult: "Tư vấn",
+          products: "Sản phẩm",
+          dealer: "Đại lý",
+          aboutHref: "/about-us",
+          consultHref: "/lien-he",
+          productsHref: "/san-pham",
+          dealerHref: "/dai-ly",
+        };
+  const menuColumns =
+    locale === "en"
+      ? [
+          [
+            ["Farm", "/en/farm"],
+            ["Products", "/en/products"],
+            ["Solutions", "/en/solutions"],
+            ["Dealer", "/en/dealer"],
+          ],
+          [
+            ["B2B", "/en/b2b"],
+            ["Library", "/en/library"],
+            ["Contact", "/en/contact"],
+          ],
+        ]
+      : viMenuColumns;
+  const smallLinks = locale === "en" ? [["Products", "/en/products"], ["Dealer", "/en/dealer"], ["Contact", "/en/contact"]] : viSmallLinks;
 
   useEffect(() => {
     if (!open) return;
@@ -71,30 +116,31 @@ export function HomeMenuButton({ tone = "light" }: { tone?: "light" | "dark" }) 
       <div className="fixed inset-0 z-[95] h-[100svh] overflow-hidden bg-[#f7f5f1] text-[#202b50]">
         <header className="px-5 py-5 md:px-10 md:py-6">
           <div className="flex items-center justify-between gap-6">
-            <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-4">
+            <Link href={homeHref} onClick={() => setOpen(false)} className="flex items-center gap-4">
               <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} priority className="h-auto w-32 md:w-44" />
               <span className="hidden text-xs font-bold uppercase tracking-[0.24em] text-[#202b50]/78 sm:inline">Vietnam</span>
             </Link>
 
             <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-[0.1em] text-[#202b50] lg:flex">
-              <Link onClick={() => setOpen(false)} className="transition hover:opacity-65" href="/about-us">
-                Về chúng tôi
+              <Link onClick={() => setOpen(false)} className="transition hover:opacity-65" href={navCopy.aboutHref}>
+                {navCopy.about}
               </Link>
-              <Link onClick={() => setOpen(false)} className="inline-flex items-center gap-2 transition hover:opacity-65" href="/lien-he">
+              <Link onClick={() => setOpen(false)} className="inline-flex items-center gap-2 transition hover:opacity-65" href={navCopy.consultHref}>
                 <Phone className="h-4 w-4" />
-                Tư vấn
+                {navCopy.consult}
               </Link>
-              <Link onClick={() => setOpen(false)} className="inline-flex items-center gap-2 transition hover:opacity-65" href="/san-pham">
+              <Link onClick={() => setOpen(false)} className="inline-flex items-center gap-2 transition hover:opacity-65" href={navCopy.productsHref}>
                 <ShoppingCart className="h-4 w-4" />
-                Sản phẩm
+                {navCopy.products}
               </Link>
-              <Link onClick={() => setOpen(false)} className="inline-flex items-center gap-2 transition hover:opacity-65" href="/dai-ly">
+              <Link onClick={() => setOpen(false)} className="inline-flex items-center gap-2 transition hover:opacity-65" href={navCopy.dealerHref}>
                 <BriefcaseBusiness className="h-4 w-4" />
-                Đại lý
+                {navCopy.dealer}
               </Link>
               <Link className="transition hover:opacity-65" href={`tel:${primaryOffice.hotline}`}>
                 {primaryOffice.displayHotline}
               </Link>
+              <LanguageToggle className="text-xs" />
             </nav>
 
             <button
@@ -114,6 +160,7 @@ export function HomeMenuButton({ tone = "light" }: { tone?: "light" | "dark" }) 
               <span>Vietnam</span>
               <span className="text-2xl leading-none">↓</span>
             </div>
+            <LanguageToggle className="mb-5 w-fit text-sm" />
             <div className="grid gap-0 md:grid-cols-2 md:gap-8">
               {menuColumns.map((column, index) => (
                 <nav key={index} className="grid gap-0 md:gap-1">
