@@ -1,16 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { BadgeCheck, ChevronRight, Factory, Gauge, Info, ListMusic, PackageCheck, Plus, ShieldCheck, X } from "lucide-react";
+import { useRef, useState } from "react";
+import { BadgeCheck, ChevronRight, Factory, Gauge, Info, ListMusic, PackageCheck, ShieldCheck, X } from "lucide-react";
 import { productCategories, type Product } from "@/lib/site-data";
 import { PrimaryButton } from "@/components/site-chrome";
 
 export function ProductBrowser() {
-  const [activeCategoryIndex, setActiveCategoryIndex] = useState<number | null>(null);
-  const [openedCategoryIndex, setOpenedCategoryIndex] = useState<number | null>(null);
+  const productListRef = useRef<HTMLDivElement>(null);
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState<number | null>(0);
+  const [openedCategoryIndex, setOpenedCategoryIndex] = useState<number | null>(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [expandedFeatureId, setExpandedFeatureId] = useState("specs");
 
   const activeCategory = activeCategoryIndex === null ? null : productCategories[activeCategoryIndex];
   const openedCategory = openedCategoryIndex === null ? null : productCategories[openedCategoryIndex];
@@ -19,11 +19,13 @@ export function ProductBrowser() {
   const chooseCategory = (index: number) => {
     setActiveCategoryIndex(index);
     setOpenedCategoryIndex(index);
+    window.setTimeout(() => {
+      productListRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
   };
 
   const openProduct = (product: Product) => {
     setSelectedProduct(product);
-    setExpandedFeatureId("specs");
   };
 
   const selectedSpecs = selectedProduct?.specs.split(" - ").filter(Boolean) ?? [];
@@ -70,12 +72,11 @@ export function ProductBrowser() {
         {
           id: "support",
           title: "Bảo hành & tư vấn",
-          description: "Dolic tư vấn cấu hình theo diện tích ao, điện áp, lưu lượng vận hành và chính sách bảo hành hiện hành.",
+          description: "Dolic tư vấn giải pháp theo diện tích ao, điện áp, lưu lượng vận hành và chính sách bảo hành hiện hành.",
           icon: ShieldCheck,
         },
       ]
     : [];
-  const expandedFeature = selectedFeatures.find((feature) => feature.id === expandedFeatureId) ?? selectedFeatures[0];
 
   return (
     <>
@@ -183,7 +184,7 @@ export function ProductBrowser() {
         </div>
       </section>
 
-      <div className="mt-10">
+      <div ref={productListRef} id="product-list" className="mt-10 scroll-mt-24">
         {openedCategory ? (
           <section id={openedCategory.id} className="scroll-mt-24">
             <div className="mb-4 flex flex-col gap-2 border-b border-slate-200 pb-4 md:flex-row md:items-end md:justify-between">
@@ -214,10 +215,7 @@ export function ProductBrowser() {
                         {product.englishName ? <p className="mt-1 line-clamp-1 text-xs font-semibold text-cyan-700">{product.englishName}</p> : null}
                         <p className="mt-2 line-clamp-2 text-sm leading-6 text-slate-600">{product.specs}</p>
                         <div className="mt-4 flex items-end justify-between gap-3">
-                          <div>
-                            <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Giá tham khảo</p>
-                            <p className="mt-1 text-base font-black text-[#0A2E5C]">{product.price} VND</p>
-                          </div>
+                          <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Tư vấn theo mô hình ao</p>
                           <span className="shrink-0 rounded-full bg-cyan-50 px-3 py-1.5 text-xs font-black text-cyan-700">
                             Chi tiết
                           </span>
@@ -241,8 +239,8 @@ export function ProductBrowser() {
       </div>
 
       {selectedProduct ? (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/72 px-3 py-5 backdrop-blur-md sm:px-4 sm:py-6" role="dialog" aria-modal="true">
-          <div className="relative max-h-[92vh] w-full max-w-6xl overflow-hidden rounded-[30px] bg-[#070b12] text-white shadow-[0_32px_110px_-38px_rgba(0,0,0,0.95)] sm:rounded-[38px]">
+        <div className="fixed inset-x-0 bottom-0 top-24 z-[60] flex items-start justify-center bg-slate-950/72 px-3 pb-4 pt-3 backdrop-blur-md sm:px-5 sm:pb-6 md:top-28" role="dialog" aria-modal="true">
+          <div className="relative h-full w-full max-w-7xl overflow-hidden rounded-[24px] bg-[#070b12] text-white shadow-[0_32px_110px_-38px_rgba(0,0,0,0.95)] sm:rounded-[30px]">
             <button
               type="button"
               aria-label="Đóng popup sản phẩm"
@@ -251,8 +249,8 @@ export function ProductBrowser() {
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="max-h-[92vh] overflow-auto lg:grid lg:grid-cols-[390px_1fr]">
-              <aside className="relative z-10 border-b border-white/10 bg-[#101723] p-4 sm:p-6 lg:min-h-[680px] lg:border-b-0 lg:border-r lg:p-7">
+            <div className="h-full overflow-auto lg:grid lg:grid-cols-[430px_minmax(0,1fr)] lg:overflow-hidden xl:grid-cols-[470px_minmax(0,1fr)]">
+              <aside className="relative z-10 border-b border-white/10 bg-[#101723] p-4 sm:p-6 lg:h-full lg:overflow-y-auto lg:border-b-0 lg:border-r lg:p-7 lg:pr-5">
                 <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-300">Dolic product</p>
                 <h2 className="mt-3 text-2xl font-black leading-tight tracking-normal text-white sm:text-3xl">{selectedProduct.name}</h2>
                 {selectedProduct.englishName ? <p className="mt-2 text-sm font-semibold leading-6 text-cyan-200">{selectedProduct.englishName}</p> : null}
@@ -261,45 +259,27 @@ export function ProductBrowser() {
                 </p>
 
                 <div className="mt-5 rounded-[24px] border border-white/10 bg-white/[0.06] p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Giá tham khảo</p>
-                  <p className="mt-2 text-3xl font-black text-white">{selectedProduct.price} VND</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Tư vấn giải pháp</p>
+                  <p className="mt-2 text-lg font-black leading-7 text-white">Báo giá và cấu hình được tư vấn theo diện tích ao, điện áp và mục tiêu vận hành.</p>
                   <span className="mt-3 inline-flex rounded-full bg-cyan-400 px-3 py-1.5 text-xs font-black text-slate-950">
                     {selectedProduct.priority ?? "Theo danh mục"}
                   </span>
                 </div>
 
                 <div className="mt-5 space-y-3">
-                  {selectedFeatures.map(({ id, title, description, icon: Icon }) => {
-                    const isExpanded = expandedFeatureId === id;
-
-                    return (
-                      <button
-                        key={id}
-                        type="button"
-                        onClick={() => setExpandedFeatureId(id)}
-                        className={`group w-full rounded-[22px] border p-4 text-left transition duration-300 ${
-                          isExpanded
-                            ? "border-cyan-300/70 bg-white/[0.12] shadow-[0_22px_55px_-42px_rgba(34,211,238,0.95)]"
-                            : "border-white/10 bg-white/[0.05] hover:border-white/24 hover:bg-white/[0.08]"
-                        }`}
-                      >
+                  {selectedFeatures.map(({ id, title, description, icon: Icon }) => (
+                      <div key={id} className="rounded-[18px] border border-white/10 bg-white/[0.06] p-4 text-left">
                         <span className="flex items-start justify-between gap-4">
                           <span className="flex min-w-0 items-center gap-3">
-                            <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition ${isExpanded ? "bg-cyan-300 text-slate-950" : "bg-white/10 text-cyan-200"}`}>
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-cyan-200">
                               <Icon className="h-4 w-4" />
                             </span>
                             <span className="min-w-0 text-base font-black leading-6 text-white">{title}</span>
                           </span>
-                          <Plus className={`mt-2 h-5 w-5 shrink-0 text-slate-300 transition duration-300 ${isExpanded ? "rotate-45 text-cyan-200" : "group-hover:text-white"}`} />
                         </span>
-                        <span className={`grid transition-all duration-300 ease-out ${isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                          <span className="overflow-hidden">
-                            <span className="block pt-3 text-sm leading-6 text-slate-300">{description}</span>
-                          </span>
-                        </span>
-                      </button>
-                    );
-                  })}
+                        <p className="pt-3 text-sm leading-6 text-slate-300">{description}</p>
+                      </div>
+                  ))}
                 </div>
 
                 {selectedSpecs.length > 0 ? (
@@ -334,23 +314,24 @@ export function ProductBrowser() {
                 </div>
               </aside>
 
-              <section className="relative min-h-[430px] overflow-hidden bg-[radial-gradient(circle_at_50%_18%,rgba(34,211,238,0.24),rgba(7,11,18,0)_38%),linear-gradient(145deg,#030712_0%,#07111f_48%,#000_100%)] sm:min-h-[560px] lg:min-h-[680px]">
-                <div className="absolute left-5 top-5 z-10 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-cyan-100 backdrop-blur">
+              <section className="relative min-h-[520px] overflow-hidden bg-[radial-gradient(circle_at_50%_42%,#ffffff_0%,#f3fafc_34%,#d6e7ed_72%,#82919a_100%)] sm:min-h-[620px] lg:h-full lg:min-h-0">
+                <div className="absolute left-5 top-5 z-10 rounded-full border border-slate-300/60 bg-white/80 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-[#0A2E5C] shadow-sm backdrop-blur">
                   {selectedProduct.model}
                 </div>
-                <div className="absolute inset-x-4 bottom-4 z-10 rounded-[24px] border border-white/10 bg-black/28 p-4 backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-5">
-                  <p className="text-sm font-black uppercase tracking-[0.16em] text-cyan-200">{expandedFeature?.title}</p>
-                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-200">{expandedFeature?.description}</p>
+                <div className="absolute inset-x-4 bottom-4 z-10 rounded-[18px] border border-white/30 bg-[#07111f]/74 p-4 shadow-[0_20px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-5">
+                  <p className="text-xs font-black uppercase tracking-[0.16em] text-cyan-200">Hình ảnh sản phẩm</p>
+                  <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-200">{selectedProduct.name}</p>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center p-8 sm:p-12 lg:p-16">
-                  <div className="relative aspect-square w-full max-w-[640px] transition duration-500 ease-out">
+                <div className="absolute inset-0 flex items-center justify-center px-3 pb-24 pt-12 sm:px-6 sm:pb-28 sm:pt-16 lg:px-8 xl:px-10">
+                  <div className="relative aspect-[16/11] w-full max-w-[1040px] transition duration-500 ease-out">
+                    <div className="absolute inset-x-8 bottom-5 h-16 rounded-full bg-slate-950/18 blur-3xl" aria-hidden="true" />
                     <Image
-                      key={`${selectedProduct.model}-${expandedFeatureId}`}
+                      key={selectedProduct.model}
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
                       fill
-                      className="object-contain drop-shadow-[0_40px_75px_rgba(0,0,0,0.55)] transition duration-500 hover:scale-[1.03]"
-                      sizes="(min-width: 1024px) 760px, 100vw"
+                      className="object-contain p-0 drop-shadow-[0_30px_60px_rgba(15,23,42,0.28)] transition duration-500 hover:scale-[1.02]"
+                      sizes="(min-width: 1280px) 980px, (min-width: 1024px) 720px, 100vw"
                       priority
                     />
                   </div>
