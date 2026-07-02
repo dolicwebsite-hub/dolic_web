@@ -9,7 +9,7 @@ export default function ProductsPage() {
           <SectionHeader
             eyebrow="Danh mục sản phẩm"
             title="Thiết bị cốt lõi cho vận hành ao nuôi"
-            desc="Danh mục hiện có được trích từ file sản phẩm và bảng báo giá Dolic. Giá chỉ là tham khảo, cấu hình cuối cùng sẽ được tư vấn theo thực tế trang trại."
+            desc="Chọn nhóm thiết bị để xem thông tin chi tiết và nhận tư vấn giải pháp phù hợp theo mô hình ao."
           />
           <ProductBrowser />
         </div>

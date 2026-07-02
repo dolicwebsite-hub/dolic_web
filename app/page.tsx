@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone, ShoppingCart } from "lucide-react";
+import { CompanyPresenceSection } from "@/components/company-presence-section";
 import { HomeLibrarySection } from "@/components/home-library-section";
 import { HomeRegionProductSection } from "@/components/home-region-product-section";
 import { contactInfo } from "@/lib/site-data";
@@ -87,11 +88,13 @@ export default function HomePage() {
         </nav>
       </section>
 
+      <CompanyPresenceSection />
+
       <HomeRegionProductSection />
 
       <HomeLibrarySection />
 
-      <section className="bg-[#f45034] text-[#17234d]">
+      <section className="bg-[#0A2E5C] text-white">
         <div className="relative px-5 py-14 text-center md:px-10 md:py-20">
           <p className="text-sm font-black uppercase tracking-[0.16em]">Tầm nhìn Dolic</p>
           <div className="mx-auto mt-8 grid max-w-7xl gap-8 md:grid-cols-[1fr_auto] md:items-center md:text-left">
@@ -100,7 +103,7 @@ export default function HomePage() {
             </h2>
             <Link
               href="/about-us"
-              className="mx-auto flex h-36 w-36 shrink-0 items-center justify-center rounded-full border border-[#17234d] font-serif text-2xl leading-none transition hover:bg-[#17234d] hover:text-white md:mx-0 md:h-40 md:w-40"
+              className="mx-auto flex h-36 w-36 shrink-0 items-center justify-center rounded-full border border-white/72 font-serif text-2xl leading-none transition hover:bg-white hover:text-[#0A2E5C] md:mx-0 md:h-40 md:w-40"
             >
               Xem
               <br />
@@ -121,7 +124,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,11,24,0.28),rgba(2,11,24,0.05))]" />
           </div>
 
-          <div className="flex flex-col justify-between bg-[#222c5a] px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="flex flex-col justify-between bg-[#061B35] px-6 py-12 text-white md:px-12 md:py-16">
             <div>
               <h3 className="font-serif text-[clamp(3rem,5vw,5.4rem)] leading-none tracking-normal">Đồng hành!</h3>
               <p className="mt-8 max-w-md text-xl font-semibold leading-8 text-white/82 md:text-2xl md:leading-10">
@@ -149,6 +152,21 @@ export default function HomePage() {
             </div>
           </div>
 
+          <div className="mb-8 overflow-hidden rounded-md bg-[#061B35]">
+            <div className="relative aspect-[16/8] min-h-[320px]">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                src="/assets/drive/experimental-farm/dolic-farm-video.mp4"
+                poster="/assets/drive/customer-farm/customer-aerator-installed.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,18,38,0.7),rgba(3,18,38,0.18))]" />
+            </div>
+          </div>
+
           <div className="grid gap-4 md:grid-cols-3">
             {featurePanels.map((item) => (
               <Link key={item.href} href={item.href} className="group overflow-hidden rounded-md bg-white shadow-[0_26px_80px_-58px_rgba(15,23,42,0.75)]">
@@ -166,6 +184,19 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-14 text-slate-950 md:px-8 md:py-20">
+        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Câu chuyện thương hiệu</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-normal md:text-4xl">Lịch sử hình thành Dolic từ ao nuôi gia đình</h2>
+          </div>
+          <Link href="/about-us#lich-su" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#0A2E5C] px-5 text-sm font-black text-white transition hover:bg-[#061B35]">
+            Xem câu chuyện
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 

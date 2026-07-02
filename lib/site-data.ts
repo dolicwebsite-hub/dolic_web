@@ -32,6 +32,7 @@ export const contactInfo = {
   email: "congtytnhhthuysandolic@gmail.com",
   fanpage: "CÔNG TY TNHH THUỶ SẢN DOLIC",
   tiktok: "THUỶ SẢN DOLIC",
+  hotlineNotice: "Hotline mới đang được đăng ký và sẽ được cập nhật sau.",
   socials: {
     zalo: "https://zalo.me/0397581028",
     facebook: "https://www.facebook.com/share/1EmHbXzC78/?mibextid=wwXIfr",

@@ -67,7 +67,7 @@ export function HomeRegionProductSection() {
             <div className="mt-5 grid gap-2 text-sm leading-6 text-white/82 md:text-base">
               <p className="font-bold text-white">Văn phòng {activeRegion.office.region}</p>
               <p>{activeRegion.office.address}</p>
-              <p className="font-semibold text-cyan-200">Hotline: {activeRegion.office.displayHotline}</p>
+              <p className="font-semibold text-cyan-200">{contactInfo.hotlineNotice}</p>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ export function HomeRegionProductSection() {
       <div className="px-5 py-16 md:px-10 md:py-24 lg:min-h-[780px]">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-5xl leading-none tracking-normal md:text-7xl">Danh mục</h2>
-          <Link href="/san-pham" className="group relative mx-auto mt-16 block aspect-[4/3] max-w-[720px] overflow-hidden bg-slate-200">
+          <Link href="/san-pham#product-list" className="group relative mx-auto mt-16 block aspect-[4/3] max-w-[720px] overflow-hidden bg-slate-200">
             {productImages.map((image, index) => (
               <Image
                 key={image}

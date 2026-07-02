@@ -17,6 +17,31 @@ const farmGallery = [
 export default function FarmPage() {
   return (
     <PageFrame>
+      <section className="relative min-h-[92svh] overflow-hidden bg-[#061B35] text-white">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/assets/drive/experimental-farm/dolic-farm-video.mp4"
+          poster="/assets/drive/customer-farm/customer-aerator-installed.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,18,38,0.84)_0%,rgba(3,18,38,0.46)_48%,rgba(3,18,38,0.74)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,18,38,0.18)_0%,rgba(3,18,38,0.24)_46%,rgba(3,18,38,0.86)_100%)]" />
+        <div className="relative z-10 mx-auto flex min-h-[92svh] max-w-7xl items-end px-5 pb-16 pt-32 md:px-8 md:pb-24">
+          <div className="max-w-4xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-100">Trang trại Dolic</p>
+            <h1 className="mt-5 text-4xl font-bold leading-tight tracking-normal md:text-6xl">
+              Thiết bị thuỷ sản được kiểm chứng bằng ao thật
+            </h1>
+            <p className="mt-5 max-w-2xl text-base font-semibold leading-8 text-cyan-50/82 md:text-lg">
+              Video trang trại được đặt làm lớp mở đầu để người xem thấy môi trường vận hành thật trước khi đọc dữ liệu, hình ảnh và quy trình kiểm chứng bên dưới.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
           <div>

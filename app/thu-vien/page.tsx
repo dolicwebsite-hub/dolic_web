@@ -1,20 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { PageFrame, SectionHeader } from "@/components/site-chrome";
-
-const libraryItems = [
-  ["Dolic là một trong hơn 200 doanh nghiệp lớn đầu ngành tham gia triển lãm quốc tế công nghệ Nông nghiệp và Môi trường", "Trang thư viện"],
-  ["Cách chọn guồng sục khí theo diện tích ao", "Hướng dẫn kỹ thuật"],
-  ["Khi nào nên dùng sục khí khí nén?", "Hỏi kỹ sư Dolic"],
-  ["Checklist kiểm tra oxy trước và sau khi cho ăn", "Vận hành ao"],
-  ["Tài liệu cho đại lý: tư vấn combo giải pháp", "Đại lý"],
-];
-
-const exhibitionImages = [
-  "/assets/drive/exhibition/IMG_6001.PNG",
-  "/assets/drive/exhibition/IMG_6004.PNG",
-  "/assets/drive/exhibition/IMG_6574.PNG",
-  "/assets/drive/exhibition/IMG_4750.PNG",
-];
+import { exhibitionImages, libraryPosts } from "@/lib/library-data";
 
 export default function LibraryPage() {
   return (
@@ -45,7 +31,7 @@ export default function LibraryPage() {
                 </a>
               </div>
             </div>
-            <div className="grid gap-px bg-slate-200 md:grid-cols-4">
+            <div className="grid gap-px bg-slate-200 md:grid-cols-6">
               {exhibitionImages.map((src, index) => (
                 <div key={src} className="relative aspect-square overflow-hidden bg-white">
                   <img src={src} alt={`Hình ảnh Dolic tham gia triển lãm ${index + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-[1.04]" />
@@ -55,14 +41,19 @@ export default function LibraryPage() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {libraryItems.slice(1).map(([title, type]) => (
-              <article key={title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{type}</span>
-                <h2 className="mt-4 min-h-16 font-bold leading-6">{title}</h2>
-                <a href="/lien-he" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-cyan-700">
+            {libraryPosts.slice(1).map((post) => (
+              <article key={post.title} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-48px_rgba(15,23,42,0.55)]">
+                <div className="relative aspect-[4/3] bg-slate-100">
+                  <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
+                </div>
+                <div className="p-5">
+                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{post.type}</span>
+                  <h2 className="mt-4 min-h-16 font-bold leading-6">{post.title}</h2>
+                  <a href="/lien-he" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-cyan-700">
                   Hỏi kỹ sư
                   <MessageCircle className="h-4 w-4" />
-                </a>
+                  </a>
+                </div>
               </article>
             ))}
           </div>

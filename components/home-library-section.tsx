@@ -3,33 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
-const libraryItems = [
-  {
-    tag: "Triển lãm",
-    title: "Dolic tham gia triển lãm quốc tế công nghệ Nông nghiệp và Môi trường",
-    image: "/assets/drive/exhibition/IMG_6001.PNG",
-    href: "/thu-vien",
-  },
-  {
-    tag: "Thực nghiệm",
-    title: "Trang trại 120.000m2 và dữ liệu vận hành ao nuôi",
-    image: "/assets/drive/customer-farm/customer-farm-2.jpg",
-    href: "/trang-trai",
-  },
-  {
-    tag: "Hiệu năng",
-    title: "So sánh tiêu thụ điện trước và sau khi tối ưu thiết bị",
-    image: "/assets/drive/performance/1JRKM8T8D_5FLBM0.jpg",
-    href: "/giai-phap",
-  },
-  {
-    tag: "Kỹ thuật",
-    title: "Cách chọn guồng sục khí theo diện tích và mục tiêu oxy",
-    image: "/assets/drive/experimental-farm/device-on-pond.jpg",
-    href: "/thu-vien",
-  },
-];
+import { libraryPosts } from "@/lib/library-data";
 
 export function HomeLibrarySection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -54,7 +28,7 @@ export function HomeLibrarySection() {
 
         <div className="overflow-hidden">
           <div className="flex w-full">
-            {libraryItems.map((item, index) => {
+            {libraryPosts.slice(0, 4).map((item, index) => {
               const active = activeIndex === index;
 
               return (
@@ -78,7 +52,7 @@ export function HomeLibrarySection() {
                       onClick={() => setActiveIndex(index)}
                       className="absolute inset-0 z-10"
                     />
-                    <span className="absolute left-0 top-0 z-20 bg-[#202b50] px-3 py-1 text-sm font-bold text-white">{item.tag}</span>
+                    <span className="absolute left-0 top-0 z-20 bg-[#202b50] px-3 py-1 text-sm font-bold text-white">{item.type}</span>
                     {active ? (
                       <Link href={item.href} className="absolute inset-0 z-30 grid place-items-center bg-black/0 text-white opacity-0 transition hover:bg-black/24 hover:opacity-100">
                         <span className="grid h-28 w-28 place-items-center rounded-full bg-white text-center font-serif text-xl leading-tight text-[#202b50] shadow-[0_18px_55px_-28px_rgba(0,0,0,0.65)]">

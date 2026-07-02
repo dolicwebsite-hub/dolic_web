@@ -11,8 +11,8 @@ const dealerPrinciples = [
     icon: Users,
   },
   {
-    title: "Đào tạo để thành chuyên gia",
-    desc: "Đại lý được hỗ trợ tài liệu, kiến thức vận hành và cách chọn cấu hình theo ao nuôi thay vì bán thiết bị rời rạc.",
+    title: "Đào tạo đại lý theo quy trình chuẩn của Dolic",
+    desc: "Đại lý được hỗ trợ tài liệu, kiến thức vận hành và cách tư vấn giải pháp theo ao nuôi thay vì bán thiết bị rời rạc.",
     icon: BookOpen,
   },
   {
@@ -25,7 +25,7 @@ const dealerPrinciples = [
 const dealerSteps = [
   ["01", "Tìm hiểu vùng nuôi", "Ghi nhận khu vực, nhóm khách hàng, mặt hàng đang bán và năng lực kỹ thuật của đại lý."],
   ["02", "Chọn danh mục phù hợp", "Dolic đề xuất nhóm thiết bị chủ lực theo nhu cầu vùng: quạt nước, bơm, sục khí, đo nước hoặc combo."],
-  ["03", "Đào tạo tư vấn", "Cung cấp catalog, cách tính cấu hình, quy trình xử lý bảo hành và nội dung truyền thông bán hàng."],
+  ["03", "Đào tạo tư vấn", "Cung cấp catalogue, các bộ giải pháp tối ưu chi phí của Dolic, quy trình chuẩn bán hàng và bảo dưỡng, hỗ trợ kiến thức mở đại lý online và offline."],
   ["04", "Cùng phát triển thị trường", "Theo dõi phản hồi từ hộ nuôi, tối ưu chính sách nhập hàng và hỗ trợ triển khai lead tại địa phương."],
 ];
 
@@ -76,7 +76,7 @@ export default function DealerPage() {
               </h2>
             </div>
             <p className="text-lg font-semibold leading-9 text-[#202b50]/72">
-              Tầm nhìn của Dolic là xây dựng hệ sinh thái đại lý có năng lực tư vấn thật: mỗi điểm bán không chỉ giao hàng, mà còn là nơi người nuôi tìm được cấu hình đúng, bảo hành rõ và sự đồng hành tận ao.
+              Tầm nhìn của Dolic là xây dựng hệ sinh thái đại lý có năng lực tư vấn thật: mỗi điểm bán không chỉ giao hàng, mà còn là nơi người nuôi tìm được giải pháp phù hợp, bảo hành nhanh chóng.
             </p>
           </div>
 
@@ -98,14 +98,14 @@ export default function DealerPage() {
         </div>
         <div className="flex flex-col justify-center px-5 py-14 md:px-10 lg:px-16">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">Dealer Mission</p>
-          <h2 className="mt-5 font-serif text-[clamp(3.2rem,6vw,6rem)] leading-none tracking-normal">Đào tạo từng đại lý thành chuyên gia</h2>
+          <h2 className="mt-5 font-serif text-[clamp(3.2rem,6vw,6rem)] leading-none tracking-normal">Đào tạo đại lý theo quy trình chuẩn của Dolic</h2>
           <p className="mt-8 max-w-2xl text-lg font-semibold leading-9 text-white/76">
             Đại lý Dolic được hỗ trợ để hiểu thiết bị, hiểu ao và tư vấn đúng bài toán của người nuôi. Sự phát triển bền vững không đến từ chiết khấu đơn lẻ, mà từ năng lực bán giải pháp.
           </p>
           <div className="mt-9 grid gap-4 sm:grid-cols-3">
             {[
               ["Catalog", "tài liệu bán hàng"],
-              ["Kỹ thuật", "đào tạo cấu hình"],
+              ["Kỹ thuật", "đào tạo giải pháp"],
               ["Bảo hành", "quy trình rõ ràng"],
             ].map(([value, label]) => (
               <div key={label} className="border-l border-cyan-200/35 pl-4">
@@ -121,7 +121,7 @@ export default function DealerPage() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Cách Dolic đồng hành</p>
-            <h2 className="mt-4 text-3xl font-black tracking-normal md:text-5xl">Từ điểm bán địa phương đến mạng lưới chuyên gia vùng nuôi</h2>
+            <h2 className="mt-4 text-3xl font-black tracking-normal md:text-5xl">Từ điểm bán vùng nuôi đến mạng lưới đại lý online và offline</h2>
             <div className="mt-9 grid gap-5">
               {dealerSteps.map(([step, title, desc]) => (
                 <article key={step} className="grid gap-4 border-b border-slate-200 pb-5 sm:grid-cols-[82px_1fr]">

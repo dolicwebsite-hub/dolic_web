@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
-import { ArrowRight, BadgeCheck, HeartHandshake, Leaf, Network, ShieldCheck, UsersRound } from "lucide-react";
+import { BadgeCheck, HeartHandshake, Leaf, Network, ShieldCheck, UsersRound } from "lucide-react";
 
 const timeline = [
   {
@@ -108,7 +108,7 @@ type Principle = {
 const principles: Principle[] = [
   { number: "01", title: "Với gia đình", headline: "Lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.", desc: "Mọi quyết định bắt đầu từ sự đoàn kết và lòng biết ơn.", icon: UsersRound },
   { number: "02", title: "Với người nuôi", headline: "Người nuôi hiểu người nuôi.", desc: "Là người bạn nghề, không phải người bán hàng; không khoảng cách giữa doanh nghiệp và bà con.", icon: HeartHandshake },
-  { number: "03", title: "Với đại lý", headline: "Đào tạo từng đại lý thành chuyên gia, cùng nhau lớn.", desc: "Không xem đại lý là kênh bán, mà là đối tác cùng phát triển và cùng giữ uy tín.", icon: Network },
+  { number: "03", title: "Với đại lý", headline: "Đào tạo đại lý theo quy trình chuẩn.", desc: "Không xem đại lý là kênh bán, mà là đối tác cùng phát triển và cùng giữ uy tín.", icon: Network },
   { number: "04", title: "Với đội ngũ", headline: "Coi đồng đội như người trong nhà.", desc: "Lớn lên cùng nhau, trân trọng từng người góp sức dựng nên Dolic.", icon: BadgeCheck },
   { number: "05", title: "Với mỗi giải pháp", headline: "Kiểm chứng thực địa trước khi đưa đến khách hàng.", desc: "Mọi sản phẩm đi qua trang trại thực nghiệm trước khi đến tay người nuôi.", icon: ShieldCheck },
   { number: "06", title: "Với môi trường", headline: "Vì người nuôi hôm nay, vì môi trường ngày mai.", desc: "Nuôi trồng bền vững là trách nhiệm, không phải khẩu hiệu.", icon: Leaf },
@@ -131,15 +131,6 @@ function Divider() {
   );
 }
 
-function LearnMoreLink({ href }: { href: string }) {
-  return (
-    <Link href={href} className="mt-5 inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.14em] text-cyan-700 transition hover:text-cyan-950">
-      Tìm hiểu thêm
-      <ArrowRight className="h-4 w-4" />
-    </Link>
-  );
-}
-
 export function AboutLinearShowcase() {
   return (
     <>
@@ -148,7 +139,7 @@ export function AboutLinearShowcase() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,27,53,0.18)_0%,rgba(6,27,53,0.38)_44%,rgba(6,27,53,0.88)_100%)]" />
         <div className="relative mx-auto flex min-h-[86svh] max-w-7xl items-end justify-center px-4 pb-16 pt-28 text-center md:px-8 md:pb-24">
           <div className="max-w-5xl">
-            <p className="text-xs font-bold uppercase tracking-[0.32em] text-cyan-100">Dolic Vietnam</p>
+            <p className="text-base font-bold uppercase tracking-[0.24em] text-cyan-100 md:text-xl">Dolic Vietnam</p>
             <h1 className="mt-5 font-serif text-5xl font-bold uppercase leading-[0.95] tracking-normal sm:text-7xl md:text-8xl">
               Người nuôi hiểu người nuôi
             </h1>
@@ -163,17 +154,17 @@ export function AboutLinearShowcase() {
         <div className="mx-auto max-w-5xl text-center">
           <Image src="/favicon-32x32.png" alt="Dolic icon" width={42} height={42} className="mx-auto h-10 w-10" />
           <Divider />
-          <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal md:text-5xl">Câu chuyện hình thành Dolic</h2>
+          <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal md:text-5xl">Câu chuyện thương hiệu Dolic</h2>
           <Divider />
           <div className="mx-auto grid max-w-4xl gap-5 text-left text-base leading-8 text-slate-700 md:text-center md:text-lg md:leading-9">
             <p>
-              Dolic không bắt đầu từ một bản giới thiệu doanh nghiệp, mà bắt đầu từ những ao nuôi thật: nguồn nước khó kiểm soát, dịch bệnh, chi phí điện và nỗi lo của người nuôi sau mỗi mùa vụ.
+              Dolic không bắt đầu từ một bản giới thiệu doanh nghiệp, mà bắt đầu từ những ao nuôi thật: nguồn nước khó kiểm soát, dịch bệnh, chi phí điện và những khó khăn trong quá trình nuôi thực tế.
             </p>
             <p>
               Từ nền tảng gia đình, Dolic chọn đi bằng con đường kiểm chứng: thử nghiệm tại trang trại, đào tạo đại lý theo quy trình và đồng hành với người nuôi bằng sự thấu hiểu của người trong nghề.
             </p>
             <p>
-              Điều Dolic theo đuổi không chỉ là bán một thiết bị, mà là đưa đến một cấu hình vận hành ổn định, tiết kiệm điện và có trách nhiệm với môi trường ngày mai.
+              Điều Dolic theo đuổi không chỉ là bán một thiết bị, mà là đưa đến giải pháp vận hành ổn định, tiết kiệm điện và thân thiện với môi trường.
             </p>
           </div>
         </div>
@@ -200,7 +191,6 @@ export function AboutLinearShowcase() {
                 </div>
                 <h3 className="mt-6 text-2xl font-bold uppercase leading-tight text-slate-950">{item.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base md:leading-8">{item.text}</p>
-                <LearnMoreLink href={item.href} />
               </article>
             ))}
           </div>
@@ -214,7 +204,7 @@ export function AboutLinearShowcase() {
           <Divider />
           <div className="grid gap-10 border-y border-slate-300 py-10">
             <article>
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-700">Tầm nhìn</p>
+              <p className="text-base font-black uppercase tracking-[0.2em] text-cyan-700 md:text-lg">Tầm nhìn</p>
               <h3 className="mx-auto mt-4 max-w-5xl font-serif text-4xl font-bold leading-tight text-[#0A2E5C] md:text-6xl">
                 Trở thành mảnh ghép tin cậy trong mỗi vụ nuôi của người Việt.
               </h3>
@@ -223,7 +213,7 @@ export function AboutLinearShowcase() {
               </p>
             </article>
             <article className="border-t border-slate-300 pt-10">
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-700">Sứ mệnh</p>
+              <p className="text-base font-black uppercase tracking-[0.2em] text-cyan-700 md:text-lg">Sứ mệnh</p>
               <h3 className="mx-auto mt-4 max-w-5xl font-serif text-4xl font-bold leading-tight text-slate-950 md:text-6xl">
                 Kiểm chứng. Đào tạo. Đồng hành.
               </h3>
@@ -279,7 +269,6 @@ export function AboutLinearShowcase() {
                   <p className="font-serif text-7xl leading-none text-cyan-200 md:text-8xl">{item.year}</p>
                   <h3 className="mt-5 text-3xl font-bold uppercase leading-tight md:text-4xl">{item.title}</h3>
                   <p className="mt-5 text-sm leading-7 text-cyan-50/76 md:text-base md:leading-8">{item.text}</p>
-                  <LearnMoreLink href="/about-us#lich-su" />
                 </div>
               </article>
             ))}

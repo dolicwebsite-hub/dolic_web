@@ -41,7 +41,7 @@ const solutionPackages = [
   {
     title: "Dolic Dealer",
     subtitle: "Gói đại lý thiết bị thủy sản",
-    desc: "Dành cho cửa hàng vật tư, đại lý vùng nuôi và đối tác muốn phân phối nhóm thiết bị có tài liệu bán hàng rõ ràng.",
+    desc: "Dành cho cửa hàng vật tư, đại lý vùng nuôi và đối tác muốn được đào tạo đại lý theo quy trình chuẩn.",
     image: "/assets/drive/exhibition/IMG_6001.PNG",
     icon: Handshake,
     tags: ["Chính sách khu vực", "Đào tạo kỹ thuật", "Tài liệu bán hàng", "Hỗ trợ sau bán"],
@@ -96,12 +96,14 @@ export default function SolutionsPage() {
   return (
     <PageFrame>
       <section className="relative overflow-hidden bg-[#082A52] text-white">
-        <Image
-          src="/assets/drive/customer-farm/customer-aerator-installed.jpg"
-          alt="Trang trại thủy sản sử dụng giải pháp Dolic"
-          fill
-          className="object-cover object-center"
-          priority
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/assets/drive/experimental-farm/dolic-farm-video.mp4"
+          poster="/assets/drive/customer-farm/customer-aerator-installed.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,42,82,0.94)_0%,rgba(8,42,82,0.82)_50%,rgba(8,42,82,0.62)_100%)] md:bg-[linear-gradient(90deg,rgba(8,42,82,0.96)_0%,rgba(8,42,82,0.82)_42%,rgba(8,42,82,0.28)_78%)]" />
         <div className="relative mx-auto grid min-h-[100svh] max-w-7xl gap-8 px-5 pb-14 pt-36 md:min-h-[680px] md:px-8 md:py-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -113,7 +115,7 @@ export default function SolutionsPage() {
               Nền tảng cấu hình giải pháp cho trang trại thủy sản
             </h1>
             <p className="hero-enter hero-enter-2 mt-5 max-w-2xl text-base leading-8 text-cyan-50/88">
-              Từ mô hình ao, điện áp và mục tiêu vận hành, Dolic đề xuất combo thiết bị sục khí, bơm, đo nước và hỗ trợ sau bán để người nuôi đầu tư đúng ngay từ đầu.
+              Từ mô hình ao, điện áp và mục tiêu vận hành, Dolic đề xuất giải pháp thiết bị sục khí, bơm, đo nước và hỗ trợ sau bán để người nuôi vận hành ổn định, tiết kiệm điện và thân thiện với môi trường.
             </p>
             <div className="hero-enter hero-enter-3 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <PrimaryButton href="/lien-he">
@@ -139,7 +141,7 @@ export default function SolutionsPage() {
                 {[
                   ["Diện tích", "2-10ha"],
                   ["Mục tiêu", "Oxy ổn định, giảm điện, giảm rủi ro"],
-                  ["Thiết bị gợi ý", "Quạt nước + bơm + máy đo DO"],
+                  ["Giải pháp gợi ý", "Quạt nước + bơm + máy đo DO"],
                   ["Hỗ trợ", "Khảo sát, báo giá, bảo hành"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex items-center justify-between gap-4 rounded-md bg-slate-50 px-3 py-3">
@@ -149,7 +151,7 @@ export default function SolutionsPage() {
                 ))}
               </div>
               <Link href="/lien-he" className="motion-interactive pressable lift-hover mt-5 flex min-h-12 items-center justify-center rounded-md bg-cyan-500 px-5 text-sm font-bold text-slate-950 hover:bg-cyan-400">
-                Nhận cấu hình chi tiết
+                Nhận tư vấn giải pháp
               </Link>
             </div>
           </div>
@@ -209,7 +211,7 @@ export default function SolutionsPage() {
                 Dolic thiết kế giải pháp theo vai trò của bạn
               </h2>
               <p className="mt-4 text-base leading-8 text-slate-600">
-                Cách tiếp cận giống platform: chọn nhu cầu, xem quyền lợi, gửi thông tin và nhận cấu hình rõ ràng trước khi đầu tư.
+                Chọn nhu cầu, xem quyền lợi, gửi thông tin và nhận giải pháp rõ ràng trước khi đầu tư.
               </p>
             </div>
             <PrimaryButton href="/lien-he" variant="outline">

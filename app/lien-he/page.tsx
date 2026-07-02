@@ -14,10 +14,10 @@ const formFields = [
 const serviceCards = [
   {
     title: "Tư vấn tối ưu điện",
-    desc: "Đánh giá thiết bị đang chạy, điện năng tiêu thụ và đề xuất cấu hình phù hợp theo diện tích ao.",
+    desc: "Đánh giá thiết bị đang chạy, điện năng tiêu thụ và đề xuất giải pháp phù hợp theo diện tích ao.",
   },
   {
-    title: "Cấu hình combo thiết bị",
+    title: "Giải pháp combo thiết bị",
     desc: "Chọn quạt nước, bơm, sục khí, đo nước và máy cho ăn theo mục tiêu năng suất từng vụ.",
   },
   {
@@ -28,7 +28,7 @@ const serviceCards = [
 
 const processSteps = [
   ["01", "Tiếp nhận thông tin", "Ghi nhận khu vực, diện tích ao, thiết bị đang dùng và mục tiêu vận hành."],
-  ["02", "Đề xuất cấu hình", "Đội kỹ thuật Dolic chọn phương án dựa trên dữ liệu trang trại thực nghiệm."],
+  ["02", "Đề xuất giải pháp", "Đội kỹ thuật Dolic chọn phương án dựa trên dữ liệu trang trại thực nghiệm."],
   ["03", "Báo giá rõ ràng", "Tách chi phí thiết bị, lắp đặt, bảo hành và phương án mở rộng nếu cần."],
   ["04", "Đồng hành vận hành", "Hỗ trợ sau bán, hướng dẫn đại lý/người nuôi xử lý tình huống ngoài ao."],
 ];
@@ -66,7 +66,7 @@ export default function ContactPage() {
               Tối ưu chi phí điện và cấu hình thiết bị cho ao nuôi của bạn
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-cyan-50/78">
-              Gửi thông tin ao, thiết bị đang dùng và mục tiêu vụ nuôi. Dolic sẽ tư vấn cấu hình dựa trên kinh nghiệm thực địa, trang trại thử nghiệm và dữ liệu vận hành thật.
+              Gửi thông tin ao, thiết bị đang dùng và mục tiêu vụ nuôi. Dolic sẽ tư vấn giải pháp phù hợp dựa trên kinh nghiệm thực địa, trang trại thử nghiệm và dữ liệu vận hành thật.
             </p>
 
             <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
@@ -124,7 +124,7 @@ export default function ContactPage() {
               Gửi yêu cầu tư vấn
               <ArrowRight className="h-4 w-4" />
             </button>
-            <p className="mt-3 text-xs leading-5 text-slate-500">Thông tin được dùng để đội Dolic tư vấn cấu hình, không chia sẻ cho bên thứ ba.</p>
+            <p className="mt-3 text-xs leading-5 text-slate-500">Thông tin được dùng để đội ngũ Dolic tư vấn giải pháp, không chia sẻ cho bên thứ ba.</p>
           </form>
         </div>
       </section>
@@ -136,9 +136,6 @@ export default function ContactPage() {
               <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Dịch vụ tư vấn</p>
               <h2 className="mt-3 text-3xl font-black tracking-normal md:text-5xl">Chọn đúng thiết bị trước khi đầu tư</h2>
             </div>
-            <p className="max-w-3xl text-base font-semibold leading-8 text-slate-600">
-              Bố cục tư vấn tập trung vào việc giúp khách hàng hiểu nhanh Dolic làm gì, vì sao đáng tin và cần để lại thông tin nào để đội ngũ đưa ra cấu hình sát thực tế.
-            </p>
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -160,7 +157,7 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Quy trình làm việc</p>
-            <h2 className="mt-3 text-3xl font-black tracking-normal md:text-5xl">Từ thông tin ao nuôi đến cấu hình vận hành</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-normal md:text-5xl">Từ thông tin ao nuôi đến giải pháp vận hành</h2>
             <div className="mt-8 grid gap-4">
               {processSteps.map(([step, title, desc]) => (
                 <article key={step} className="grid gap-4 border-b border-slate-300 pb-4 sm:grid-cols-[76px_1fr]">
