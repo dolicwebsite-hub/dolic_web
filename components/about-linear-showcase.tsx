@@ -18,7 +18,7 @@ const timeline = [
     image: "/assets/drive/customer-farm/customer-farm-4.jpg",
     fit: "cover",
     text:
-      "Với số vốn vay hoàn toàn bằng tín chấp từ những người họ hàng tin vào ý chí của ông, trang trại đầu tiên được dựng lên trên mảnh đất quê hương Bắc Giang. Không có gì ngoài đôi tay, lòng tin và một lời hứa với chính mình.",
+      "Với số vốn vay hoàn toàn bằng tín chấp, từ vài người họ hàng tin vào ý chí của ông, ông bắt đầu dựng trang trại ngay trên mảnh đất quê hương Bắc Giang. Không có gì ngoài đôi tay, lòng tin và một lời hứa với chính mình.",
   },
   {
     year: "2016",
@@ -26,7 +26,7 @@ const timeline = [
     image: "/assets/drive/customer-farm/customer-farm-2.jpg",
     fit: "cover",
     text:
-      "Sau hai mươi năm bền bỉ, trang trại nuôi trồng thuỷ sản rộng 12ha trở thành gốc rễ tri thức của Dolic: nơi hiểu tận cùng những khó khăn của người nuôi và về sau trở thành trang trại thực nghiệm.",
+      "Sau hai mươi năm bền bỉ, trang trại nuôi trồng thủy sản rộng 12 ha trở thành gốc rễ tri thức của Dolic. Hai mươi năm ấy không chỉ là số diện tích tích luỹ được, mà là sự thấu hiểu tận cùng những khó khăn của người nuôi và về sau trở thành trang trại thực nghiệm và cũng là gốc rễ tri thức của Dolic.",
   },
   {
     year: "2019",
@@ -34,7 +34,7 @@ const timeline = [
     image: "/assets/drive/experimental-farm/device-on-pond.jpg",
     fit: "cover",
     text:
-      "Sau nhiều mùa vụ thất thoát vì dịch bệnh, nguồn nước khó kiểm soát và chi phí điện năng chưa tối ưu, trang trại Dolic đi tìm lời giải bằng công nghệ vi sinh, máy móc hiện đại và dữ liệu vận hành thực tế.",
+      "Sau nhiều mùa vụ thất thoát vì dịch bệnh, nguồn nước khó kiểm soát và chi phí điện năng không được tối ưu, trang trại Dolic đi tìm lời giải bằng công nghệ vi sinh và cũng trở thành đơn vị tiên phong ở Bắc Giang áp dụng công nghệ vi sinh để “nuôi nước” và đưa máy móc hiện đại vào quy trình nuôi.",
   },
   {
     year: "2020",
@@ -42,15 +42,15 @@ const timeline = [
     image: "/assets/drive/experimental-farm/comparison-aerator-1.jpg",
     fit: "cover",
     text:
-      "Hiểu rõ trên ao thật sự cần gì, Dolic tuyển chọn và đưa những thiết bị đã được kiểm chứng trên chính trại nuôi của mình đến với bà con các vùng lân cận.",
+      "Hiểu rõ trên ao thật sự cần gì, Dolic tuyển chọn và đưa những thiết bị máy móc tốt đã được kiểm chứng trên chính trại nuôi của mình đến với bà con các vùng lân cận.",
   },
   {
     year: "2024",
-    title: "Thế hệ kế cận",
+    title: "Công ty TNHH Thuỷ sản Dolic chính thức thành lập",
     image: "/assets/drive/exhibition/IMG_6009.PNG",
     fit: "cover",
     text:
-      "Công ty TNHH Thuỷ sản Dolic chính thức thành lập. Tên thương hiệu được ghép từ tên của ba anh em trong gia đình, biểu trưng cho tinh thần đoàn kết, lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.",
+      "“Một cây làm chẳng nên non\nBa cây chụm lại nên hòn núi cao.”\n\nNăm 2024, Công ty TNHH Thuỷ sản Dolic chính thức thành lập. Tên thương hiệu được ghép từ tên của ba anh em trong gia đình-  biểu trưng cho tinh thần đoàn kết, lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.\n\nNiềm đam mê và ý chí của người cha với một nền nông nghiệp bền vững được người con trai cả, anh Bùi Quý Đôn, kế thừa bằng tấm lòng và phát huy bằng tri thức. Anh theo học chuyên ngành Thuỷ sản học tại Học viện Nông nghiệp Việt Nam, tiếp tục học lên chương trình thạc sĩ và đảm nhận vai trò Giám đốc Kinh doanh của Dolic.",
   },
   {
     year: "2025",
@@ -58,15 +58,16 @@ const timeline = [
     image: "/assets/drive/customer-farm/customer-aerator-installed.jpg",
     fit: "cover",
     text:
-      "Từ gốc Bắc Giang, Dolic đưa tinh thần người nuôi hiểu người nuôi đến thị trường Nam - Bắc, phục vụ khoảng 15.000+ đối tác và khách hàng tại 34 tỉnh thành Việt Nam.",
+      "Chỉ sau một năm, Dolic đưa những sản phẩm đã được kiểm chứng cùng tinh thần “người nuôi hiểu người nuôi” của Dolic đến tận tay bà con. Từ gốc Bắc Giang, Dolic vươn ra phủ khắp thị trường Nam – Bắc, phục vụ 34 tỉnh thành qua 15000 khách hàng bao gồm cả đại lý và các hộ nuôi. Cùng năm, Dolic đặt chi nhánh tại miền Nam để đứng gần hơn với các vùng nuôi trọng điểm.",
   },
   {
     year: "2026",
     title: "Từ sản phẩm đến giải pháp",
+    headline: "Từ bán sản phẩm đến bán giải pháp",
     image: "/assets/drive/exhibition/IMG_6001.PNG",
     fit: "cover",
     text:
-      "Dolic hiện diện tại các triển lãm công nghệ quốc tế đầu ngành và nâng cấp từ bán sản phẩm hoàn thiện sang bán giải pháp tối ưu chi phí, vận hành ổn định và bền vững cho ngành nuôi trồng thuỷ sản.",
+      "Người con gái thứ hai, chị Bùi Khánh Linh, tốt nghiệp chuyên ngành Quản trị Kinh doanh Nông nghiệp tiên tiến (Học viện Nông nghiệp Việt Nam) cùng khát vọng nâng tầm doanh nghiệp gia đình, đảm nhận vai trò Head of Marketing. Ngoài đam mê với kinh doanh, chị còn là gương mặt được công chúng yêu mến và biết đến với ý chí quyết tâm, sự bản lĩnh khi chinh phục danh hiệu Á hậu  tại các đấu trường nhan sắc lớn trong nước và quốc tế.\n\nĐây cũng là năm đánh dấu bước chuyển mình của Dolic: hiện diện tại nhiều triển lãm công nghệ quốc tế đầu ngành, tham gia hội thảo khoa học trong ngành nông nghiệp và nâng cấp từ bán sản phẩm hoàn thiện sang bán giải pháp tối ưu chi phí và bền vững cho ngành nuôi trồng thuỷ sản.",
   },
 ];
 
@@ -108,17 +109,15 @@ type Principle = {
 const principles: Principle[] = [
   { number: "01", title: "Với gia đình", headline: "Lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.", desc: "Mọi quyết định bắt đầu từ sự đoàn kết và lòng biết ơn.", icon: UsersRound },
   { number: "02", title: "Với người nuôi", headline: "Người nuôi hiểu người nuôi.", desc: "Là người bạn nghề, không phải người bán hàng; không khoảng cách giữa doanh nghiệp và bà con.", icon: HeartHandshake },
-  { number: "03", title: "Với đại lý", headline: "Đào tạo đại lý theo quy trình chuẩn.", desc: "Không xem đại lý là kênh bán, mà là đối tác cùng phát triển và cùng giữ uy tín.", icon: Network },
+  { number: "03", title: "Với đại lý", headline: "Đào tạo từng đại lý thành chuyên gia, cùng nhau lớn.", desc: "Không xem đại lý là kênh bán, mà là đối tác cùng phát triển và cùng giữ uy tín.", icon: Network },
   { number: "04", title: "Với đội ngũ", headline: "Coi đồng đội như người trong nhà.", desc: "Lớn lên cùng nhau, trân trọng từng người góp sức dựng nên Dolic.", icon: BadgeCheck },
-  { number: "05", title: "Với mỗi giải pháp", headline: "Kiểm chứng thực địa trước khi đưa đến khách hàng.", desc: "Mọi sản phẩm đi qua trang trại thực nghiệm trước khi đến tay người nuôi.", icon: ShieldCheck },
-  { number: "06", title: "Với môi trường", headline: "Vì người nuôi hôm nay, vì môi trường ngày mai.", desc: "Nuôi trồng bền vững là trách nhiệm, không phải khẩu hiệu.", icon: Leaf },
+  { number: "05", title: "Với mỗi giải pháp", headline: "Kiểm chứng thực địa - không mang đến khách hàng những sản phẩm chưa được\nthực nghiệm.", desc: "Mọi sản phẩm đi qua trang trại thực nghiệm trước khi đến tay người nuôi.", icon: ShieldCheck },
+  { number: "06", title: "Với môi trường", headline: "Vì Người nuôi hôm nay vì môi trường ngày mai.", desc: "Nuôi trồng bền vững là trách nhiệm, không phải khẩu hiệu.", icon: Leaf },
 ];
 
 const commitments = [
   ["Hiệu năng cao", "Thiết bị vận hành tối ưu, tiết kiệm điện, tăng năng suất vụ nuôi."],
   ["Ổn định", "Vận hành đáng tin cậy trong nhiều điều kiện môi trường thuỷ sản khắc nghiệt."],
-  ["Kiểm chứng", "Không mang đến khách hàng những sản phẩm chưa được thực nghiệm."],
-  ["Đồng hành", "Đào tạo đại lý và hỗ trợ người nuôi đến tận ao."],
 ];
 
 function Divider() {
@@ -140,7 +139,7 @@ export function AboutLinearShowcase() {
         <div className="relative mx-auto flex min-h-[86svh] max-w-7xl items-end justify-center px-4 pb-16 pt-28 text-center md:px-8 md:pb-24">
           <div className="max-w-5xl">
             <p className="text-base font-bold uppercase tracking-[0.24em] text-cyan-100 md:text-xl">Dolic Vietnam</p>
-            <h1 className="mt-5 font-serif text-5xl font-bold uppercase leading-[0.95] tracking-normal sm:text-7xl md:text-8xl">
+            <h1 className="mt-5 font-serif text-4xl font-bold uppercase leading-[1.02] tracking-normal sm:text-5xl md:text-6xl">
               Người nuôi hiểu người nuôi
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-cyan-50/86 md:text-xl md:leading-9">
@@ -205,20 +204,20 @@ export function AboutLinearShowcase() {
           <div className="grid gap-10 border-y border-slate-300 py-10">
             <article>
               <p className="text-base font-black uppercase tracking-[0.2em] text-cyan-700 md:text-lg">Tầm nhìn</p>
-              <h3 className="mx-auto mt-4 max-w-5xl font-serif text-4xl font-bold leading-tight text-[#0A2E5C] md:text-6xl">
-                Trở thành mảnh ghép tin cậy trong mỗi vụ nuôi của người Việt.
+              <h3 className="mx-auto mt-4 max-w-5xl font-serif text-3xl font-bold leading-tight text-[#0A2E5C] md:text-4xl">
+                Mảnh ghép đáng tin cậy
               </h3>
               <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600">
-                Và mang giải pháp nuôi trồng bền vững của Việt Nam vươn ra Đông Nam Á.
+                Trở thành mảnh ghép tin cậy trong mỗi vụ nuôi của người Việt — và mang giải pháp nuôi trồng bền vững của Việt Nam vươn ra Đông Nam Á.
               </p>
             </article>
             <article className="border-t border-slate-300 pt-10">
               <p className="text-base font-black uppercase tracking-[0.2em] text-cyan-700 md:text-lg">Sứ mệnh</p>
-              <h3 className="mx-auto mt-4 max-w-5xl font-serif text-4xl font-bold leading-tight text-slate-950 md:text-6xl">
-                Kiểm chứng. Đào tạo. Đồng hành.
+              <h3 className="mx-auto mt-4 max-w-5xl font-serif text-3xl font-bold leading-tight text-slate-950 md:text-4xl">
+                Kiểm chứng, đào tạo, đồng hành
               </h3>
               <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600">
-                Kiểm chứng từng giải pháp tại trang trại thực nghiệm, đào tạo từng đại lý theo đúng quy trình chuẩn, đồng hành cùng từng người nuôi Việt đến tận ao.
+                Kiểm chứng từng giải pháp tại trang trại thực nghiệm · đào tạo đại lý theo bộ quy trình chuẩn và đồng hành cùng người nuôi.
               </p>
             </article>
           </div>
@@ -238,7 +237,7 @@ export function AboutLinearShowcase() {
                 <Icon className="mx-auto h-9 w-9 text-cyan-700" />
                 <p className="mt-5 text-sm font-black uppercase tracking-[0.24em] text-slate-400">{number}</p>
                 <h3 className="mt-3 text-xl font-bold uppercase leading-tight text-slate-950">{title}</h3>
-                <p className="mt-4 text-lg font-bold leading-7 text-[#0A2E5C]">{headline}</p>
+                <p className="mt-4 whitespace-pre-line text-lg font-bold leading-7 text-[#0A2E5C]">{headline}</p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{desc}</p>
               </article>
             ))}
@@ -267,8 +266,8 @@ export function AboutLinearShowcase() {
                 </div>
                 <div className={index % 2 === 1 ? "md:order-1 md:text-right" : ""}>
                   <p className="font-serif text-7xl leading-none text-cyan-200 md:text-8xl">{item.year}</p>
-                  <h3 className="mt-5 text-3xl font-bold uppercase leading-tight md:text-4xl">{item.title}</h3>
-                  <p className="mt-5 text-sm leading-7 text-cyan-50/76 md:text-base md:leading-8">{item.text}</p>
+                  {"headline" in item ? <h3 className="mt-5 text-3xl font-bold uppercase leading-tight md:text-4xl">{item.headline}</h3> : null}
+                  <p className="mt-5 whitespace-pre-line text-sm leading-7 text-cyan-50/76 md:text-base md:leading-8">{item.text}</p>
                 </div>
               </article>
             ))}
