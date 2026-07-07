@@ -95,7 +95,7 @@ export function FarmActivityRings() {
             Nhìn hiệu quả vận hành như một vòng sức khỏe của ao
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-            Dolic biến tư vấn thiết bị thành các chỉ số dễ theo dõi: oxy ổn định, điện tối ưu và rủi ro vận hành thấp hơn. Mỗi vòng tương ứng với một mục tiêu kỹ thuật khi cấu hình sục khí, bơm và đo nước cho trang trại.
+            Dolic biến tư vấn thiết bị thành các chỉ số dễ theo dõi: oxy ổn định, điện tối ưu và rủi ro vận hành thấp hơn. Mỗi vòng tương ứng với một mục tiêu kỹ thuật khi triển khai sục khí, bơm và đo nước cho trang trại.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <PrimaryButton href="/giai-phap">
@@ -103,7 +103,7 @@ export function FarmActivityRings() {
               <ArrowRight className="h-4 w-4" />
             </PrimaryButton>
             <PrimaryButton href="/lien-he" variant="outline">
-              Nhận cấu hình ao
+              Nhận giải pháp ao
             </PrimaryButton>
           </div>
         </div>

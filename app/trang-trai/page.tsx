@@ -9,7 +9,7 @@ const farmStats = [
 
 const farmGallery = [
   ["/assets/drive/experimental-farm/device-on-pond.jpg", "Thiết bị đang vận hành trên ao nuôi thực tế tại Dolic"],
-  ["/assets/drive/experimental-farm/comparison-aerator-1.jpg", "Quạt thử nghiệm để so sánh cấu hình tại trang trại"],
+  ["/assets/drive/experimental-farm/comparison-aerator-1.jpg", "Quạt thử nghiệm để so sánh thiết bị tại trang trại"],
   ["/assets/drive/experimental-farm/test-device.jpg", "Thiết bị thử nghiệm tại trang trại thực nghiệm Dolic"],
   ["/assets/drive/experimental-farm/warehouse.png", "Kho thiết bị Dolic phục vụ kiểm chứng và triển khai"],
 ];
@@ -33,7 +33,7 @@ export default function FarmPage() {
           <div className="max-w-4xl">
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-100">Trang trại Dolic</p>
             <h1 className="mt-5 text-4xl font-bold leading-tight tracking-normal md:text-6xl">
-              Thiết bị thuỷ sản được kiểm chứng bằng ao thật
+              Thiết bị thuỷ sản được kiểm chứng tại trang trại thử nghiệm
             </h1>
             <p className="mt-5 max-w-2xl text-base font-semibold leading-8 text-cyan-50/82 md:text-lg">
               Video trang trại được đặt làm lớp mở đầu để người xem thấy môi trường vận hành thật trước khi đọc dữ liệu, hình ảnh và quy trình kiểm chứng bên dưới.
@@ -48,7 +48,7 @@ export default function FarmPage() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-cyan-700">Trang trại thực nghiệm</p>
             <h1 className="mt-3 text-3xl font-bold tracking-normal md:text-4xl">Kiểm chứng trước khi đưa giải pháp đến tay người nuôi</h1>
             <p className="mt-5 text-base leading-8 text-slate-600">
-              Trang trại 12 hecta (120.000m²) là nền tảng để Dolic kiểm tra cấu hình thiết bị, đo điện năng thực tế và theo dõi độ ổn định vận hành trước khi tư vấn rộng rãi.
+              Trang trại 12 hecta (120.000m²) là nền tảng để Dolic kiểm tra thiết bị, đo điện năng thực tế và theo dõi độ ổn định vận hành trước khi tư vấn rộng rãi.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               {farmStats.map(([value, label, desc]) => (
@@ -62,7 +62,7 @@ export default function FarmPage() {
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {[
                 ["Quy trình", "Đo, thử tải, vận hành và ghi nhận dữ liệu điện năng, oxy thực địa."],
-                ["Tham quan", "Đặt lịch để xem cách cấu hình thiết bị trong môi trường ao nuôi thật."],
+                ["Tham quan", "Đặt lịch để xem cách thiết bị vận hành trong môi trường ao nuôi thật."],
                 ["Đào tạo", "Huấn luyện đại lý và đội kỹ thuật theo tình huống vận hành thực tế."],
                 ["Tối ưu", "Điều chỉnh combo theo mùa vụ, quy mô ao và mục tiêu tiết kiệm điện."],
               ].map(([title, desc]) => (

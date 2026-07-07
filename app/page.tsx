@@ -24,13 +24,13 @@ const actionLinks = [
 const featurePanels = [
   {
     title: "Trang trại thực nghiệm",
-    desc: "120.000m2 ao nuôi là nơi Dolic kiểm chứng thiết bị, cấu hình và mức tiêu thụ điện trước khi tư vấn cho người nuôi.",
+    desc: "120.000m2 ao nuôi là nơi Dolic kiểm chứng thiết bị và mức tiêu thụ điện trước khi tư vấn cho người nuôi.",
     href: "/trang-trai",
     image: "/assets/drive/experimental-farm/dolic-farm-real.png",
   },
   {
     title: "Hiệu năng và tiết kiệm điện",
-    desc: "Tập trung vào quạt nước, bơm, sục khí và cấu hình vận hành giúp giảm hao phí điện trong vụ nuôi.",
+    desc: "Tập trung vào quạt nước, bơm, sục khí và phương án vận hành giúp giảm hao phí điện trong vụ nuôi.",
     href: "/giai-phap",
     image: "/assets/drive/performance/1JRKM8T8D_5FLBM0.jpg",
   },
@@ -128,7 +128,7 @@ export default function HomePage() {
             <div>
               <h3 className="font-serif text-[clamp(3rem,5vw,5.4rem)] leading-none tracking-normal">Đồng hành!</h3>
               <p className="mt-8 max-w-md text-xl font-semibold leading-8 text-white/82 md:text-2xl md:leading-10">
-                Từ trang trại thực nghiệm đến từng ao nuôi, Dolic kiểm chứng giải pháp, đào tạo đại lý và đi cùng người nuôi đến tận hiện trường.
+                Từ trang trại thực nghiệm đến từng ao nuôi, Dolic kiểm chứng giải pháp, đào tạo đại lý theo bộ quy trình chuẩn và đồng hành cùng người nuôi.
               </p>
             </div>
             <Link
@@ -148,7 +148,7 @@ export default function HomePage() {
           <div className="mb-10 max-w-3xl">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Dolic Vietnam</p>
-              <h1 className="mt-3 text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl">Thiết bị thuỷ sản được kiểm chứng bằng ao thật</h1>
+              <h1 className="mt-3 text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl">Thiết bị thuỷ sản được kiểm chứng tại trang trại thử nghiệm</h1>
             </div>
           </div>
 
@@ -203,7 +203,7 @@ export default function HomePage() {
       <section className="bg-[#061B35] px-4 py-14 text-white md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_0.8fr] md:items-center">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-300">Sẵn sàng trao đổi cấu hình</p>
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-300">Sẵn sàng trao đổi giải pháp</p>
             <h2 className="mt-3 text-3xl font-bold tracking-normal md:text-4xl">Tư vấn theo ao, theo điện năng và mục tiêu vụ nuôi</h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">

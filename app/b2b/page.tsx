@@ -26,14 +26,14 @@ const packages = [
     tags: ["Chính sách theo khu vực", "Tài liệu bán hàng", "Đào tạo kỹ thuật"],
     details: [
       "Tư vấn bộ sản phẩm ưu tiên theo vùng nuôi và phân khúc khách hàng.",
-      "Cung cấp thông số, hình ảnh, bảng giá và cách tư vấn cấu hình cơ bản.",
+      "Cung cấp thông số, hình ảnh, bảng giá và cách tư vấn giải pháp cơ bản.",
       "Hỗ trợ đại lý xử lý câu hỏi kỹ thuật trước và sau bán.",
     ],
   },
   {
     eyebrow: "DOLIC FARM",
     title: "Gói trang trại và cụm ao quy mô lớn",
-    desc: "Dành cho chủ trại cần cấu hình thiết bị theo diện tích ao, mật độ nuôi, điện áp, lưu lượng nước và mục tiêu vận hành.",
+    desc: "Dành cho chủ trại cần giải pháp thiết bị theo diện tích ao, mật độ nuôi, điện áp, lưu lượng nước và mục tiêu vận hành.",
     image: "/assets/drive/customer-farm/customer-aerator-installed.jpg",
     tags: ["Khảo sát tận ao", "Combo thiết bị", "Bảo hành 12 tháng"],
     details: [
@@ -50,7 +50,7 @@ const packages = [
     tags: ["Báo giá dự án", "Thông số kỹ thuật", "Hỗ trợ nghiệm thu"],
     details: [
       "Cung cấp danh mục thiết bị, model, công suất và giá tham khảo để lập phương án.",
-      "Phối hợp chọn cấu hình theo bản vẽ, diện tích và tiến độ triển khai.",
+      "Phối hợp chọn thiết bị theo bản vẽ, diện tích và tiến độ triển khai.",
       "Hỗ trợ hậu mãi, bảo hành và đào tạo vận hành sau bàn giao.",
     ],
   },
@@ -64,12 +64,12 @@ const whyChoose = [
   },
   {
     title: "Danh mục thực chiến",
-    desc: "Danh mục tập trung vào nhóm thiết bị cốt lõi: sục khí, bơm nước, đo oxy và các cấu hình hỗ trợ vận hành ao.",
+    desc: "Danh mục tập trung vào nhóm thiết bị cốt lõi: sục khí, bơm nước, đo oxy và các phương án hỗ trợ vận hành ao.",
     icon: BadgeCheck,
   },
   {
     title: "Quy trình tư vấn rõ",
-    desc: "Từ tiếp nhận nhu cầu, khảo sát, cấu hình, báo giá đến hậu mãi đều có đầu việc cụ thể để đối tác dễ theo dõi.",
+    desc: "Từ tiếp nhận nhu cầu, khảo sát, đề xuất, báo giá đến hậu mãi đều có đầu việc cụ thể để đối tác dễ theo dõi.",
     icon: ClipboardCheck,
   },
   {
@@ -80,7 +80,7 @@ const whyChoose = [
 ];
 
 const partnerStats = [
-  ["40%", "giảm chi phí điện năng", "Tư vấn cấu hình theo hướng giảm hao phí trong vận hành dài hạn."],
+  ["40%", "giảm chi phí điện năng", "Tư vấn giải pháp theo hướng giảm hao phí trong vận hành dài hạn."],
   ["1000+", "farm tham khảo mô hình", "Định vị Dolic cho đại lý và trang trại cần giải pháp thực chiến."],
   ["24h", "phản hồi kỹ thuật", "Ưu tiên xử lý nhanh nhu cầu báo giá, vận hành và bảo hành."],
   ["12 tháng", "bảo hành chính hãng", "Chính sách bảo hành theo bảng báo giá và điều kiện hiện hành."],
@@ -88,15 +88,15 @@ const partnerStats = [
 
 const processSteps = [
   ["01", "Ghi nhận nhu cầu", "Xác định vai trò đối tác, khu vực, quy mô ao hoặc nhóm sản phẩm cần phân phối."],
-  ["02", "Khảo sát và chọn cấu hình", "Đề xuất thiết bị theo loài nuôi, diện tích, điện áp, lưu lượng và ngân sách."],
+  ["02", "Khảo sát và chọn thiết bị", "Đề xuất thiết bị theo loài nuôi, diện tích, điện áp, lưu lượng và ngân sách."],
   ["03", "Chốt chính sách", "Thống nhất giá, điều kiện giao hàng, bảo hành, tài liệu bán hàng và lịch triển khai."],
-  ["04", "Đồng hành sau bán", "Hỗ trợ đào tạo, vận hành, xử lý bảo hành và tối ưu cấu hình theo phản hồi thực địa."],
+  ["04", "Đồng hành sau bán", "Hỗ trợ đào tạo, vận hành, xử lý bảo hành và tối ưu phương án theo phản hồi thực địa."],
 ];
 
 const faqItems = [
   ["Dolic B2B phù hợp với ai?", "Đại lý vật tư thủy sản, chủ trang trại quy mô lớn, nhà thầu setup ao nuôi và đơn vị tích hợp thiết bị thủy sản."],
   ["Có chính sách riêng cho đại lý không?", "Có. Chính sách được tư vấn theo khu vực, năng lực bán hàng, nhóm sản phẩm và mức cam kết hợp tác."],
-  ["Có hỗ trợ khảo sát trang trại không?", "Có. Với nhu cầu dự án hoặc cụm ao lớn, Dolic ưu tiên khảo sát hiện trạng trước khi đề xuất cấu hình."],
+  ["Có hỗ trợ khảo sát trang trại không?", "Có. Với nhu cầu dự án hoặc cụm ao lớn, Dolic ưu tiên khảo sát hiện trạng trước khi đề xuất giải pháp."],
   ["Giá trên website có phải giá cuối cùng không?", "Giá là tham khảo từ bảng báo giá hiện hành. Giá cuối cùng phụ thuộc số lượng, vận chuyển và chính sách hợp tác."],
 ];
 
@@ -141,7 +141,7 @@ export default function B2BPage() {
             </p>
             <h2 className="mb-6 text-2xl font-bold text-[#0A2E5C] sm:text-3xl md:text-4xl">
               Để đại lý bán đúng kỹ thuật. <br />
-              Để trang trại đầu tư đúng cấu hình.
+              Để trang trại đầu tư đúng thiết bị.
             </h2>
             <p className="mx-auto mb-8 max-w-3xl text-base leading-8 text-slate-700 sm:text-[18px]">
               Dolic B2B là giải pháp hợp tác thiết bị thủy sản cho đối tác cần danh mục rõ, tư vấn thực địa, báo giá minh bạch và hậu mãi có trách nhiệm.
@@ -315,7 +315,7 @@ export default function B2BPage() {
               </div>
               <div className="space-y-4 rounded-[28px] bg-[linear-gradient(180deg,#f0fdff_0%,#e0f2fe_100%)] p-3">
                 {[
-                  [Factory, "Cấu hình thiết bị theo ao nuôi"],
+                  [Factory, "Thiết bị theo ao nuôi"],
                   [Truck, "Tư vấn giao hàng theo khu vực"],
                   [Headphones, "Đồng hành kỹ thuật sau bán"],
                 ].map(([Icon, text]) => (
@@ -378,7 +378,7 @@ export default function B2BPage() {
           </a>
           <h2 className="mb-4 pt-5 text-xl font-bold text-black md:text-3xl">Đối tác của bạn đã sẵn sàng chưa?</h2>
           <p className="mb-8 text-sm leading-7 text-slate-600 md:text-[16px]">
-            Hãy cung cấp thông tin để Dolic tư vấn chính sách, danh mục và cấu hình phù hợp với mô hình kinh doanh hoặc trang trại của bạn.
+            Hãy cung cấp thông tin để Dolic tư vấn chính sách, danh mục và giải pháp phù hợp với mô hình kinh doanh hoặc trang trại của bạn.
           </p>
           <form className="mt-8 space-y-6 md:mt-10">
             <div className="grid gap-5 md:grid-cols-2">

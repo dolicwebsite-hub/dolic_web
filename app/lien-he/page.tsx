@@ -63,7 +63,7 @@ export default function ContactPage() {
               Tư vấn giải pháp Dolic
             </p>
             <h1 className="mt-5 max-w-4xl text-4xl font-black leading-tight tracking-normal md:text-6xl">
-              Tối ưu chi phí điện và cấu hình thiết bị cho ao nuôi của bạn
+              Tối ưu chi phí điện và thiết bị cho ao nuôi của bạn
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-cyan-50/78">
               Gửi thông tin ao, thiết bị đang dùng và mục tiêu vụ nuôi. Dolic sẽ tư vấn giải pháp phù hợp dựa trên kinh nghiệm thực địa, trang trại thử nghiệm và dữ liệu vận hành thật.

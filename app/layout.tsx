@@ -10,7 +10,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dolic - Giải pháp tối ưu điện năng cho nuôi trồng thuỷ sản",
-  description: "Dolic cung cấp máy móc, thiết bị và cấu hình vận hành giúp trang trại thuỷ sản tối ưu điện năng, chi phí và độ bền.",
+  description: "Dolic cung cấp máy móc, thiết bị và giải pháp vận hành giúp trang trại thuỷ sản tối ưu điện năng, chi phí và độ bền.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",

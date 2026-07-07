@@ -32,7 +32,7 @@ const solutionPackages = [
   {
     title: "Dolic Farm",
     subtitle: "Gói trang trại và cụm ao",
-    desc: "Dành cho chủ trại cần cấu hình thiết bị theo diện tích ao, mật độ nuôi, điện áp và mục tiêu tiết kiệm chi phí.",
+    desc: "Dành cho chủ trại cần giải pháp thiết bị theo diện tích ao, mật độ nuôi, điện áp và mục tiêu tiết kiệm chi phí.",
     image: "/assets/drive/experimental-farm/dolic-farm-real.png",
     icon: Droplets,
     tags: ["Khảo sát tận ao", "Combo oxy", "Bơm nước", "Đo DO"],
@@ -50,7 +50,7 @@ const solutionPackages = [
   {
     title: "Dolic Support",
     subtitle: "Gói hỗ trợ khách đang vận hành",
-    desc: "Dành cho khách đã dùng thiết bị Dolic cần tra cứu bảo hành, hỏi kỹ thuật hoặc nâng cấp cấu hình.",
+    desc: "Dành cho khách đã dùng thiết bị Dolic cần tra cứu bảo hành, hỏi kỹ thuật hoặc nâng cấp thiết bị.",
     image: "/assets/drive/customer-farm/customer-aerator-installed.jpg",
     icon: Headphones,
     tags: ["Hotline kỹ thuật", "Bảo hành", "Nâng cấp thiết bị", "Hướng dẫn vận hành"],
@@ -112,7 +112,7 @@ export default function SolutionsPage() {
               Dolic Solution Platform
             </p>
             <h1 className="hero-enter hero-enter-1 mt-5 max-w-3xl text-[2.55rem] font-bold leading-[1.12] tracking-normal sm:text-5xl md:text-6xl">
-              Nền tảng cấu hình giải pháp cho trang trại thủy sản
+              Mảnh ghép đáng tin cậy cho trang trại nuôi trồng thuỷ sản
             </h1>
             <p className="hero-enter hero-enter-2 mt-5 max-w-2xl text-base leading-8 text-cyan-50/88">
               Từ mô hình ao, điện áp và mục tiêu vận hành, Dolic đề xuất giải pháp thiết bị sục khí, bơm, đo nước và hỗ trợ sau bán để người nuôi vận hành ổn định, tiết kiệm điện và thân thiện với môi trường.
@@ -132,7 +132,7 @@ export default function SolutionsPage() {
             <div className="rounded-lg bg-white p-4 text-slate-950 sm:p-5">
               <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.08em] text-cyan-700">Bảng cấu hình nhanh</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.08em] text-cyan-700">Bảng gợi ý nhanh</p>
                   <h2 className="mt-2 text-xl font-bold sm:text-2xl">Ao tôm/cá thương phẩm</h2>
                 </div>
                 <Calculator className="h-8 w-8 text-cyan-600" />
@@ -271,7 +271,7 @@ export default function SolutionsPage() {
                 <p className="font-bold">Khảo sát theo vùng nuôi</p>
               </div>
               <p className="mt-3 text-sm leading-6 text-cyan-50/78">
-                Dolic ưu tiên cấu hình theo điều kiện thực tế: điện áp, nguồn nước, mật độ nuôi và thiết bị sẵn có.
+                Dolic ưu tiên giải pháp theo điều kiện thực tế: điện áp, nguồn nước, mật độ nuôi và thiết bị sẵn có.
               </p>
             </div>
           </div>
@@ -327,7 +327,7 @@ export default function SolutionsPage() {
                 <BadgeCheck className="h-5 w-5 text-cyan-200" />
                 <p className="text-sm font-bold uppercase tracking-[0.08em] text-cyan-100">Dolic cam kết tư vấn đúng nhu cầu</p>
               </div>
-              <h2 className="mt-3 text-2xl font-bold tracking-normal">Cần cấu hình theo diện tích ao?</h2>
+              <h2 className="mt-3 text-2xl font-bold tracking-normal">Cần giải pháp theo diện tích ao?</h2>
               <p className="mt-2 text-sm leading-6 text-cyan-50/78">
                 Gửi thông tin trang trại, Dolic sẽ đề xuất nhóm thiết bị và combo phù hợp trước khi báo giá.
               </p>
