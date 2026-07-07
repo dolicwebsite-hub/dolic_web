@@ -201,10 +201,10 @@ export function ProductBrowser() {
             {openedCategory.products.length > 0 ? (
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {openedCategory.products.map((product) => (
-                  <article key={`${product.model}-${product.name}`} className="group overflow-hidden rounded-[28px] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-[0_28px_70px_-38px_rgba(8,145,178,0.45)]">
+                  <article key={`${product.model}-${product.name}`} className="group overflow-hidden rounded-lg border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-[0_28px_70px_-38px_rgba(8,145,178,0.45)]">
                     <button type="button" onClick={() => openProduct(product)} className="block h-full w-full text-left">
-                      <div className="relative aspect-[5/3] overflow-hidden bg-[radial-gradient(circle_at_top,#ffffff_0%,#eef5f9_58%,#e2e8f0_100%)] sm:aspect-[4/3]">
-                        <Image src={product.image} alt={product.name} fill className="object-contain p-5 transition duration-500 group-hover:scale-[1.06] sm:p-7" sizes="(min-width: 1280px) 390px, (min-width: 768px) 50vw, 100vw" />
+                      <div className="relative aspect-[4/3] overflow-hidden border-b border-slate-200 bg-white">
+                        <Image src={product.image} alt={product.name} fill className="object-contain p-6 transition duration-500 group-hover:scale-[1.04] sm:p-8" sizes="(min-width: 1280px) 390px, (min-width: 768px) 50vw, 100vw" />
                         <span className="absolute left-4 top-4 rounded-full bg-white/88 px-3 py-1 text-xs font-bold text-slate-700 shadow-sm backdrop-blur">{product.model}</span>
                         <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 text-white shadow-[0_16px_35px_-20px_rgba(15,23,42,0.85)] transition group-hover:bg-cyan-500 group-hover:text-slate-950">
                           <ChevronRight className="h-5 w-5" />
@@ -227,7 +227,7 @@ export function ProductBrowser() {
               </div>
             ) : (
               <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-6 text-sm leading-6 text-slate-600">
-                Nhóm combo thiết bị đang được chừa sẵn để thêm cấu hình theo mô hình ao, diện tích và mục tiêu tiết kiệm điện khi có dữ liệu chính thức.
+                Nhóm combo thiết bị đang được chừa sẵn để thêm giải pháp theo mô hình ao, diện tích và mục tiêu tiết kiệm điện khi có dữ liệu chính thức.
               </div>
             )}
           </section>
@@ -240,7 +240,7 @@ export function ProductBrowser() {
 
       {selectedProduct ? (
         <div className="fixed inset-x-0 bottom-0 top-24 z-[60] flex items-start justify-center bg-slate-950/72 px-3 pb-4 pt-3 backdrop-blur-md sm:px-5 sm:pb-6 md:top-28" role="dialog" aria-modal="true">
-          <div className="relative h-full w-full max-w-7xl overflow-hidden rounded-[24px] bg-[#070b12] text-white shadow-[0_32px_110px_-38px_rgba(0,0,0,0.95)] sm:rounded-[30px]">
+          <div className="relative h-full w-full max-w-7xl overflow-hidden rounded-lg bg-[#070b12] text-white shadow-[0_32px_110px_-38px_rgba(0,0,0,0.95)]">
             <button
               type="button"
               aria-label="Đóng popup sản phẩm"
@@ -258,9 +258,9 @@ export function ProductBrowser() {
                   {selectedProduct.model} | {selectedProduct.origin}
                 </p>
 
-                <div className="mt-5 rounded-[24px] border border-white/10 bg-white/[0.06] p-4">
+                <div className="mt-5 rounded-lg border border-white/10 bg-white/[0.06] p-4">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Tư vấn giải pháp</p>
-                  <p className="mt-2 text-lg font-black leading-7 text-white">Báo giá và cấu hình được tư vấn theo diện tích ao, điện áp và mục tiêu vận hành.</p>
+                  <p className="mt-2 text-lg font-black leading-7 text-white">Báo giá và giải pháp được tư vấn theo diện tích ao, điện áp và mục tiêu vận hành.</p>
                   <span className="mt-3 inline-flex rounded-full bg-cyan-400 px-3 py-1.5 text-xs font-black text-slate-950">
                     {selectedProduct.priority ?? "Theo danh mục"}
                   </span>
@@ -285,7 +285,7 @@ export function ProductBrowser() {
                 {selectedSpecs.length > 0 ? (
                   <div className="mt-5 grid grid-cols-2 gap-2">
                     {selectedSpecs.slice(0, 4).map((spec) => (
-                      <div key={spec} className="rounded-2xl border border-white/10 bg-white/[0.06] px-3 py-3 text-center">
+                      <div key={spec} className="rounded-lg border border-white/10 bg-white/[0.06] px-3 py-3 text-center">
                         <p className="text-sm font-black text-cyan-50">{spec}</p>
                       </div>
                     ))}
@@ -293,7 +293,7 @@ export function ProductBrowser() {
                 ) : null}
 
                 {selectedProduct.usp?.length ? (
-                  <div className="mt-5 rounded-[24px] border border-cyan-300/20 bg-cyan-300/[0.08] p-4">
+                  <div className="mt-5 rounded-lg border border-cyan-300/20 bg-cyan-300/[0.08] p-4">
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200">USP chính</p>
                     <ul className="mt-3 space-y-2">
                       {selectedProduct.usp.map((item) => (
@@ -322,15 +322,14 @@ export function ProductBrowser() {
                   <p className="text-xs font-black uppercase tracking-[0.16em] text-cyan-200">Hình ảnh sản phẩm</p>
                   <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-200">{selectedProduct.name}</p>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center px-3 pb-24 pt-12 sm:px-6 sm:pb-28 sm:pt-16 lg:px-8 xl:px-10">
-                  <div className="relative aspect-[16/11] w-full max-w-[1040px] transition duration-500 ease-out">
-                    <div className="absolute inset-x-8 bottom-5 h-16 rounded-full bg-slate-950/18 blur-3xl" aria-hidden="true" />
+                <div className="absolute inset-0 flex items-center justify-center px-4 pb-28 pt-16 sm:px-8 lg:px-10">
+                  <div className="relative aspect-[4/3] w-full max-w-[980px] overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_30px_80px_-48px_rgba(15,23,42,0.8)] transition duration-500 ease-out">
                     <Image
                       key={selectedProduct.model}
                       src={selectedProduct.image}
                       alt={selectedProduct.name}
                       fill
-                      className="object-contain p-0 drop-shadow-[0_30px_60px_rgba(15,23,42,0.28)] transition duration-500 hover:scale-[1.02]"
+                      className="object-contain p-8 drop-shadow-[0_30px_60px_rgba(15,23,42,0.2)] transition duration-500 hover:scale-[1.02] sm:p-10"
                       sizes="(min-width: 1280px) 980px, (min-width: 1024px) 720px, 100vw"
                       priority
                     />
