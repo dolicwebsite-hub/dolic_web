@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { libraryPosts } from "@/lib/library-data";
+import { libraryTopics } from "@/lib/library-data";
 
 export function HomeLibrarySection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const featuredTopics = libraryTopics.slice(0, 3);
 
   return (
     <section className="overflow-hidden border-y border-[#202b50] bg-[#f7f5f1] text-[#202b50]">
@@ -28,19 +29,20 @@ export function HomeLibrarySection() {
 
         <div className="overflow-hidden">
           <div className="flex w-full">
-            {libraryPosts.slice(0, 4).map((item, index) => {
+            {featuredTopics.map((item, index) => {
               const active = activeIndex === index;
+              const heroPost = item.posts[0];
 
               return (
                 <article
-                  key={item.title}
+                  key={item.id}
                   className={`group flex min-h-[520px] min-w-0 flex-col justify-center border-r border-[#202b50] px-4 py-12 transition-[flex-grow,flex-basis,background-color] duration-500 ease-out md:px-6 ${
-                    active ? "basis-[54%] grow-[8] bg-[#f7f5f1]" : "basis-[11%] grow hover:bg-white"
+                    active ? "basis-[52%] grow-[8] bg-[#f7f5f1]" : "basis-[16%] grow hover:bg-white"
                   }`}
                 >
                   <div className={`relative overflow-hidden bg-slate-200 transition-all duration-500 ${active ? "aspect-[4/3]" : "aspect-[3/5]"}`}>
                     <Image
-                      src={item.image}
+                      src={heroPost.image}
                       alt={item.title}
                       fill
                       sizes={active ? "(min-width: 1024px) 42vw, 82vw" : "(min-width: 1024px) 14vw, 45vw"}
@@ -52,9 +54,9 @@ export function HomeLibrarySection() {
                       onClick={() => setActiveIndex(index)}
                       className="absolute inset-0 z-10"
                     />
-                    <span className="absolute left-0 top-0 z-20 bg-[#202b50] px-3 py-1 text-sm font-bold text-white">{item.type}</span>
+                    <span className="absolute left-0 top-0 z-20 bg-[#202b50] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-white">{item.title}</span>
                     {active ? (
-                      <Link href={item.href} className="absolute inset-0 z-30 grid place-items-center bg-black/0 text-white opacity-0 transition hover:bg-black/24 hover:opacity-100">
+                      <Link href="/thu-vien" className="absolute inset-0 z-30 grid place-items-center bg-black/0 text-white opacity-0 transition hover:bg-black/24 hover:opacity-100">
                         <span className="grid h-28 w-28 place-items-center rounded-full bg-white text-center font-serif text-xl leading-tight text-[#202b50] shadow-[0_18px_55px_-28px_rgba(0,0,0,0.65)]">
                           Chi tiết
                         </span>
@@ -65,6 +67,7 @@ export function HomeLibrarySection() {
                     <h3 className={`mt-6 uppercase leading-tight tracking-normal transition ${active ? "text-2xl md:text-3xl" : "line-clamp-5 break-words text-sm text-[#202b50]/52 group-hover:text-[#202b50] md:text-base"}`}>
                       {item.title}
                     </h3>
+                    {active ? <p className="mt-4 text-sm leading-7 text-[#202b50]/74">{item.description}</p> : null}
                   </button>
                 </article>
               );
