@@ -2,39 +2,33 @@ import Image from "next/image";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import { BadgeCheck, HeartHandshake, Leaf, Network, ShieldCheck, UsersRound } from "lucide-react";
+import { RevealOnScroll } from "@/components/reveal-on-scroll";
 
 const timeline = [
   {
-    year: "1996",
-    title: "Hai bàn tay trắng",
-    image: "/assets/drive/experimental-farm/warehouse.png",
+    year: "2026",
+    title: "Từ sản phẩm đến giải pháp",
+    headline: "Từ bán sản phẩm đến bán giải pháp",
+    image: "/assets/drive/history-website/history-2026.webp",
     fit: "cover",
     text:
-      "Từ câu hỏi trăn trở của tuổi đôi mươi, ông Bùi Văn Tới cùng người vợ tảo tần đồng lòng gây dựng cơ nghiệp từ hai bàn tay trắng. Những viên gạch đầu tiên của Dolic được đặt bằng bản lĩnh của người cha, sự kiên trung của người mẹ và niềm tin mãnh liệt của tuổi trẻ.",
+      "Người con gái thứ hai, chị Bùi Khánh Linh, tốt nghiệp chuyên ngành Quản trị Kinh doanh Nông nghiệp tiên tiến (Học viện Nông nghiệp Việt Nam) cùng khát vọng nâng tầm doanh nghiệp gia đình, đảm nhận vai trò Head of Marketing. Ngoài đam mê với kinh doanh, chị còn là gương mặt được công chúng yêu mến và biết đến với ý chí quyết tâm, sự bản lĩnh khi chinh phục danh hiệu Á hậu tại các đấu trường nhan sắc lớn trong nước và quốc tế.\n\nĐây cũng là năm đánh dấu bước chuyển mình của Dolic: hiện diện tại nhiều triển lãm công nghệ quốc tế đầu ngành, tham gia hội thảo khoa học trong ngành nông nghiệp và nâng cấp từ bán sản phẩm hoàn thiện sang bán giải pháp tối ưu chi phí và bền vững cho ngành nuôi trồng thuỷ sản.",
   },
   {
-    year: "1997",
-    title: "Trang trại đầu tiên tại Bắc Giang",
-    image: "/assets/drive/customer-farm/customer-farm-4.jpg",
+    year: "2025",
+    title: "Mạng lưới đại lý và vùng nuôi",
+    image: "/assets/drive/history-website/history-office.webp",
     fit: "cover",
     text:
-      "Với số vốn vay hoàn toàn bằng tín chấp, từ vài người họ hàng tin vào ý chí của ông, ông bắt đầu dựng trang trại ngay trên mảnh đất quê hương Bắc Giang. Không có gì ngoài đôi tay, lòng tin và một lời hứa với chính mình.",
+      "Chỉ sau một năm, Dolic đưa những sản phẩm đã được kiểm chứng cùng tinh thần “người nuôi hiểu người nuôi” của Dolic đến tận tay bà con. Từ gốc Bắc Giang, Dolic vươn ra phủ khắp thị trường Nam – Bắc, phục vụ 34 tỉnh thành qua 15000 khách hàng bao gồm cả đại lý và các hộ nuôi. Cùng năm, Dolic đặt chi nhánh tại miền Nam để đứng gần hơn với các vùng nuôi trọng điểm.",
   },
   {
-    year: "2016",
-    title: "Trang trại 12ha",
-    image: "/assets/drive/customer-farm/customer-farm-2.jpg",
+    year: "2024",
+    title: "Công ty TNHH Thuỷ sản Dolic chính thức thành lập",
+    image: "/assets/drive/exhibition/IMG_6009.PNG",
     fit: "cover",
     text:
-      "Sau hai mươi năm bền bỉ, trang trại nuôi trồng thủy sản rộng 12 ha trở thành gốc rễ tri thức của Dolic. Hai mươi năm ấy không chỉ là số diện tích tích luỹ được, mà là sự thấu hiểu tận cùng những khó khăn của người nuôi và về sau trở thành trang trại thực nghiệm và cũng là gốc rễ tri thức của Dolic.",
-  },
-  {
-    year: "2019",
-    title: "Ứng dụng vi sinh và máy móc trên ao",
-    image: "/assets/drive/experimental-farm/device-on-pond.jpg",
-    fit: "cover",
-    text:
-      "Sau nhiều mùa vụ thất thoát vì dịch bệnh, nguồn nước khó kiểm soát và chi phí điện năng không được tối ưu, trang trại Dolic đi tìm lời giải bằng công nghệ vi sinh và cũng trở thành đơn vị tiên phong ở Bắc Giang áp dụng công nghệ vi sinh để “nuôi nước” và đưa máy móc hiện đại vào quy trình nuôi.",
+      "“Một cây làm chẳng nên non\nBa cây chụm lại nên hòn núi cao.”\n\nNăm 2024, Công ty TNHH Thuỷ sản Dolic chính thức thành lập. Tên thương hiệu được ghép từ tên của ba anh em trong gia đình- biểu trưng cho tinh thần đoàn kết, lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.\n\nNiềm đam mê và ý chí của người cha với lĩnh vực nông nghiệp bền vững được người con trai cả, anh Bùi Quý Đôn, kế thừa bằng tấm lòng và phát huy bằng tri thức. Anh theo học chuyên ngành Thuỷ sản học tại Học viện Nông nghiệp Việt Nam, tiếp tục học lên chương trình thạc sĩ và đảm nhận vai trò Giám đốc Kinh doanh của Dolic.",
   },
   {
     year: "2020",
@@ -45,29 +39,36 @@ const timeline = [
       "Hiểu rõ trên ao thật sự cần gì, Dolic tuyển chọn và đưa những thiết bị máy móc tốt đã được kiểm chứng trên chính trại nuôi của mình đến với bà con các vùng lân cận.",
   },
   {
-    year: "2024",
-    title: "Công ty TNHH Thuỷ sản Dolic chính thức thành lập",
-    image: "/assets/drive/exhibition/IMG_6009.PNG",
+    year: "2019",
+    title: "Ứng dụng vi sinh và máy móc trên ao",
+    image: "/assets/drive/experimental-farm/device-on-pond.jpg",
     fit: "cover",
     text:
-      "“Một cây làm chẳng nên non\nBa cây chụm lại nên hòn núi cao.”\n\nNăm 2024, Công ty TNHH Thuỷ sản Dolic chính thức thành lập. Tên thương hiệu được ghép từ tên của ba anh em trong gia đình-  biểu trưng cho tinh thần đoàn kết, lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.\n\nNiềm đam mê và ý chí của người cha với một nền nông nghiệp bền vững được người con trai cả, anh Bùi Quý Đôn, kế thừa bằng tấm lòng và phát huy bằng tri thức. Anh theo học chuyên ngành Thuỷ sản học tại Học viện Nông nghiệp Việt Nam, tiếp tục học lên chương trình thạc sĩ và đảm nhận vai trò Giám đốc Kinh doanh của Dolic.",
+      "Sau nhiều mùa vụ thất thoát vì dịch bệnh, nguồn nước khó kiểm soát và chi phí điện năng không được tối ưu, trang trại Dolic đi tìm lời giải bằng công nghệ vi sinh và cũng trở thành đơn vị tiên phong ở Bắc Giang áp dụng công nghệ vi sinh để “nuôi nước” và đưa máy móc hiện đại vào quy trình nuôi.",
   },
   {
-    year: "2025",
-    title: "Mạng lưới đại lý và vùng nuôi",
-    image: "/assets/drive/customer-farm/customer-aerator-installed.jpg",
+    year: "2016",
+    title: "Trang trại 12ha",
+    image: "/assets/drive/history-website/history-2016.webp",
     fit: "cover",
     text:
-      "Chỉ sau một năm, Dolic đưa những sản phẩm đã được kiểm chứng cùng tinh thần “người nuôi hiểu người nuôi” của Dolic đến tận tay bà con. Từ gốc Bắc Giang, Dolic vươn ra phủ khắp thị trường Nam – Bắc, phục vụ 34 tỉnh thành qua 15000 khách hàng bao gồm cả đại lý và các hộ nuôi. Cùng năm, Dolic đặt chi nhánh tại miền Nam để đứng gần hơn với các vùng nuôi trọng điểm.",
+      "Sau hai mươi năm bền bỉ, trang trại nuôi trồng thủy sản rộng 12 ha trở thành gốc rễ tri thức của Dolic. Hai mươi năm ấy không chỉ là số diện tích tích luỹ được, mà là sự thấu hiểu tận cùng những khó khăn của người nuôi và về sau trở thành trang trại thực nghiệm và cũng là gốc rễ tri thức của Dolic.",
   },
   {
-    year: "2026",
-    title: "Từ sản phẩm đến giải pháp",
-    headline: "Từ bán sản phẩm đến bán giải pháp",
-    image: "/assets/drive/exhibition/IMG_6001.PNG",
+    year: "1997",
+    title: "Trang trại đầu tiên tại Bắc Giang",
+    image: "/assets/drive/history-website/history-1997.webp",
     fit: "cover",
     text:
-      "Người con gái thứ hai, chị Bùi Khánh Linh, tốt nghiệp chuyên ngành Quản trị Kinh doanh Nông nghiệp tiên tiến (Học viện Nông nghiệp Việt Nam) cùng khát vọng nâng tầm doanh nghiệp gia đình, đảm nhận vai trò Head of Marketing. Ngoài đam mê với kinh doanh, chị còn là gương mặt được công chúng yêu mến và biết đến với ý chí quyết tâm, sự bản lĩnh khi chinh phục danh hiệu Á hậu  tại các đấu trường nhan sắc lớn trong nước và quốc tế.\n\nĐây cũng là năm đánh dấu bước chuyển mình của Dolic: hiện diện tại nhiều triển lãm công nghệ quốc tế đầu ngành, tham gia hội thảo khoa học trong ngành nông nghiệp và nâng cấp từ bán sản phẩm hoàn thiện sang bán giải pháp tối ưu chi phí và bền vững cho ngành nuôi trồng thuỷ sản.",
+      "Với số vốn vay hoàn toàn bằng tín chấp, từ vài người họ hàng tin vào ý chí của ông, ông bắt đầu dựng trang trại ngay trên mảnh đất quê hương Bắc Giang. Không có gì ngoài đôi tay, lòng tin và một lời hứa với chính mình.",
+  },
+  {
+    year: "1996",
+    title: "Hai bàn tay trắng",
+    image: "/assets/drive/history-website/history-1996.webp",
+    fit: "cover",
+    text:
+      "Từ câu hỏi trăn trở của tuổi đôi mươi, ông Bùi Văn Tới cùng người vợ tảo tần đồng lòng gây dựng cơ nghiệp từ hai bàn tay trắng. Những viên gạch đầu tiên của Dolic được đặt bằng bản lĩnh của người cha, sự kiên trung của người mẹ và niềm tin mãnh liệt của tuổi trẻ.",
   },
 ];
 
@@ -252,10 +253,12 @@ export function AboutLinearShowcase() {
             <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal md:text-5xl">Lịch sử hình thành</h2>
             <Divider />
           </div>
-          <div className="grid gap-12">
+          <div className="grid gap-10 border-r border-cyan-200/30 pr-6 md:pr-10">
             {timeline.map((item, index) => (
-              <article key={item.year} className="grid gap-8 border-b border-white/14 pb-12 last:border-b-0 md:grid-cols-2 md:items-center">
-                <div className={`relative aspect-[4/3] overflow-hidden bg-white/6 ${item.fit === "contain" ? "p-10 md:p-16" : ""} ${index % 2 === 1 ? "md:order-2" : ""}`}>
+              <RevealOnScroll key={item.year} delay={Math.min(index * 40, 200)}>
+                <article className="relative grid gap-8 border-b border-white/14 pb-10 last:border-b-0 md:grid-cols-2 md:items-center">
+                <span className="absolute -right-[1.45rem] top-12 h-3 w-3 rounded-full bg-cyan-200 shadow-[0_0_0_5px_rgba(34,211,238,0.18)]" />
+                <div className={`relative aspect-[4/3] overflow-hidden bg-white/6 ${item.fit === "contain" ? "p-10 md:p-16" : ""}`}>
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -264,12 +267,14 @@ export function AboutLinearShowcase() {
                     className={item.fit === "contain" ? "object-contain p-10 brightness-0 invert" : "object-cover"}
                   />
                 </div>
-                <div className={index % 2 === 1 ? "md:order-1 md:text-right" : ""}>
+                <div className="text-right">
                   <p className="font-serif text-7xl leading-none text-cyan-200 md:text-8xl">{item.year}</p>
                   {"headline" in item ? <h3 className="mt-5 text-3xl font-bold uppercase leading-tight md:text-4xl">{item.headline}</h3> : null}
+                  {"headline" in item ? null : <h3 className="mt-5 text-2xl font-bold uppercase leading-tight md:text-3xl">{item.title}</h3>}
                   <p className="mt-5 whitespace-pre-line text-sm leading-7 text-cyan-50/76 md:text-base md:leading-8">{item.text}</p>
                 </div>
               </article>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
