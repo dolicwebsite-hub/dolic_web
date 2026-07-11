@@ -3,18 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BriefcaseBusiness, ChevronUp, Mail, MapPin, Phone, ShoppingCart } from "lucide-react";
+import { BriefcaseBusiness, ChevronUp, Phone, ShoppingCart } from "lucide-react";
 import { HomeMenuButton } from "@/components/home-menu-button";
 import { SocialLinks } from "@/components/social-links";
 import { getLocaleFromPath } from "@/lib/i18n";
 import { contactInfo, navItems } from "@/lib/site-data";
-
-const footerProductLinks = [
-  ["Máy sục khí / Quạt nước", "/san-pham#may-suc-khi-quat-nuoc"],
-  ["Máy sục khí bản treo", "/san-pham#may-suc-khi-ban-treo-khi-nen"],
-  ["Bơm, lọc, xử lý nước", "/san-pham#bom-loc-xu-ly-nuoc"],
-  ["Thiết bị đo nước", "/san-pham#thiet-bi-do-nuoc"],
-];
 
 export function PrimaryButton({
   href,
@@ -109,77 +102,44 @@ export function SiteFooter() {
         ["Dealer", "/en/dealer"],
         ["Contact", "/en/contact"],
       ]
-    : navItems;
-  const productLinks = isEnglish
-    ? [
-        ["Aerators / paddle wheels", "/en/products"],
-        ["Air blower systems", "/en/products"],
-        ["Pumps and water treatment", "/en/products"],
-      ]
-    : footerProductLinks.slice(0, 3);
+    : navItems.filter(([label]) => label !== "Sản phẩm");
 
   return (
     <footer className="bg-[#071F3E] px-5 py-8 text-sm text-cyan-50/70 md:px-10 md:py-10">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 border-b border-white/10 pb-7 md:grid-cols-[1.05fr_0.85fr_0.9fr] lg:gap-14">
+        <div className="grid gap-8 border-b border-white/10 pb-7 md:grid-cols-[0.8fr_0.9fr_1.2fr] lg:gap-14">
           <div>
             <Link href={homeHref} className="flex h-12 w-36 items-center md:w-40">
               <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain brightness-0 invert" />
             </Link>
-            <p className="mt-4 max-w-sm text-sm font-semibold leading-6 text-cyan-50/70">
-              {isEnglish ? "High-performance aquaculture equipment verified in real farm conditions before reaching farmers." : "Thiết bị thủy sản hiệu năng cao, kiểm chứng thực địa trước khi đến tay người nuôi."}
-            </p>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">{isEnglish ? "Farmers understand farmers" : "Người nuôi hiểu người nuôi"}</p>
+            <p className="mt-4 text-sm font-semibold text-cyan-50/70">{isEnglish ? "Website chính thức của Dolic Vietnam." : "Website chính thức của Dolic Vietnam."}</p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-1">
+          <div>
             <div>
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">{isEnglish ? "Quick links" : "Liên kết nhanh"}</h2>
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">Liên kết nhanh</h2>
               <nav className="mt-4 grid gap-2">
                 {quickLinks.map(([label, href]) => (
                   <Link key={href} href={href} className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
                     {label}
                   </Link>
                 ))}
-                {isEnglish ? null : (
-                  <Link href="/chinh-sach-cookie" className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
-                    Cookie Policy
-                  </Link>
-                )}
-              </nav>
-            </div>
-
-            <div>
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">{isEnglish ? "Products" : "Sản phẩm"}</h2>
-              <nav className="mt-4 grid gap-2">
-                {productLinks.map(([label, href]) => (
-                  <Link key={href} href={href} className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
-                    {label}
-                  </Link>
-                ))}
+                <Link href="/chinh-sach-cookie" className="w-fit font-semibold text-cyan-50/70 transition hover:text-white">
+                  Chính sách bảo mật
+                </Link>
               </nav>
             </div>
           </div>
 
           <div>
-            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">{isEnglish ? "Contact" : "Liên hệ"}</h2>
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">CÔNG TY TNHH THUỶ SẢN DOLIC</h2>
             <div className="mt-4 grid gap-2.5">
-              <Link href={`tel:${contactInfo.offices[0].hotline}`} className="inline-flex w-fit items-center gap-3 font-bold text-cyan-50 transition hover:text-cyan-200">
-                <Phone className="h-4 w-4 shrink-0 text-cyan-300" />
-                {contactInfo.offices.map((office) => office.displayHotline).join(" - ")}
-              </Link>
-              <Link href={`mailto:${contactInfo.email}`} className="inline-flex w-fit max-w-full items-center gap-3 font-bold text-cyan-50 transition hover:text-cyan-200">
-                <Mail className="h-4 w-4 shrink-0 text-cyan-300" />
-                <span className="min-w-0 break-words">{contactInfo.email}</span>
-              </Link>
-              <p className="flex items-start gap-3 pt-1 text-sm font-semibold leading-6 text-cyan-50/70">
-                <MapPin className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />
-                <span>
-                  {isEnglish ? "South" : "Miền Nam"}: {contactInfo.offices[0].address}
-                  <br />
-                  {isEnglish ? "North" : "Miền Bắc"}: {contactInfo.offices[1].address}
-                </span>
-              </p>
+              <p className="font-semibold text-cyan-50/80">Hotline miền Nam: {contactInfo.offices[0].displayHotline}</p>
+              <p className="font-semibold text-cyan-50/80">Hotline miền Bắc: {contactInfo.offices[1].displayHotline}</p>
+              <p className="font-semibold text-cyan-50/80">Email for inquiry: {contactInfo.email}</p>
+              <p className="font-semibold text-cyan-50/80">Email for feedback: feedback@dolic.vn</p>
+              <p className="pt-1 text-sm font-semibold leading-6 text-cyan-50/70">Miền Nam: {contactInfo.offices[0].address}</p>
+              <p className="text-sm font-semibold leading-6 text-cyan-50/70">Miền Bắc: {contactInfo.offices[1].address}</p>
             </div>
 
             <div className="mt-5">

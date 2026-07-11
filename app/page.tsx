@@ -4,6 +4,7 @@ import { ArrowRight, MapPin, Phone, ShoppingCart } from "lucide-react";
 import { CompanyPresenceSection } from "@/components/company-presence-section";
 import { HomeLibrarySection } from "@/components/home-library-section";
 import { HomeRegionProductSection } from "@/components/home-region-product-section";
+import { SocialLinks } from "@/components/social-links";
 import { contactInfo } from "@/lib/site-data";
 
 const heroLinks = [
@@ -40,6 +41,14 @@ const featurePanels = [
     href: "/about-us",
     image: "/assets/drive/exhibition/IMG_6009.PNG",
   },
+];
+
+const homeQuickLinks = [
+  ["Về chúng tôi", "/about-us"],
+  ["Giải pháp", "/giai-phap"],
+  ["Đại lý", "/dai-ly"],
+  ["Thư viện", "/thu-vien"],
+  ["Chính sách bảo mật", "/chinh-sach-cookie"],
 ];
 
 export default function HomePage() {
@@ -171,7 +180,13 @@ export default function HomePage() {
             {featurePanels.map((item) => (
               <Link key={item.href} href={item.href} className="group overflow-hidden rounded-md bg-white shadow-[0_26px_80px_-58px_rgba(15,23,42,0.75)]">
                 <div className="relative aspect-[4/3] overflow-hidden bg-slate-200">
-                  <Image src={item.image} alt={item.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className={`transition duration-500 group-hover:scale-105 ${item.title === "Hiệu năng và tiết kiệm điện" ? "object-contain bg-slate-100 p-4" : "object-cover"}`}
+                  />
                 </div>
                 <div className="p-5">
                   <h2 className="text-xl font-bold">{item.title}</h2>
@@ -197,6 +212,41 @@ export default function HomePage() {
             Xem câu chuyện
             <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
+      </section>
+
+      <section className="bg-[#071F3E] px-4 py-14 text-white md:px-8 md:py-18">
+        <div className="mx-auto grid max-w-7xl gap-8 border-y border-white/10 py-10 md:grid-cols-[0.8fr_0.9fr_1.3fr]">
+          <div>
+            <h3 className="text-sm font-black uppercase tracking-[0.16em] text-cyan-200">Dolic Vietnam</h3>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-black uppercase tracking-[0.16em] text-white">Liên kết nhanh</h3>
+            <nav className="mt-4 grid gap-2">
+              {homeQuickLinks.map(([label, href]) => (
+                <Link key={href} href={href} className="w-fit text-sm font-semibold text-cyan-50/80 transition hover:text-white">
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-black uppercase tracking-[0.16em] text-white">CÔNG TY TNHH THUỶ SẢN DOLIC</h3>
+            <div className="mt-4 grid gap-2 text-sm font-semibold text-cyan-50/80">
+              <p>Hotline miền Nam: {contactInfo.offices[0].displayHotline}</p>
+              <p>Hotline miền Bắc: {contactInfo.offices[1].displayHotline}</p>
+              <p>Email for inquiry: {contactInfo.email}</p>
+              <p>Email for feedback: feedback@dolic.vn</p>
+              <p>Miền Nam: {contactInfo.offices[0].address}</p>
+              <p>Miền Bắc: {contactInfo.offices[1].address}</p>
+            </div>
+            <div className="mt-5">
+              <p className="mb-3 text-sm font-black uppercase tracking-[0.16em] text-cyan-200">Facebook · TikTok · YouTube · Instagram</p>
+              <SocialLinks variant="footer" tone="light" />
+            </div>
+          </div>
         </div>
       </section>
 
