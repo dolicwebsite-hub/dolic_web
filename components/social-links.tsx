@@ -11,7 +11,7 @@ type SocialLinksProps = {
 
 const baseItems = [
   { label: "Facebook", href: contactInfo.socials.facebook, external: true, iconUrl: "https://img.icons8.com/?size=100&id=118497&format=png&color=000000" },
-  { label: "TikTok", href: contactInfo.socials.tiktok, external: true, iconUrl: "https://img.icons8.com/fluency/96/tiktok.png" },
+  { label: "TikTok", href: contactInfo.socials.tiktok, external: true, iconUrl: "https://img.icons8.com/color/96/tiktok--v1.png" },
   { label: "YouTube", href: contactInfo.socials.youtube, external: true, iconUrl: "https://img.icons8.com/?size=100&id=19318&format=png&color=000000" },
   { label: "Instagram", href: contactInfo.socials.instagram, external: true, iconUrl: "https://img.icons8.com/?size=100&id=32323&format=png&color=000000" },
 ];

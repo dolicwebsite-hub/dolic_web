@@ -2,12 +2,32 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import { libraryTopics } from "@/lib/library-data";
 
 export function HomeLibrarySection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const featuredTopics = libraryTopics.slice(0, 3);
+  const totalSlides = featuredTopics.length;
+
+  useEffect(() => {
+    if (totalSlides <= 1) return;
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % totalSlides);
+    }, 4500);
+
+    return () => window.clearInterval(timer);
+  }, [totalSlides]);
+
+  const goPrev = () => {
+    setActiveIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const goNext = () => {
+    setActiveIndex((prev) => (prev + 1) % totalSlides);
+  };
 
   return (
     <section className="overflow-hidden border-y border-[#202b50] bg-[#f7f5f1] text-[#202b50]">
@@ -27,51 +47,56 @@ export function HomeLibrarySection() {
           </Link>
         </div>
 
-        <div className="overflow-hidden">
-          <div className="flex w-full">
-            {featuredTopics.map((item, index) => {
-              const active = activeIndex === index;
-              const heroPost = item.posts[0];
+        <div className="relative min-h-[520px] border-r border-[#202b50] p-4 md:p-6">
+          <div className="overflow-hidden border border-[#202b50]/16 bg-white">
+            <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+              {featuredTopics.map((item) => {
+                const heroPost = item.posts[0];
+                return (
+                  <article key={item.id} className="w-full shrink-0 p-4 md:p-6">
+                    <div className="relative aspect-[16/9] overflow-hidden border border-[#202b50]/20 bg-slate-100">
+                      <Image src={heroPost.image} alt={item.title} fill sizes="(min-width: 1024px) 72vw, 100vw" className="object-cover" />
+                      <span className="absolute left-0 top-0 bg-[#202b50] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-white">{item.title}</span>
+                    </div>
+                    <h3 className="mt-5 text-3xl font-black uppercase leading-tight tracking-normal text-[#202b50]">{item.title}</h3>
+                    <p className="mt-3 max-w-3xl text-base leading-7 text-[#202b50]/74">{item.description}</p>
+                    <Link href="/thu-vien" className="mt-5 inline-flex items-center gap-2 text-sm font-black text-cyan-700">
+                      Xem chuyên mục
+                      <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
 
-              return (
-                <article
-                  key={item.id}
-                  className={`group flex min-h-[520px] min-w-0 flex-col justify-center border-r border-[#202b50] px-4 py-12 transition-[flex-grow,flex-basis,background-color] duration-500 ease-out md:px-6 ${
-                    active ? "basis-[52%] grow-[8] bg-[#f7f5f1]" : "basis-[16%] grow hover:bg-white"
-                  }`}
-                >
-                  <div className={`relative overflow-hidden bg-slate-200 transition-all duration-500 ${active ? "aspect-[4/3]" : "aspect-[3/5]"}`}>
-                    <Image
-                      src={heroPost.image}
-                      alt={item.title}
-                      fill
-                      sizes={active ? "(min-width: 1024px) 42vw, 82vw" : "(min-width: 1024px) 14vw, 45vw"}
-                      className={`object-cover transition duration-500 ${active ? "opacity-100" : "opacity-68 group-hover:opacity-92"}`}
-                    />
-                    <button
-                      type="button"
-                      aria-label={`Mở rộng ${item.title}`}
-                      onClick={() => setActiveIndex(index)}
-                      className="absolute inset-0 z-10"
-                    />
-                    <span className="absolute left-0 top-0 z-20 bg-[#202b50] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-white">{item.title}</span>
-                    {active ? (
-                      <Link href="/thu-vien" className="absolute inset-0 z-30 grid place-items-center bg-black/0 text-white opacity-0 transition hover:bg-black/24 hover:opacity-100">
-                        <span className="grid h-28 w-28 place-items-center rounded-full bg-white text-center font-serif text-xl leading-tight text-[#202b50] shadow-[0_18px_55px_-28px_rgba(0,0,0,0.65)]">
-                          Chi tiết
-                        </span>
-                      </Link>
-                    ) : null}
-                  </div>
-                  <button type="button" onClick={() => setActiveIndex(index)} className="text-left">
-                    <h3 className={`mt-6 uppercase leading-tight tracking-normal transition ${active ? "text-2xl md:text-3xl" : "line-clamp-5 break-words text-sm text-[#202b50]/52 group-hover:text-[#202b50] md:text-base"}`}>
-                      {item.title}
-                    </h3>
-                    {active ? <p className="mt-4 text-sm leading-7 text-[#202b50]/74">{item.description}</p> : null}
-                  </button>
-                </article>
-              );
-            })}
+          <button
+            type="button"
+            aria-label="Slide trước"
+            onClick={goPrev}
+            className="absolute left-7 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[#202b50] p-2 text-white transition hover:bg-[#0f1a3a]"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <button
+            type="button"
+            aria-label="Slide sau"
+            onClick={goNext}
+            className="absolute right-7 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[#202b50] p-2 text-white transition hover:bg-[#0f1a3a]"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+
+          <div className="mt-4 flex items-center justify-center gap-2">
+            {featuredTopics.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                aria-label={`Chuyển đến slide ${index + 1}`}
+                onClick={() => setActiveIndex(index)}
+                className={`h-2.5 rounded-full transition-all ${index === activeIndex ? "w-8 bg-[#202b50]" : "w-2.5 bg-[#202b50]/35 hover:bg-[#202b50]/55"}`}
+              />
+            ))}
           </div>
         </div>
       </div>

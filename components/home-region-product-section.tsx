@@ -9,12 +9,12 @@ const regions = [
   {
     label: "Miền Bắc",
     office: contactInfo.offices[1],
-    image: "/assets/drive/customer-farm/customer-farm-2.jpg",
+    image: "/assets/drive/history-website/history-office.webp",
   },
   {
     label: "Miền Nam",
     office: contactInfo.offices[0],
-    image: "/assets/drive/customer-farm/customer-farm-1.jpg",
+    image: "/assets/drive/history-website/history-office.webp",
   },
 ];
 
@@ -41,7 +41,7 @@ export function HomeRegionProductSection() {
   }, []);
 
   return (
-    <section className="grid bg-[#e9e4da] text-[#202b50] lg:grid-cols-2">
+    <section id="vung-hoat-dong" className="grid bg-[#e9e4da] text-[#202b50] lg:grid-cols-2">
       <div className="bg-[#202b50] px-5 py-16 text-white md:px-10 md:py-24 lg:min-h-[780px]">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-5xl leading-none tracking-normal md:text-7xl">Vùng hoạt động</h2>
@@ -89,7 +89,7 @@ export function HomeRegionProductSection() {
       <div className="px-5 py-16 md:px-10 md:py-24 lg:min-h-[780px]">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-5xl leading-none tracking-normal md:text-7xl">Danh mục</h2>
-          <Link href="/san-pham#product-list" className="group relative mx-auto mt-16 block aspect-[4/3] max-w-[720px] overflow-hidden bg-slate-200">
+          <Link href="/san-pham#product-list" className="group relative mx-auto mt-16 block aspect-[4/3] max-w-[720px] overflow-hidden border border-slate-200 bg-white">
             {productImages.map((image, index) => (
               <Image
                 key={image}

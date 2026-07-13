@@ -1,5 +1,8 @@
+ "use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import { BadgeCheck, HeartHandshake, Leaf, Network, ShieldCheck, UsersRound } from "lucide-react";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
@@ -72,13 +75,19 @@ const timeline = [
   },
 ];
 
+const blueOverlayTimelineImages = new Set([
+  "/assets/drive/history-website/history-2016.webp",
+  "/assets/drive/experimental-farm/device-on-pond.jpg",
+  "/assets/drive/experimental-farm/comparison-aerator-1.jpg",
+]);
+
 const systems = [
   {
     title: "Nền tảng gia đình",
-    image: "/assets/drive/experimental-farm/warehouse.png",
+    image: "/assets/drive/brand-story/family-foundation.webp",
     fit: "cover",
     text:
-      "Dolic hình thành từ sự đồng lòng của một gia đình làm nghề nuôi thực địa, nơi lòng biết ơn và tinh thần đoàn kết trở thành gốc rễ cho mọi quyết định.",
+      "Dolic hình thành từ sự đồng lòng của một gia đình làm nghề nuôi thực địa,\nnơi lòng biết ơn và tinh thần đoàn kết trở thành gốc rễ cho mọi quyết định.",
     href: "#tam-nhin",
   },
   {
@@ -86,15 +95,15 @@ const systems = [
     image: "/assets/drive/customer-farm/customer-farm-2.jpg",
     fit: "cover",
     text:
-      "120.000m2 ao nuôi là nơi thiết bị được chạy thử, đo đạc và hiệu chỉnh trong điều kiện thật trước khi được tư vấn rộng rãi.",
+      "120.000m2 ao nuôi là nơi thiết bị được chạy thử, đo đạc và hiệu chỉnh trong điều kiện thật,\ntrước khi được tư vấn rộng rãi.",
     href: "/trang-trai",
   },
   {
     title: "Mạng lưới người nuôi",
-    image: "/assets/drive/customer-farm/customer-farm-2.jpg",
+    image: "/assets/drive/brand-story/network-growers.webp",
     fit: "cover",
     text:
-      "Từ đại lý đến hộ nuôi, Dolic chọn đồng hành bằng đào tạo, quy trình và sự gần gũi của người đã trải qua khó khăn ngoài ao.",
+      "Từ đại lý đến hộ nuôi, Dolic chọn đồng hành bằng đào tạo,\nquy trình và sự gần gũi của người đã trải qua khó khăn ngoài ao.",
     href: "/dai-ly",
   },
 ];
@@ -108,11 +117,11 @@ type Principle = {
 };
 
 const principles: Principle[] = [
-  { number: "01", title: "Với gia đình", headline: "Lấy gia đình làm gốc, lấy biết ơn làm kim chỉ nam.", desc: "Mọi quyết định bắt đầu từ sự đoàn kết và lòng biết ơn.", icon: UsersRound },
-  { number: "02", title: "Với người nuôi", headline: "Người nuôi hiểu người nuôi.", desc: "Là người bạn nghề, không phải người bán hàng; không khoảng cách giữa doanh nghiệp và bà con.", icon: HeartHandshake },
-  { number: "03", title: "Với đại lý", headline: "Đào tạo từng đại lý thành chuyên gia, cùng nhau lớn.", desc: "Không xem đại lý là kênh bán, mà là đối tác cùng phát triển và cùng giữ uy tín.", icon: Network },
-  { number: "04", title: "Với đội ngũ", headline: "Coi đồng đội như người trong nhà.", desc: "Lớn lên cùng nhau, trân trọng từng người góp sức dựng nên Dolic.", icon: BadgeCheck },
-  { number: "05", title: "Với mỗi giải pháp", headline: "Kiểm chứng thực địa - không mang đến khách hàng những sản phẩm chưa được\nthực nghiệm.", desc: "Mọi sản phẩm đi qua trang trại thực nghiệm trước khi đến tay người nuôi.", icon: ShieldCheck },
+  { number: "01", title: "Với gia đình", headline: "Lấy gia đình làm gốc, \nlấy biết ơn làm kim chỉ nam.", desc: "Mọi quyết định bắt đầu từ sự đoàn kết và lòng biết ơn.", icon: UsersRound },
+  { number: "02", title: "Với người nuôi", headline: "Người nuôi hiểu người nuôi.", desc: "Là người bạn nghề, không phải người bán hàng; \nkhông khoảng cách giữa doanh nghiệp và bà con.", icon: HeartHandshake },
+  { number: "03", title: "Với đại lý", headline: "Đào tạo từng đại lý thành chuyên gia, \ncùng nhau lớn.", desc: "Không xem đại lý là kênh bán,\n mà là đối tác cùng phát triển và cùng giữ uy tín.", icon: Network },
+  { number: "04", title: "Với đội ngũ", headline: "Coi đồng đội như người trong nhà.", desc: "Lớn lên cùng nhau, \ntrân trọng từng người góp sức dựng nên Dolic.", icon: BadgeCheck },
+  { number: "05", title: "Với mỗi giải pháp", headline: "Kiểm chứng thực địa \n không mang đến khách hàng\n những sản phẩm chưa được thực nghiệm.", desc: "Mọi sản phẩm đi qua trang trại thực nghiệm \ntrước khi đến tay người nuôi.", icon: ShieldCheck },
   { number: "06", title: "Với môi trường", headline: "Vì Người nuôi hôm nay vì môi trường ngày mai.", desc: "Nuôi trồng bền vững là trách nhiệm, không phải khẩu hiệu.", icon: Leaf },
 ];
 
@@ -132,10 +141,78 @@ function Divider() {
 }
 
 export function AboutLinearShowcase() {
+  const timelineContainerRef = useRef<HTMLDivElement>(null);
+  const timelinePathRef = useRef<SVGPathElement>(null);
+  const timelineItemRefs = useRef<Array<HTMLElement | null>>([]);
+  const [markerOffsets, setMarkerOffsets] = useState<number[]>([]);
+
+  useEffect(() => {
+    const container = timelineContainerRef.current;
+    const path = timelinePathRef.current;
+    if (!container || !path) return;
+
+    const svgViewBoxWidth = 1000;
+    const svgViewBoxHeight = 4200;
+
+    const getPointAtY = (targetY: number) => {
+      let lo = 0;
+      let hi = path.getTotalLength();
+
+      for (let i = 0; i < 36; i += 1) {
+        const mid = (lo + hi) / 2;
+        const pt = path.getPointAtLength(mid);
+        if (pt.y < targetY) {
+          lo = mid;
+        } else {
+          hi = mid;
+        }
+      }
+
+      return path.getPointAtLength((lo + hi) / 2);
+    };
+
+    const recalcMarkers = () => {
+      const rect = container.getBoundingClientRect();
+      if (!rect.height || !rect.width) return;
+
+      const nextOffsets = timelineItemRefs.current.map((itemEl) => {
+        if (!itemEl) return 0;
+        const itemRect = itemEl.getBoundingClientRect();
+        const centerYInContainer = itemRect.top - rect.top + itemRect.height / 2;
+        const yRatio = Math.min(1, Math.max(0, centerYInContainer / rect.height));
+        const targetY = yRatio * svgViewBoxHeight;
+        const point = getPointAtY(targetY);
+        const markerXPx = (point.x / svgViewBoxWidth) * rect.width;
+        const centerXPx = rect.width / 2;
+        return markerXPx - centerXPx;
+      });
+
+      setMarkerOffsets(nextOffsets);
+    };
+
+    recalcMarkers();
+    const rafId = window.requestAnimationFrame(recalcMarkers);
+    const timeoutId = window.setTimeout(recalcMarkers, 180);
+
+    const resizeObserver = new ResizeObserver(() => recalcMarkers());
+    resizeObserver.observe(container);
+    timelineItemRefs.current.forEach((itemEl) => {
+      if (itemEl) resizeObserver.observe(itemEl);
+    });
+
+    window.addEventListener("resize", recalcMarkers);
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.clearTimeout(timeoutId);
+      window.removeEventListener("resize", recalcMarkers);
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <section className="relative min-h-[86svh] overflow-hidden bg-[#061B35] text-white">
-        <Image src="/assets/drive/customer-farm/customer-farm-2.jpg" alt="Trang trại thực nghiệm Dolic" fill className="object-cover object-center" priority />
+        <Image src="/assets/drive/history-website/history-2026.webp" alt="Hình ảnh lịch sử hình thành năm 2026" fill className="object-cover object-center" priority />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,27,53,0.18)_0%,rgba(6,27,53,0.38)_44%,rgba(6,27,53,0.88)_100%)]" />
         <div className="relative mx-auto flex min-h-[86svh] max-w-7xl items-end justify-center px-4 pb-16 pt-28 text-center md:px-8 md:pb-24">
           <div className="max-w-5xl">
@@ -190,7 +267,7 @@ export function AboutLinearShowcase() {
                   />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold uppercase leading-tight text-slate-950">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base md:leading-8">{item.text}</p>
+                <p className="mt-4 whitespace-pre-line text-sm leading-7 text-slate-600 md:text-base md:leading-8">{item.text}</p>
               </article>
             ))}
           </div>
@@ -209,16 +286,16 @@ export function AboutLinearShowcase() {
                 Mảnh ghép đáng tin cậy
               </h3>
               <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600">
-                Trở thành mảnh ghép tin cậy trong mỗi vụ nuôi của người Việt — và mang giải pháp nuôi trồng bền vững của Việt Nam vươn ra Đông Nam Á.
+                Trở thành mảnh ghép tin cậy trong mỗi vụ nuôi của người Việt <br></br> và mang giải pháp nuôi trồng bền vững của Việt Nam vươn ra Đông Nam Á.
               </p>
             </article>
             <article className="border-t border-slate-300 pt-10">
               <p className="text-base font-black uppercase tracking-[0.2em] text-cyan-700 md:text-lg">Sứ mệnh</p>
-              <h3 className="mx-auto mt-4 max-w-5xl font-serif text-3xl font-bold leading-tight text-slate-950 md:text-4xl">
+              <h3 className="mx-auto mt-4 max-w-5xl font-serif text-3xl font-bold leading-tight text-[#0A2E5C] md:text-4xl">
                 Kiểm chứng, đào tạo, đồng hành
               </h3>
               <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600">
-                Kiểm chứng từng giải pháp tại trang trại thực nghiệm · đào tạo đại lý theo bộ quy trình chuẩn và đồng hành cùng người nuôi.
+                Kiểm chứng từng giải pháp tại trang trại thực nghiệm  đào tạo đại lý theo bộ quy trình chuẩn và đồng hành cùng người nuôi.
               </p>
             </article>
           </div>
@@ -239,43 +316,90 @@ export function AboutLinearShowcase() {
                 <p className="mt-5 text-sm font-black uppercase tracking-[0.24em] text-slate-400">{number}</p>
                 <h3 className="mt-3 text-xl font-bold uppercase leading-tight text-slate-950">{title}</h3>
                 <p className="mt-4 whitespace-pre-line text-lg font-bold leading-7 text-[#0A2E5C]">{headline}</p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{desc}</p>
+                <p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-600">{desc}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="lich-su" className="bg-[#061B35] px-4 py-16 text-white md:px-8 md:py-24">
+      <section id="lich-su" className="bg-[#f5f2ea] px-4 py-16 text-[#1c1c1c] md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <Divider />
             <h2 className="text-3xl font-bold uppercase leading-tight tracking-normal md:text-5xl">Lịch sử hình thành</h2>
             <Divider />
           </div>
-          <div className="grid gap-10 border-r border-cyan-200/30 pr-6 md:pr-10">
-            {timeline.map((item, index) => (
-              <RevealOnScroll key={item.year} delay={Math.min(index * 40, 200)}>
-                <article className="relative grid gap-8 border-b border-white/14 pb-10 last:border-b-0 md:grid-cols-2 md:items-center">
-                <span className="absolute -right-[1.45rem] top-12 h-3 w-3 rounded-full bg-cyan-200 shadow-[0_0_0_5px_rgba(34,211,238,0.18)]" />
-                <div className={`relative aspect-[4/3] overflow-hidden bg-white/6 ${item.fit === "contain" ? "p-10 md:p-16" : ""}`}>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className={item.fit === "contain" ? "object-contain p-10 brightness-0 invert" : "object-cover"}
-                  />
-                </div>
-                <div className="text-right">
-                  <p className="font-serif text-7xl leading-none text-cyan-200 md:text-8xl">{item.year}</p>
-                  {"headline" in item ? <h3 className="mt-5 text-3xl font-bold uppercase leading-tight md:text-4xl">{item.headline}</h3> : null}
-                  {"headline" in item ? null : <h3 className="mt-5 text-2xl font-bold uppercase leading-tight md:text-3xl">{item.title}</h3>}
-                  <p className="mt-5 whitespace-pre-line text-sm leading-7 text-cyan-50/76 md:text-base md:leading-8">{item.text}</p>
-                </div>
-              </article>
-              </RevealOnScroll>
-            ))}
+
+          <div ref={timelineContainerRef} className="relative mt-12 md:mt-16">
+            <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 1000 4200" preserveAspectRatio="none" aria-hidden="true">
+              <path
+                ref={timelinePathRef}
+                d="M500 0 C518 110 518 240 500 360 C482 480 482 610 500 730 C518 860 518 990 500 1120 C482 1250 482 1380 500 1510 C518 1640 518 1770 500 1900 C482 2030 482 2160 500 2290 C518 2420 518 2550 500 2680 C482 2810 482 2940 500 3070 C518 3200 518 3330 500 3460 C482 3590 482 3720 500 3850 C518 3980 510 4090 500 4200"
+                fill="none"
+                stroke="#97a5b8"
+                strokeWidth="1.7"
+                strokeDasharray="2.5 9"
+                strokeLinecap="round"
+                opacity="0.62"
+              />
+            </svg>
+
+            <div className="grid gap-16 md:gap-24">
+              {timeline.map((item, index) => {
+                const textOnRight = index % 2 === 0;
+                const useBlueOverlay = blueOverlayTimelineImages.has(item.image);
+                return (
+                  <RevealOnScroll key={item.year} delay={Math.min(index * 45, 220)}>
+                    <article
+                      ref={(el) => {
+                        timelineItemRefs.current[index] = el;
+                      }}
+                      className="relative md:min-h-[560px] md:grid md:grid-cols-2 md:gap-14"
+                    >
+                      <span
+                        className="absolute left-1/2 top-1/2 z-10 hidden h-16 w-16 md:block"
+                        style={{ transform: `translate(-50%, -50%) translateX(${markerOffsets[index] ?? 0}px)` }}
+                      >
+                        <span className="absolute inset-0 rounded-full border-[2.5px] border-dotted border-[#0A2E5C]/50" />
+                        <span className="absolute left-1/2 top-1/2 h-11 w-11 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-cyan-600/35 bg-white shadow-[0_0_0_8px_rgba(8,145,178,0.12)]" />
+                        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                          <img
+                            src="https://img.icons8.com/?size=100&id=793&format=png&color=0A2E5C"
+                            alt=""
+                            aria-hidden="true"
+                            className="h-[18px] w-[18px] object-contain"
+                          />
+                        </span>
+                      </span>
+
+                      <div className={textOnRight ? "md:col-start-2 md:pl-16" : "md:col-start-1 md:pr-16 md:text-left"}>
+                        <p className="font-serif text-6xl italic leading-none text-[#0f172a] md:text-7xl">{item.year}</p>
+                        {"headline" in item ? (
+                          <h3 className="mt-4 max-w-xl text-xl font-semibold leading-tight text-[#0f172a] md:text-2xl">{item.headline}</h3>
+                        ) : (
+                          <h3 className="mt-4 max-w-xl text-xl font-semibold leading-tight text-[#0f172a] md:text-2xl">{item.title}</h3>
+                        )}
+                        <p className="mt-4 max-w-xl whitespace-pre-line text-sm leading-7 text-slate-600 md:text-base md:leading-8">{item.text}</p>
+                      </div>
+
+                      <div className={`${textOnRight ? "md:col-start-1 md:row-start-1 md:pr-16" : "md:col-start-2 md:row-start-1 md:pl-16"} mt-6 md:mt-1`}>
+                        <div className={`relative aspect-[4/3] overflow-hidden rounded-[24px] bg-transparent ${item.fit === "contain" ? "p-8 md:p-12" : ""}`}>
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            sizes="(min-width: 768px) 42vw, 100vw"
+                            className={`${item.fit === "contain" ? "object-contain p-8" : "object-cover"} contrast-[1.08] saturate-[1.08]`}
+                          />
+                          {useBlueOverlay ? <span className="absolute inset-0 bg-[linear-gradient(130deg,rgba(7,31,62,0.28),rgba(13,59,102,0.18)_50%,rgba(7,31,62,0.24))]" /> : null}
+                        </div>
+                      </div>
+                    </article>
+                  </RevealOnScroll>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

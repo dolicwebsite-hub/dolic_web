@@ -112,7 +112,6 @@ export function SiteFooter() {
             <Link href={homeHref} className="flex h-12 w-36 items-center md:w-40">
               <Image src="/Logo-Dolic.png" alt="Dolic" width={2867} height={842} className="h-auto w-full object-contain brightness-0 invert" />
             </Link>
-            <p className="mt-4 text-sm font-semibold text-cyan-50/70">{isEnglish ? "Website chính thức của Dolic Vietnam." : "Website chính thức của Dolic Vietnam."}</p>
           </div>
 
           <div>
@@ -136,10 +135,11 @@ export function SiteFooter() {
             <div className="mt-4 grid gap-2.5">
               <p className="font-semibold text-cyan-50/80">Hotline miền Nam: {contactInfo.offices[0].displayHotline}</p>
               <p className="font-semibold text-cyan-50/80">Hotline miền Bắc: {contactInfo.offices[1].displayHotline}</p>
-              <p className="font-semibold text-cyan-50/80">Email for inquiry: {contactInfo.email}</p>
-              <p className="font-semibold text-cyan-50/80">Email for feedback: feedback@dolic.vn</p>
-              <p className="pt-1 text-sm font-semibold leading-6 text-cyan-50/70">Miền Nam: {contactInfo.offices[0].address}</p>
-              <p className="text-sm font-semibold leading-6 text-cyan-50/70">Miền Bắc: {contactInfo.offices[1].address}</p>
+              <p className="pt-1 text-sm font-semibold leading-6 text-cyan-50/70">Cơ sở chính: {contactInfo.offices[1].address}</p>
+              <Link href="/#vung-hoat-dong" className="inline-flex w-fit items-center gap-2 pt-1 text-sm font-bold text-cyan-200 transition hover:text-white">
+                Cơ sở khác
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
 
             <div className="mt-5">
@@ -151,9 +151,8 @@ export function SiteFooter() {
 
         <div className="grid gap-4 pt-5 text-xs font-semibold leading-5 text-cyan-50/50 md:grid-cols-[1fr_auto] md:items-end">
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <span>Website: {contactInfo.website}</span>
-            <span>Fanpage: {contactInfo.fanpage}</span>
-            <span>Tiktok: {contactInfo.tiktok}</span>
+            <span>Email liên hệ: {contactInfo.email}</span>
+            <span>Email góp ý: feedback@dolic.vn</span>
           </div>
           <p className="md:text-right">© 2026 Dolic Vietnam</p>
         </div>

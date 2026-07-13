@@ -160,7 +160,6 @@ pre {
 }
 
 body:has(.home-pizza-style) > nav,
-body:has(.home-pizza-style) footer,
 body:has(.home-pizza-style) a[aria-label="Quay lại đầu trang"] {
   display: none;
 }
@@ -287,6 +286,11 @@ body:has(.home-pizza-style) > .site-global-header {
 .motion-reveal-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Neutralize all Tailwind tracking utilities to avoid letter spacing gaps. */
+[class*="tracking-"] {
+  letter-spacing: normal !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

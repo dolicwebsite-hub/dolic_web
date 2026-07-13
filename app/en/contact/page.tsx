@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, MapPin, Phone, Zap } from "lucide-react";
 import { PageFrame } from "@/components/site-chrome";
@@ -8,7 +7,6 @@ export default function EnglishContactPage() {
   return (
     <PageFrame>
       <section className="relative overflow-hidden bg-[#061B35] px-5 pb-16 pt-28 text-white md:px-10 md:pb-24 md:pt-36">
-        <Image src="/assets/drive/customer-farm/customer-aerator-installed.jpg" alt="Dolic equipment operating on a pond" fill priority sizes="100vw" className="object-cover opacity-24" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,18,38,0.94)_0%,rgba(3,18,38,0.82)_48%,rgba(3,18,38,0.58)_100%)]" />
         <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.86fr] lg:items-center">
           <div>

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 const stats = [
   { value: 120000, suffix: " m2", label: "Diện tích trang trại thực nghiệm" },
-  { value: 1996, eyebrow: "Từ năm", label: "người sáng lập Ông Bùi Văn Tới bắt đầu từ thực địa nuôi trồng thuỷ sản" },
+  { value: 1996, eyebrow: "Từ năm", label: "người sáng lập bắt đầu từ thực địa nuôi trồng thuỷ sản" },
   { value: 34, suffix: "+", label: "Có mặt trên 34 tỉnh thành" },
 ];
 

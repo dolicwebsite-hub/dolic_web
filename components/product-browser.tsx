@@ -201,7 +201,7 @@ export function ProductBrowser() {
             {openedCategory.products.length > 0 ? (
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {openedCategory.products.map((product) => (
-                  <article key={`${product.model}-${product.name}`} className="group overflow-hidden rounded-lg border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-[0_28px_70px_-38px_rgba(8,145,178,0.45)]">
+                  <article key={`${product.model}-${product.name}`} className="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_18px_45px_-32px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:border-cyan-200 hover:shadow-[0_28px_70px_-38px_rgba(8,145,178,0.45)]">
                     <button type="button" onClick={() => openProduct(product)} className="block h-full w-full text-left">
                       <div className="relative aspect-[4/3] overflow-hidden border-b border-slate-200 bg-white">
                         <Image src={product.image} alt={product.name} fill className="object-contain p-6 transition duration-500 group-hover:scale-[1.04] sm:p-8" sizes="(min-width: 1280px) 390px, (min-width: 768px) 50vw, 100vw" />
@@ -308,16 +308,21 @@ export function ProductBrowser() {
 
                 <div className="mt-6 flex flex-col gap-3">
                   <PrimaryButton href="/lien-he">Nhận báo giá sản phẩm</PrimaryButton>
-                  <button type="button" onClick={() => setSelectedProduct(null)} className="inline-flex min-h-11 w-full items-center justify-center rounded-md border border-white/15 bg-white/[0.06] px-4 py-2.5 text-sm font-black text-white transition hover:border-cyan-300 hover:bg-white/[0.1]">
-                    Xem tiếp sản phẩm
-                  </button>
                 </div>
               </aside>
 
-              <section className="relative min-h-[520px] overflow-hidden bg-[radial-gradient(circle_at_50%_42%,#ffffff_0%,#f3fafc_34%,#d6e7ed_72%,#82919a_100%)] sm:min-h-[620px] lg:h-full lg:min-h-0">
+              <section className="relative min-h-[520px] overflow-hidden bg-white sm:min-h-[620px] lg:h-full lg:min-h-0">
                 <div className="absolute left-5 top-5 z-10 rounded-full border border-slate-300/60 bg-white/80 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-[#0A2E5C] shadow-sm backdrop-blur">
                   {selectedProduct.model}
                 </div>
+                <button
+                  type="button"
+                  aria-label="Đóng chi tiết sản phẩm"
+                  onClick={() => setSelectedProduct(null)}
+                  className="absolute right-6 top-6 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-slate-900/88 text-white shadow-[0_14px_34px_-16px_rgba(2,6,23,0.78)] backdrop-blur transition hover:bg-cyan-500 hover:text-slate-950"
+                >
+                  <X className="h-5 w-5" />
+                </button>
                 <div className="absolute inset-x-4 bottom-4 z-10 rounded-[18px] border border-white/30 bg-[#07111f]/74 p-4 shadow-[0_20px_70px_-44px_rgba(0,0,0,0.9)] backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-5">
                   <p className="text-xs font-black uppercase tracking-[0.16em] text-cyan-200">Hình ảnh sản phẩm</p>
                   <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-200">{selectedProduct.name}</p>
