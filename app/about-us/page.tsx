@@ -1,13 +1,54 @@
+import type { Metadata } from "next";
 import { AboutLinearShowcase } from "@/components/about-linear-showcase";
 import { PageFrame } from "@/components/site-chrome";
 import { contactInfo } from "@/lib/site-data";
 
 const primaryAddress = contactInfo.offices[1].address;
 const googleMapsQuery = encodeURIComponent(primaryAddress);
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dolic.vn";
+
+export const metadata: Metadata = {
+  title: "Về chúng tôi | Dolic Vietnam",
+  description:
+    "Tìm hiểu lịch sử hình thành Dolic Vietnam và hành trình phát triển cùng đội ngũ, trong đó có chị Bùi Khánh Linh với vai trò Head of Marketing.",
+  keywords: [
+    "Bùi Khánh Linh",
+    "Dolic Vietnam",
+    "Về chúng tôi Dolic",
+    "Lịch sử hình thành Dolic",
+    "Head of Marketing Dolic",
+  ],
+  alternates: {
+    canonical: "/about-us",
+  },
+  openGraph: {
+    title: "Về chúng tôi | Dolic Vietnam",
+    description:
+      "Hành trình phát triển của Dolic Vietnam và đội ngũ đồng hành cùng ngành nuôi trồng thủy sản Việt Nam.",
+    url: "/about-us",
+    type: "website",
+  },
+};
 
 export default function AboutUsPage() {
+  const personStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Bùi Khánh Linh",
+    jobTitle: "Head of Marketing",
+    worksFor: {
+      "@type": "Organization",
+      name: "CÔNG TY TNHH THUỶ SẢN DOLIC",
+      url: siteUrl,
+    },
+    mainEntityOfPage: `${siteUrl}/about-us`,
+    description:
+      "Người con gái thứ hai trong hành trình phát triển của Dolic, đảm nhận vai trò Head of Marketing và đồng hành trong định hướng bán giải pháp.",
+  };
+
   return (
     <PageFrame>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personStructuredData) }} />
       <AboutLinearShowcase />
 
       <section className="bg-white px-4 py-16 md:px-8 md:py-20">
