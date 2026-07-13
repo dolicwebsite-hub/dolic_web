@@ -43,7 +43,7 @@ export default function DealerPage() {
     <PageFrame>
       <section className="relative min-h-[88svh] overflow-hidden bg-[#061B35] px-5 pb-16 pt-32 text-white md:px-10 md:pb-24 md:pt-40">
         <Image
-          src="/assets/drive/customer-farm/customer-farm-1.jpg"
+          src="/daily.jpeg"
           alt="Vùng nuôi đối tác Dolic"
           fill
           priority
@@ -104,7 +104,7 @@ export default function DealerPage() {
           </p>
           <div className="mt-9 grid gap-4 sm:grid-cols-3">
             {[
-              ["Catalog", "tài liệu bán hàng"],
+              ["Catalouge", "tài liệu bán hàng"],
               ["Kỹ thuật", "đào tạo giải pháp"],
               ["Bảo hành", "quy trình rõ ràng"],
             ].map(([value, label]) => (
