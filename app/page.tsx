@@ -7,6 +7,7 @@ import { HomeRegionProductSection } from "@/components/home-region-product-secti
 import { contactInfo } from "@/lib/site-data";
 
 const heroLinks = [
+  { label: "Về chúng tôi", href: "/about-us" },
   { label: "Trang trại", href: "/trang-trai" },
   { label: "Sản phẩm", href: "/san-pham" },
   { label: "Giải pháp", href: "/giai-phap" },
