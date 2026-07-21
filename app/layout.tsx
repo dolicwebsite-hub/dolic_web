@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { CookiePolicyBanner } from "@/components/cookie-policy-banner";
 import { MaintenancePage } from "@/components/maintenance-page";
 import { SiteHeader } from "@/components/site-header";
@@ -23,6 +24,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="vi" data-scroll-behavior="smooth">
+      <head>
+        {/* Google Search Console: verifies site ownership for this domain. */}
+        <meta name="google-site-verification" content="pGuoZHa_ga-e_kihI07pydaKb7lrRXKGKD3TUuZEy9g" />
+
+        {/* Google Analytics 4: loads the gtag library for traffic tracking. */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-V14F0T5YLF" strategy="afterInteractive" />
+        <Script id="google-analytics-4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V14F0T5YLF');
+          `}
+        </Script>
+      </head>
       <body>
         {maintenanceMode ? (
           <MaintenancePage />
