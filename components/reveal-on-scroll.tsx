@@ -2,14 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type RevealDirection = "up" | "left" | "right";
+
 export function RevealOnScroll({
   children,
   delay = 0,
   className = "",
+  direction = "up",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  direction?: RevealDirection;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -32,10 +36,13 @@ export function RevealOnScroll({
     return () => observer.disconnect();
   }, []);
 
+  const directionClass =
+    direction === "left" ? "motion-reveal-left" : direction === "right" ? "motion-reveal-right" : "motion-reveal";
+
   return (
     <div
       ref={ref}
-      className={`motion-reveal ${visible ? "motion-reveal-visible" : ""} ${className}`}
+      className={`${directionClass} ${visible ? "motion-reveal-visible" : ""} ${className}`}
       style={visible ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

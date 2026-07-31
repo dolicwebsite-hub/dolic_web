@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { LucideIcon } from "lucide-react";
-import { BadgeCheck, HeartHandshake, Leaf, Network, ShieldCheck, UsersRound } from "lucide-react";
+import { BadgeCheck, ChevronDown, ChevronUp, HeartHandshake, Leaf, Network, ShieldCheck, UsersRound } from "lucide-react";
 import { RevealOnScroll } from "@/components/reveal-on-scroll";
+import { TimelineParallax } from "@/components/timeline-parallax";
 
 const timeline = [
   {
@@ -87,7 +88,7 @@ const systems = [
     image: "/assets/drive/brand-story/family-foundation.webp",
     fit: "cover",
     text:
-      "Dolic hình thành từ sự đồng lòng của một gia đình làm nghề nuôi thực địa,\nnơi lòng biết ơn và tinh thần đoàn kết trở thành gốc rễ cho mọi quyết định.",
+      "Dolic hình thành từ sự đồng lòng \n của một gia đình làm nghề nuôi thực địa,\nnơi lòng biết ơn và tinh thần đoàn kết \n trở thành gốc rễ cho mọi quyết định.",
     href: "#tam-nhin",
   },
   {
@@ -95,7 +96,7 @@ const systems = [
     image: "/assets/drive/customer-farm/customer-farm-2.jpg",
     fit: "cover",
     text:
-      "120.000m2 ao nuôi là nơi thiết bị được chạy thử, đo đạc và hiệu chỉnh trong điều kiện thật,\ntrước khi được tư vấn rộng rãi.",
+      "120.000m2 ao nuôi là nơi thiết bị được chạy thử,\n đo đạc và hiệu chỉnh trong điều kiện thật,\ntrước khi được tư vấn rộng rãi.",
     href: "/trang-trai",
   },
   {
@@ -103,7 +104,7 @@ const systems = [
     image: "/assets/drive/brand-story/network-growers.webp",
     fit: "cover",
     text:
-      "Từ đại lý đến hộ nuôi, Dolic chọn đồng hành bằng đào tạo,\nquy trình và sự gần gũi của người đã trải qua khó khăn ngoài ao.",
+      "Từ đại lý đến hộ nuôi, \n Dolic chọn đồng hành bằng đào tạo,\nquy trình và sự gần gũi \n của người đã trải qua khó khăn ngoài ao.",
     href: "/dai-ly",
   },
 ];
@@ -127,7 +128,7 @@ const principles: Principle[] = [
 
 const commitments = [
   ["Hiệu năng cao", "Thiết bị vận hành tối ưu, tiết kiệm điện, tăng năng suất vụ nuôi."],
-  ["Ổn định", "Vận hành đáng tin cậy trong nhiều điều kiện môi trường thuỷ sản khắc nghiệt."],
+  ["Ổn định", "Vận hành đáng tin cậy trong nhiều điều kiện môi trường thuỷ sản \n khắc nghiệt."],
 ];
 
 function Divider() {
@@ -145,6 +146,79 @@ export function AboutLinearShowcase() {
   const timelinePathRef = useRef<SVGPathElement>(null);
   const timelineItemRefs = useRef<Array<HTMLElement | null>>([]);
   const [markerOffsets, setMarkerOffsets] = useState<number[]>([]);
+  const [activeTimelineIndex, setActiveTimelineIndex] = useState(0);
+  const updatePathProgressRef = useRef<() => void>(() => {});
+
+  useEffect(() => {
+    const path = timelinePathRef.current;
+    if (!path) return;
+
+    const pathLength = path.getTotalLength();
+    path.style.strokeDasharray = `${pathLength}`;
+    path.style.strokeDashoffset = `${pathLength}`;
+
+    const updatePathProgress = () => {
+      const container = timelineContainerRef.current;
+      if (!container || !path) return;
+
+      const containerRect = container.getBoundingClientRect();
+      if (!containerRect.height) return;
+
+      const focusLine = window.innerHeight * 0.42;
+      const focusInContainer = focusLine - containerRect.top;
+      const progress = Math.min(1, Math.max(0, focusInContainer / containerRect.height));
+
+      path.style.strokeDashoffset = `${pathLength * (1 - progress)}`;
+    };
+
+    updatePathProgressRef.current = updatePathProgress;
+    updatePathProgress();
+    const timeoutId = window.setTimeout(updatePathProgress, 240);
+    window.addEventListener("scroll", updatePathProgress, { passive: true });
+    window.addEventListener("resize", updatePathProgress);
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.removeEventListener("scroll", updatePathProgress);
+      window.removeEventListener("resize", updatePathProgress);
+    };
+  }, []);
+
+  useEffect(() => {
+    let observer: IntersectionObserver | null = null;
+    const timeoutId = window.setTimeout(() => {
+      const items = timelineItemRefs.current.filter(Boolean) as HTMLElement[];
+      if (items.length === 0) return;
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          const visibleEntries = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+          if (visibleEntries.length === 0) return;
+
+          const nextIndex = items.findIndex((item) => item === visibleEntries[0].target);
+          if (nextIndex >= 0) setActiveTimelineIndex(nextIndex);
+        },
+        { threshold: [0.35, 0.55, 0.75], rootMargin: "-20% 0px -20% 0px" },
+      );
+
+      items.forEach((item) => observer?.observe(item));
+    }, 120);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      observer?.disconnect();
+    };
+  }, []);
+
+  const scrollToTimelineItem = (index: number) => {
+    const targetIndex = Math.min(timeline.length - 1, Math.max(0, index));
+    const target = timelineItemRefs.current[targetIndex];
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "smooth", block: "center" });
+    setActiveTimelineIndex(targetIndex);
+  };
 
   useEffect(() => {
     const container = timelineContainerRef.current;
@@ -188,6 +262,7 @@ export function AboutLinearShowcase() {
       });
 
       setMarkerOffsets(nextOffsets);
+      updatePathProgressRef.current();
     };
 
     recalcMarkers();
@@ -201,10 +276,12 @@ export function AboutLinearShowcase() {
     });
 
     window.addEventListener("resize", recalcMarkers);
+    window.addEventListener("scroll", recalcMarkers, { passive: true });
     return () => {
       window.cancelAnimationFrame(rafId);
       window.clearTimeout(timeoutId);
       window.removeEventListener("resize", recalcMarkers);
+      window.removeEventListener("scroll", recalcMarkers);
       resizeObserver.disconnect();
     };
   }, []);
@@ -295,7 +372,7 @@ export function AboutLinearShowcase() {
                 Kiểm chứng, đào tạo, đồng hành
               </h3>
               <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600">
-                Kiểm chứng từng giải pháp tại trang trại thực nghiệm  đào tạo đại lý theo bộ quy trình chuẩn và đồng hành cùng người nuôi.
+                Kiểm chứng từng giải pháp tại trang trại thực nghiệm  đào tạo đại lý theo bộ quy trình chuẩn <br/> và đồng hành cùng người nuôi.
               </p>
             </article>
           </div>
@@ -332,6 +409,27 @@ export function AboutLinearShowcase() {
           </div>
 
           <div ref={timelineContainerRef} className="relative mt-12 md:mt-16">
+            <div className="pointer-events-none absolute right-0 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-2 md:flex">
+              <button
+                type="button"
+                aria-label="Mốc trước"
+                disabled={activeTimelineIndex <= 0}
+                onClick={() => scrollToTimelineItem(activeTimelineIndex - 1)}
+                className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white/95 text-[#0A2E5C] shadow-[0_12px_30px_-18px_rgba(15,23,42,0.55)] transition hover:border-cyan-400 hover:text-cyan-700 disabled:cursor-not-allowed disabled:opacity-35"
+              >
+                <ChevronUp className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                aria-label="Mốc sau"
+                disabled={activeTimelineIndex >= timeline.length - 1}
+                onClick={() => scrollToTimelineItem(activeTimelineIndex + 1)}
+                className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-slate-300/80 bg-white/95 text-[#0A2E5C] shadow-[0_12px_30px_-18px_rgba(15,23,42,0.55)] transition hover:border-cyan-400 hover:text-cyan-700 disabled:cursor-not-allowed disabled:opacity-35"
+              >
+                <ChevronDown className="h-5 w-5" />
+              </button>
+            </div>
+
             <svg className="pointer-events-none absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 1000 4200" preserveAspectRatio="none" aria-hidden="true">
               <path
                 ref={timelinePathRef}
@@ -350,30 +448,31 @@ export function AboutLinearShowcase() {
                 const textOnRight = index % 2 === 0;
                 const useBlueOverlay = blueOverlayTimelineImages.has(item.image);
                 return (
-                  <RevealOnScroll key={item.year} delay={Math.min(index * 45, 220)}>
-                    <article
-                      ref={(el) => {
-                        timelineItemRefs.current[index] = el;
-                      }}
-                      className="relative md:min-h-[560px] md:grid md:grid-cols-2 md:gap-14"
+                  <article
+                    key={item.year}
+                    ref={(el) => {
+                      timelineItemRefs.current[index] = el;
+                    }}
+                    className="relative scroll-mt-28 md:min-h-[560px] md:grid md:grid-cols-2 md:gap-14"
+                  >
+                    <span
+                      className="absolute left-1/2 top-1/2 z-10 hidden h-16 w-16 md:block"
+                      style={{ transform: `translate(-50%, -50%) translateX(${markerOffsets[index] ?? 0}px)` }}
                     >
-                      <span
-                        className="absolute left-1/2 top-1/2 z-10 hidden h-16 w-16 md:block"
-                        style={{ transform: `translate(-50%, -50%) translateX(${markerOffsets[index] ?? 0}px)` }}
-                      >
-                        <span className="absolute inset-0 rounded-full border-[2.5px] border-dotted border-[#0A2E5C]/50" />
-                        <span className="absolute left-1/2 top-1/2 h-11 w-11 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-cyan-600/35 bg-white shadow-[0_0_0_8px_rgba(8,145,178,0.12)]" />
-                        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                          <img
-                            src="https://img.icons8.com/?size=100&id=793&format=png&color=0A2E5C"
-                            alt=""
-                            aria-hidden="true"
-                            className="h-[18px] w-[18px] object-contain"
-                          />
-                        </span>
+                      <span className="absolute inset-0 rounded-full border-[2.5px] border-dotted border-[#0A2E5C]/50" />
+                      <span className="absolute left-1/2 top-1/2 h-11 w-11 -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-cyan-600/35 bg-white shadow-[0_0_0_8px_rgba(8,145,178,0.12)]" />
+                      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <img
+                          src="https://img.icons8.com/?size=100&id=793&format=png&color=0A2E5C"
+                          alt=""
+                          aria-hidden="true"
+                          className="h-[18px] w-[18px] object-contain"
+                        />
                       </span>
+                    </span>
 
-                      <div className={textOnRight ? "md:col-start-2 md:pl-16" : "md:col-start-1 md:pr-16 md:text-left"}>
+                    <RevealOnScroll delay={Math.min(index * 50, 240)} direction="up" className={`timeline-rise-reveal ${textOnRight ? "md:col-start-2" : "md:col-start-1"}`}>
+                      <TimelineParallax speed={textOnRight ? -0.045 : 0.045} className={textOnRight ? "md:col-start-2 md:pl-16" : "md:col-start-1 md:pr-16 md:text-left"}>
                         <p className="font-serif text-6xl italic leading-none text-[#0f172a] md:text-7xl">{item.year}</p>
                         {"headline" in item ? (
                           <h3 className="mt-4 max-w-xl text-xl font-semibold leading-tight text-[#0f172a] md:text-2xl">{item.headline}</h3>
@@ -381,9 +480,11 @@ export function AboutLinearShowcase() {
                           <h3 className="mt-4 max-w-xl text-xl font-semibold leading-tight text-[#0f172a] md:text-2xl">{item.title}</h3>
                         )}
                         <p className="mt-4 max-w-xl whitespace-pre-line text-sm leading-7 text-slate-600 md:text-base md:leading-8">{item.text}</p>
-                      </div>
+                      </TimelineParallax>
+                    </RevealOnScroll>
 
-                      <div className={`${textOnRight ? "md:col-start-1 md:row-start-1 md:pr-16" : "md:col-start-2 md:row-start-1 md:pl-16"} mt-6 md:mt-1`}>
+                    <RevealOnScroll delay={Math.min(index * 50 + 120, 360)} direction="up" className={`timeline-rise-reveal ${textOnRight ? "md:col-start-1 md:row-start-1" : "md:col-start-2 md:row-start-1"}`}>
+                      <TimelineParallax speed={textOnRight ? 0.055 : -0.055} className={`${textOnRight ? "md:col-start-1 md:row-start-1 md:pr-16" : "md:col-start-2 md:row-start-1 md:pl-16"} mt-6 md:mt-1`}>
                         <div className={`relative aspect-[4/3] overflow-hidden rounded-[24px] bg-transparent ${item.fit === "contain" ? "p-8 md:p-12" : ""}`}>
                           <Image
                             src={item.image}
@@ -394,11 +495,33 @@ export function AboutLinearShowcase() {
                           />
                           {useBlueOverlay ? <span className="absolute inset-0 bg-[linear-gradient(130deg,rgba(7,31,62,0.28),rgba(13,59,102,0.18)_50%,rgba(7,31,62,0.24))]" /> : null}
                         </div>
-                      </div>
-                    </article>
-                  </RevealOnScroll>
+                      </TimelineParallax>
+                    </RevealOnScroll>
+                  </article>
                 );
               })}
+            </div>
+
+            <div className="mt-10 flex items-center justify-center gap-3 md:hidden">
+              <button
+                type="button"
+                aria-label="Mốc trước"
+                disabled={activeTimelineIndex <= 0}
+                onClick={() => scrollToTimelineItem(activeTimelineIndex - 1)}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-[#0A2E5C] shadow-sm disabled:opacity-35"
+              >
+                <ChevronUp className="h-5 w-5" />
+              </button>
+              <span className="min-w-16 text-center text-sm font-bold text-slate-600">{timeline[activeTimelineIndex]?.year}</span>
+              <button
+                type="button"
+                aria-label="Mốc sau"
+                disabled={activeTimelineIndex >= timeline.length - 1}
+                onClick={() => scrollToTimelineItem(activeTimelineIndex + 1)}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-[#0A2E5C] shadow-sm disabled:opacity-35"
+              >
+                <ChevronDown className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </div>
@@ -413,7 +536,7 @@ export function AboutLinearShowcase() {
             {commitments.map(([title, desc]) => (
               <article key={title} className="bg-white p-8 shadow-[0_22px_70px_-52px_rgba(15,23,42,0.75)]">
                 <h3 className="font-serif text-3xl font-bold text-[#0A2E5C]">{title}</h3>
-                <p className="mt-4 text-base leading-8 text-slate-600">{desc}</p>
+                <p className="mt-4 whitespace-pre-line text-base leading-8 text-slate-600">{desc}</p>
               </article>
             ))}
           </div>

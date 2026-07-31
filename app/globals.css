@@ -12,7 +12,9 @@
   --motion-fast: 150ms;
   --motion-base: 200ms;
   --motion-slow: 250ms;
+  --motion-timeline: 680ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -288,6 +290,40 @@ body:has(.home-pizza-style) > .site-global-header {
   transform: translateY(0);
 }
 
+.timeline-rise-reveal.motion-reveal {
+  transform: translateY(42px);
+  transition:
+    opacity var(--motion-timeline) var(--ease-smooth),
+    transform var(--motion-timeline) var(--ease-smooth);
+}
+
+.timeline-rise-reveal.motion-reveal.motion-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition:
+    opacity var(--motion-timeline) var(--ease-smooth),
+    transform var(--motion-timeline) var(--ease-smooth);
+}
+
+.motion-reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition:
+    opacity var(--motion-timeline) var(--ease-smooth),
+    transform var(--motion-timeline) var(--ease-smooth);
+}
+
+.motion-reveal-visible.motion-reveal-left,
+.motion-reveal-visible.motion-reveal-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* Neutralize all Tailwind tracking utilities to avoid letter spacing gaps. */
 [class*="tracking-"] {
   letter-spacing: normal !important;
@@ -307,6 +343,12 @@ body:has(.home-pizza-style) > .site-global-header {
   }
 
   .motion-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .motion-reveal-left,
+  .motion-reveal-right {
     opacity: 1;
     transform: none;
   }

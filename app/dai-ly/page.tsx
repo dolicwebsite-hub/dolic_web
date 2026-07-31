@@ -48,16 +48,20 @@ export default function DealerPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-45"
+          className="scale-200 object-cover object-[20%_center] opacity-45"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,20,42,0.94)_0%,rgba(4,20,42,0.78)_48%,rgba(4,20,42,0.44)_100%)]" />
         <div className="relative z-10 mx-auto max-w-7xl">
           <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200">Cơ hội đại lý Dolic</p>
-          <h1 className="mt-6 max-w-6xl font-serif text-[clamp(3.2rem,7.5vw,7.2rem)] leading-[1.08] tracking-normal">
-            Cùng đại lý lớn lên bằng uy tín vùng nuôi
+          <h1 className="mt-6 max-w-6xl font-serif text-[clamp(3.2rem,7.5vw,2rem)] leading-[1.08] tracking-normal">
+            Cùng đại lý lớn lên
+            <br />
+            bằng uy tín vùng nuôi
           </h1>
           <p className="mt-8 max-w-2xl text-lg font-semibold leading-8 text-cyan-50/78">
-            Dolic không xây mạng lưới bằng bán nhanh. Chúng tôi chọn những đối tác hiểu người nuôi, được đào tạo đúng quy trình và cùng giữ lời hứa về giải pháp đã kiểm chứng.
+            Dolic không xây mạng lưới bằng bán nhanh. 
+            <br/>
+            Chúng tôi chọn những đối tác hiểu người nuôi, <br/>được đào tạo đúng quy trình <br/> và cùng giữ lời hứa về giải pháp đã kiểm chứng.
           </p>
           <Link href="#dang-ky-dai-ly" className="mt-10 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-cyan-400 px-6 text-sm font-black uppercase tracking-[0.08em] text-slate-950 transition hover:bg-cyan-300">
             Đăng ký làm đại lý
@@ -70,8 +74,8 @@ export default function DealerPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Our Vision</p>
-              <h2 className="mt-4 font-serif text-[clamp(3.4rem,7vw,7rem)] leading-[0.96] tracking-normal">
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Tầm nhìn của chúng tôi</p>
+              <h2 className="mt-4 font-serif text-[clamp(3.4rem,7vw,2rem)] leading-[0.96] tracking-normal">
                 Người nuôi tin đại lý, đại lý tin Dolic
               </h2>
             </div>
@@ -98,7 +102,7 @@ export default function DealerPage() {
         </div>
         <div className="flex flex-col justify-center px-5 py-14 md:px-10 lg:px-16">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">Dealer Mission</p>
-          <h2 className="mt-5 font-serif text-[clamp(3.2rem,6vw,6rem)] leading-none tracking-normal">Đào tạo đại lý theo quy trình chuẩn của Dolic</h2>
+          <h2 className="mt-5 font-serif text-[clamp(3.2rem,6vw,2rem)] leading-none tracking-normal">Đào tạo đại lý theo quy trình chuẩn của Dolic</h2>
           <p className="mt-8 max-w-2xl text-lg font-semibold leading-9 text-white/76">
             Đại lý Dolic được hỗ trợ để hiểu thiết bị, hiểu ao và tư vấn đúng bài toán của người nuôi. Sự phát triển bền vững không đến từ chiết khấu đơn lẻ, mà từ năng lực bán giải pháp.
           </p>

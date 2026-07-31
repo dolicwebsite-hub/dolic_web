@@ -18,11 +18,7 @@ export const libraryTopics: LibraryTopic[] = [
     title: "Tin tức / Sự kiện",
     description: "Cập nhật triển lãm, hoạt động thị trường và sự kiện nổi bật của Dolic.",
     posts: [
-      { title: "Dolic tham gia triển lãm quốc tế công nghệ Nông nghiệp và Môi trường", image: "/assets/drive/exhibition/IMG_6001.PNG", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Dolic giới thiệu giải pháp tại gian hàng công nghệ thuỷ sản", image: "/assets/drive/exhibition/IMG_6009.PNG", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Kết nối đại lý vùng nuôi tại miền Nam", image: "/assets/drive/exhibition/IMG_6576.PNG", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Dolic chia sẻ kinh nghiệm vận hành thiết bị ngoài ao", image: "/assets/drive/exhibition/IMG_4750.PNG", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Tổng hợp hoạt động truyền thông trong tuần", image: "/assets/drive/exhibition/IMG_6004.PNG", href: "/thu-vien", date: "Tuần 1" },
+      { title: "Dolic tại triển lãm quốc tế VietAgros 2026: tiết kiệm điện lên đến 40% không khó", image: "/assets/drive/exhibition/IMG_6001.PNG", href: "/tin-tuc/dolic-tai-vietagros-2026", date: "09-11/06/2026" },
     ],
   },
   {
@@ -30,11 +26,7 @@ export const libraryTopics: LibraryTopic[] = [
     title: "Giải pháp tiết kiệm điện",
     description: "Bài viết kỹ thuật giúp chọn công suất đúng và tối ưu chi phí điện theo từng mô hình ao.",
     posts: [
-      { title: "Cách chọn guồng sục khí theo diện tích ao", image: "/assets/drive/experimental-farm/device-on-pond.jpg", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Khi nào nên dùng sục khí khí nén?", image: "/assets/products/drive-full/may-suc-khi-treo-khi-nen.webp", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Checklist kiểm tra oxy trước và sau khi cho ăn", image: "/assets/products/drive-full/may-do-oxy-2001.webp", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Vận hành bơm theo khung giờ để giảm điện năng", image: "/assets/products/drive-full/fb-200-75-bom-co-phao.webp", href: "/thu-vien", date: "Tuần 1" },
-      { title: "So sánh cấu hình quạt nước cho ao tôm thâm canh", image: "/assets/products/drive-full/yc-22z-10-canh.webp", href: "/thu-vien", date: "Tuần 1" },
+      { title: "Máy sục khí treo khí nén Dolic: từ khảo sát thực địa đến kiểm chứng tại Việt Nam", image: "/assets/products/drive-full/may-suc-khi-treo-khi-nen.webp", href: "/tin-tuc/may-suc-khi-treo-khi-nen-nguon-goc", date: "30/07/2026" },
     ],
   },
   {
@@ -42,11 +34,10 @@ export const libraryTopics: LibraryTopic[] = [
     title: "Bảo hành / Bảo dưỡng",
     description: "Hướng dẫn bảo dưỡng định kỳ, quy trình tiếp nhận bảo hành và xử lý sự cố.",
     posts: [
-      { title: "Quy trình bảo hành thiết bị Dolic", image: "/assets/drive/customer-farm/customer-aerator-installed.jpg", href: "/lien-he", date: "Tuần 1" },
-      { title: "Lịch bảo dưỡng quạt nước theo mùa vụ", image: "/assets/products/drive-full/yc-15z-6-canh-hop-so.webp", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Các lỗi thường gặp ở bơm và cách xử lý nhanh", image: "/assets/products/drive-full/qy250-6-4-bom-tieu-chuan.webp", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Kiểm tra động cơ giảm tốc trước khi vào vụ mới", image: "/assets/drive/history-website/history-office.webp", href: "/thu-vien", date: "Tuần 1" },
-      { title: "Biểu mẫu gửi yêu cầu hỗ trợ kỹ thuật", image: "/assets/drive/exhibition/IMG_6574.PNG", href: "/lien-he", date: "Tuần 1" },
+      { title: "Đừng đổ nhầm dầu xe máy vào hộp số giảm tốc quạt nước", image: "/assets/products/drive-full/yc-15z-6-canh-hop-so.webp", href: "/tin-tuc/dau-hop-so-giam-toc-quat-nuoc", date: "30/07/2026" },
+      { title: "Đấu dây tiếp địa PE đúng cách cho thiết bị ao nuôi", image: "/assets/products/drive-full/qy250-6-4-bom-tieu-chuan.webp", href: "/tin-tuc/dau-day-tiep-dia-pe-thiet-bi-ao-nuoi", date: "30/07/2026" },
+      { title: "Mô-tơ ngừng do quá nhiệt: nguyên nhân và cách xử lý", image: "/assets/products/drive-full/fb-200-75-bom-co-phao.webp", href: "/tin-tuc/mo-to-qua-nhiet-tu-ngat-nguyen-nhan-cach-xu-ly", date: "30/07/2026" },
+      { title: "Vì sao phải dùng thiết bị chống mất pha cho động cơ ba pha", image: "/assets/products/drive-full/MÔ TƠ GIẢM TỐC 2,2KW 380V.webp", href: "/tin-tuc/thiet-bi-chong-mat-pha-dong-co-3-pha", date: "30/07/2026" },
     ],
   },
 ];

@@ -15,17 +15,17 @@ export default function LibraryPage() {
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
               <div className="bg-[#071F3E] p-7 text-white md:p-9">
                 <p className="text-xs font-bold uppercase text-cyan-200">Trang thư viện</p>
-                <h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">Dolic tại triển lãm quốc tế công nghệ Nông nghiệp và Môi trường</h2>
+                <h2 className="mt-4 text-3xl font-bold leading-tight md:text-4xl">Dolic tại triển lãm quốc tế VietAgros 2026</h2>
               </div>
               <div className="p-7 md:p-9">
                 <p className="text-lg font-bold leading-8 text-slate-950">
-                  Dolic là một trong hơn 200 doanh nghiệp lớn đầu ngành tham gia triển lãm quốc tế công nghệ Nông nghiệp và Môi trường.
+                  Dolic tham gia VietAgros 2026 với vai trò nhà tài trợ, ba gian hàng A7-A8-A9 và bài trình bày về tối ưu chi phí điện năng trong nuôi tôm.
                 </p>
                 <p className="mt-4 text-sm leading-7 text-slate-600">
-                  Nội dung này dùng làm bài nổi bật trong thư viện, phục vụ truyền thông năng lực, kết nối đối tác và cập nhật hoạt động công nghệ của Dolic.
+                  Bài viết ghi lại các hoạt động tại triển lãm, phần tư vấn kỹ thuật tại gian hàng và số liệu kiểm chứng thực địa từ các vùng nuôi.
                 </p>
-                <a href="/lien-he" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyan-700">
-                  Liên hệ truyền thông
+                <a href="/tin-tuc/dolic-tai-vietagros-2026" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyan-700">
+                  Đọc bài viết
                   <MessageCircle className="h-4 w-4" />
                 </a>
               </div>

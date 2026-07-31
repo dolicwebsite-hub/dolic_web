@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/dai-ly",
     "/b2b",
     "/thu-vien",
+    "/tin-tuc/dolic-tai-vietagros-2026",
+    "/tin-tuc/may-suc-khi-treo-khi-nen-nguon-goc",
+    "/tin-tuc/dau-hop-so-giam-toc-quat-nuoc",
+    "/tin-tuc/dau-day-tiep-dia-pe-thiet-bi-ao-nuoi",
+    "/tin-tuc/mo-to-qua-nhiet-tu-ngat-nguyen-nhan-cach-xu-ly",
+    "/tin-tuc/thiet-bi-chong-mat-pha-dong-co-3-pha",
     "/lien-he",
   ];
 

@@ -15,7 +15,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const primaryOffice = contactInfo.offices[0];
   const solidAtTopPages = ["/san-pham", "/trang-trai", "/thu-vien", "/en/products", "/en/farm", "/en/library"];
-  const solidHeader = scrolled || solidAtTopPages.includes(pathname);
+  const solidHeader = scrolled || solidAtTopPages.includes(pathname) || pathname.startsWith("/tin-tuc/");
   const locale = getLocaleFromPath(pathname);
   const homeHref = locale === "en" ? "/en" : "/";
   const navCopy =
