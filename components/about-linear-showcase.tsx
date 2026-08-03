@@ -85,8 +85,8 @@ const blueOverlayTimelineImages = new Set([
 const systems = [
   {
     title: "Nền tảng gia đình",
-    image: "/assets/drive/brand-story/family-foundation.webp",
-    fit: "cover",
+    image: "/nền tảng gia đình.png",
+    fit: "contain",
     text:
       "Dolic hình thành từ sự đồng lòng \n của một gia đình làm nghề nuôi thực địa,\nnơi lòng biết ơn và tinh thần đoàn kết \n trở thành gốc rễ cho mọi quyết định.",
     href: "#tam-nhin",
@@ -101,8 +101,8 @@ const systems = [
   },
   {
     title: "Mạng lưới người nuôi",
-    image: "/assets/drive/brand-story/network-growers.webp",
-    fit: "cover",
+    image: "/1b48ecc0-f5cb-47d6-9d68-5a0becebba08.png",
+    fit: "contain",
     text:
       "Từ đại lý đến hộ nuôi, \n Dolic chọn đồng hành bằng đào tạo,\nquy trình và sự gần gũi \n của người đã trải qua khó khăn ngoài ao.",
     href: "/dai-ly",
@@ -289,7 +289,8 @@ export function AboutLinearShowcase() {
   return (
     <>
       <section className="relative min-h-[86svh] overflow-hidden bg-[#061B35] text-white">
-        <Image src="/assets/drive/history-website/history-2026.webp" alt="Hình ảnh lịch sử hình thành năm 2026" fill className="object-cover object-center" priority />
+        <Image src="/assets/drive/history-website/history-2026.webp" alt="" fill className="object-cover object-center opacity-55 blur-sm scale-105 md:hidden" priority />
+        <Image src="/assets/drive/history-website/history-2026.webp" alt="Hình ảnh lịch sử hình thành năm 2026" fill className="object-contain object-[center_32%] md:object-cover md:object-center" priority />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,27,53,0.18)_0%,rgba(6,27,53,0.38)_44%,rgba(6,27,53,0.88)_100%)]" />
         <div className="relative mx-auto flex min-h-[86svh] max-w-7xl items-end justify-center px-4 pb-16 pt-28 text-center md:px-8 md:pb-24">
           <div className="max-w-5xl">
@@ -334,13 +335,13 @@ export function AboutLinearShowcase() {
           <div className="grid gap-8 md:grid-cols-3">
             {systems.map((item) => (
               <article key={item.title} className="text-center">
-                <div className={`relative mx-auto aspect-[4/3] w-full overflow-hidden bg-[#f3f5f5] ${item.fit === "contain" ? "p-10 md:p-14" : ""}`}>
+                <div className={`relative mx-auto aspect-[4/3] w-full overflow-hidden ${item.fit === "contain" ? "bg-white p-4 md:p-6" : "bg-[#f3f5f5]"}`}>
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
-                    className={item.fit === "contain" ? "object-contain p-10" : "object-cover"}
+                    className={item.fit === "contain" ? "object-contain" : "object-cover"}
                   />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold uppercase leading-tight text-slate-950">{item.title}</h3>

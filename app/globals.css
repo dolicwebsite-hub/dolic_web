@@ -59,6 +59,28 @@ pre {
   word-break: break-word;
 }
 
+article .prose h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #007c8f;
+  line-height: 1.25;
+}
+
+article .prose h2:first-child {
+  margin-top: 0;
+}
+
+article .prose p + h2,
+article .prose ul + h2,
+article .prose ol + h2,
+article .prose blockquote + h2 {
+  margin-top: 3.5rem;
+}
+
+article .prose h2 + p {
+  margin-top: 0.85rem;
+}
+
 .reveal {
   animation: reveal-up var(--motion-slow) var(--ease-out) both;
 }
@@ -161,9 +183,23 @@ pre {
   }
 }
 
-body:has(.home-pizza-style) > nav,
 body:has(.home-pizza-style) a[aria-label="Quay lại đầu trang"] {
   display: none;
+}
+
+body:has(.home-pizza-style) > .dolic-vertical-menu-mobile {
+  display: flex !important;
+}
+
+@media (min-width: 768px) {
+  body:has(.home-pizza-style) > .dolic-vertical-menu-desktop {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  body:has(.home-pizza-style) > .dolic-vertical-menu-mobile {
+    display: none !important;
+  }
 }
 
 body:has(.home-pizza-style) > .site-global-header {

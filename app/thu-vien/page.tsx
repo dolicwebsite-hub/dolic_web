@@ -7,9 +7,8 @@ export default function LibraryPage() {
     <PageFrame>
       <section className="px-4 pb-16 pt-40 md:px-8 md:pb-24 md:pt-44">
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-8 max-w-3xl text-center">
-            <p className="text-xs font-bold uppercase text-cyan-700">Thư viện kỹ thuật</p>
-            <h1 className="mt-3 text-2xl font-bold tracking-normal text-slate-950 sm:text-3xl md:text-4xl">Nội dung để người nuôi và đại lý ra quyết định tốt hơn</h1>
+          <div className="mx-auto mb-6 max-w-3xl text-center">
+            <p className="text-xl font-bold uppercase text-cyan-700">Thư viện kỹ thuật</p>
           </div>
           <div className="mb-8 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
@@ -40,32 +39,42 @@ export default function LibraryPage() {
           </div>
 
           <div className="grid gap-8">
-            {libraryTopics.map((topic) => (
-              <section key={topic.id} className="rounded-lg border border-slate-200 bg-white p-5 md:p-6">
-                <div className="mb-5 border-b border-slate-200 pb-4">
-                  <p className="text-xs font-bold uppercase text-cyan-700">Chuyên mục</p>
-                  <h2 className="mt-2 text-2xl font-bold text-slate-950">{topic.title}</h2>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">{topic.description}</p>
-                </div>
-                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                  {topic.posts.map((post) => (
-                    <article key={post.title} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-48px_rgba(15,23,42,0.55)]">
-                      <div className="relative aspect-[4/3] bg-slate-100">
-                        <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
-                      </div>
-                      <div className="p-5">
-                        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{post.date ?? "Cập nhật tuần"}</span>
-                        <h3 className="mt-4 min-h-14 font-bold leading-6">{post.title}</h3>
-                        <a href={post.href} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-cyan-700">
-                          Xem chi tiết
-                          <MessageCircle className="h-4 w-4" />
-                        </a>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-            ))}
+            {libraryTopics.map((topic) => {
+              const isWarrantyTopic = topic.id === "bao-hanh-bao-duong";
+
+              return (
+                <section key={topic.id} className="rounded-lg border border-slate-200 bg-white p-5 md:p-6">
+                  <div className="mb-5 border-b border-slate-200 pb-4">
+                    <p className="text-xs font-bold uppercase text-cyan-700">Chuyên mục</p>
+                    <h2 className="mt-2 text-2xl font-bold text-slate-950">{topic.title}</h2>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{topic.description}</p>
+                  </div>
+                  <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {topic.posts.map((post) => (
+                      <article key={post.title} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-48px_rgba(15,23,42,0.55)]">
+                        {isWarrantyTopic ? (
+                          <div className="grid aspect-[4/3] place-items-center bg-[#075BB7] p-10">
+                            <img src="/Logo-Dolic.png" alt="Dolic" className="w-full max-w-[260px] brightness-0 invert" />
+                          </div>
+                        ) : (
+                          <div className="relative aspect-[4/3] bg-slate-100">
+                            <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
+                          </div>
+                        )}
+                        <div className="p-5">
+                          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{post.date ?? "Cập nhật tuần"}</span>
+                          <h3 className="mt-4 min-h-14 font-bold leading-6">
+                            <a href={post.href} className="transition hover:text-cyan-700">
+                              {post.title}
+                            </a>
+                          </h3>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
           </div>
         </div>
       </section>

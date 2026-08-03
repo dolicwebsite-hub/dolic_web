@@ -98,7 +98,7 @@ export default function DealerPage() {
 
       <section className="grid bg-[#222c5a] text-white lg:grid-cols-2">
         <div className="relative min-h-[420px] overflow-hidden lg:min-h-[660px]">
-          <Image src="/assets/drive/exhibition/IMG_6001.PNG" alt="Dolic kết nối đối tác tại triển lãm" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          <Image src="/assets/drive/exhibition/IMG_6010.PNG" alt="Dolic kết nối đối tác tại triển lãm VietAgros 2026" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
         </div>
         <div className="flex flex-col justify-center px-5 py-14 md:px-10 lg:px-16">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-200">Dealer Mission</p>

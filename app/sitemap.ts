@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/b2b",
     "/thu-vien",
     "/tin-tuc/dolic-tai-vietagros-2026",
+    "/tin-tuc/dolic-tai-vietshrimp-asia-2026",
+    "/tin-tuc/dolic-hoi-thao-co-dien-nong-nghiep-thong-minh-vnua",
     "/tin-tuc/may-suc-khi-treo-khi-nen-nguon-goc",
     "/tin-tuc/dau-hop-so-giam-toc-quat-nuoc",
     "/tin-tuc/dau-day-tiep-dia-pe-thiet-bi-ao-nuoi",

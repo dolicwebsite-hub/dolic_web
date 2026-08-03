@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { CalendarDays, MapPin, MessageCircle, Zap } from "lucide-react";
+import { CalendarDays, MapPin, Zap } from "lucide-react";
 import { PageFrame } from "@/components/site-chrome";
-import { libraryPosts } from "@/lib/library-data";
-import { LibraryBackButton } from "../bao-duong-article-parts";
+import { LibraryBackButton, RecentArticles } from "../bao-duong-article-parts";
 
 export const metadata: Metadata = {
   title: "Dolic tại VietAgros 2026: tiết kiệm điện lên đến 40% không khó",
@@ -78,8 +77,6 @@ const fieldProofImages = [
     caption: "So sánh thực địa trước và sau khi triển khai giải pháp sục khí Dolic.",
   },
 ];
-
-const recentArticles = libraryPosts.filter((post) => post.href !== "/tin-tuc/dolic-tai-vietagros-2026").slice(0, 3);
 
 export default function VietAgrosArticlePage() {
   return (
@@ -217,29 +214,7 @@ export default function VietAgrosArticlePage() {
             </p>
           </div>
 
-          <section className="mt-12">
-            <div className="mb-5 border-b border-slate-200 pb-4">
-              <p className="text-xs font-bold uppercase text-cyan-700">Thư viện</p>
-              <h2 className="mt-2 text-2xl font-bold text-slate-950">Bài viết gần đây</h2>
-            </div>
-            <div className="grid gap-4 md:grid-cols-3">
-              {recentArticles.map((post) => (
-                <article key={post.title} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-48px_rgba(15,23,42,0.55)]">
-                  <div className="relative aspect-[4/3] bg-slate-100">
-                    <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
-                  </div>
-                  <div className="p-5">
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{post.date ?? "Cập nhật tuần"}</span>
-                    <h3 className="mt-4 min-h-16 font-bold leading-6 text-slate-950">{post.title}</h3>
-                    <a href={post.href} className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-cyan-700">
-                      Xem chi tiết
-                      <MessageCircle className="h-4 w-4" />
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
+          <RecentArticles currentHref="/tin-tuc/dolic-tai-vietagros-2026" />
         </div>
       </article>
     </PageFrame>

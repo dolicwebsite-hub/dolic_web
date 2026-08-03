@@ -18,7 +18,9 @@ export const libraryTopics: LibraryTopic[] = [
     title: "Tin tức / Sự kiện",
     description: "Cập nhật triển lãm, hoạt động thị trường và sự kiện nổi bật của Dolic.",
     posts: [
-      { title: "Dolic tại triển lãm quốc tế VietAgros 2026: tiết kiệm điện lên đến 40% không khó", image: "/assets/drive/exhibition/IMG_6001.PNG", href: "/tin-tuc/dolic-tai-vietagros-2026", date: "09-11/06/2026" },
+      { title: "Dolic tại triển lãm quốc tế VietAgros 2026: tiết kiệm điện lên đến 40% không khó", image: "/assets/drive/exhibition/IMG_6003.PNG", href: "/tin-tuc/dolic-tai-vietagros-2026", date: "09-11/06/2026" },
+      { title: "Dolic tại triển lãm VietShrimp Asia 2026", image: "/assets/drive/exhibition/IMG_6574.PNG", href: "/tin-tuc/dolic-tai-vietshrimp-asia-2026", date: "18-20/03/2026" },
+      { title: "Dolic tham dự hội thảo khoa học Cơ điện nông nghiệp thông minh tại Học viện Nông nghiệp Việt Nam", image: "/assets/drive/exhibition/IMG_4750.PNG", href: "/tin-tuc/dolic-hoi-thao-co-dien-nong-nghiep-thong-minh-vnua", date: "05/2026" },
     ],
   },
   {
