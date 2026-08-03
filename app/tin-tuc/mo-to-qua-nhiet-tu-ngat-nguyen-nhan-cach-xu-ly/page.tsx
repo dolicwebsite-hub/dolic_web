@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CalendarDays, Thermometer } from "lucide-react";
 import { PageFrame } from "@/components/site-chrome";
-import { Checklist, ContactCta, InfoTable, LibraryBackButton, RecentArticles, SeoBlock, SummaryBox } from "../bao-duong-article-parts";
+import { Checklist, ContactCta, InfoTable, LibraryBackButton, RecentArticles, SummaryBox } from "../bao-duong-article-parts";
 
 const currentHref = "/tin-tuc/mo-to-qua-nhiet-tu-ngat-nguyen-nhan-cach-xu-ly";
 
@@ -10,16 +10,6 @@ export const metadata: Metadata = {
   description:
     "Máy tạo oxy hoặc máy bơm tự ngắt giữa vụ? Đây là bảy nguyên nhân thường gặp và quy trình tám bước xử lý an toàn trước khi cho máy chạy lại.",
 };
-
-const seoRows = [
-  { label: "Từ khóa chính", value: "mô-tơ quá nhiệt tự ngắt" },
-  { label: "Từ khóa phụ", value: "rơ le nhiệt mô-tơ · máy tạo oxy ngừng chạy · máy bơm ao tôm bị nóng · mô-tơ chạy khô · máy sục khí tự tắt" },
-  { label: "Title tag", value: "Mô-tơ ngừng do quá nhiệt: nguyên nhân và cách xử lý (50 ký tự)" },
-  { label: "Meta description", value: "Máy tạo oxy hoặc máy bơm tự ngắt giữa vụ? Đây là bảy nguyên nhân thường gặp và quy trình tám bước xử lý an toàn trước khi cho máy chạy lại. (140 ký tự)" },
-  { label: "Slug", value: "/mo-to-qua-nhiet-tu-ngat-nguyen-nhan-cach-xu-ly" },
-  { label: "Danh mục", value: "Bảo hành · Bảo dưỡng" },
-  { label: "Liên kết nội bộ", value: "Bài “Đấu dây tiếp địa PE đúng cách” · Bài “Đừng đổ nhầm dầu xe máy vào hộp số giảm tốc” · Bài pillar Tiết kiệm điện" },
-];
 
 const summaryPoints = [
   "Tất cả mô-tơ, máy bơm, máy tạo oxy và quạt của Dolic đều có rơ le bảo vệ nhiệt. Khi mô-tơ quá nóng, rơ le tự ngắt điện để bảo vệ động cơ.",
@@ -80,7 +70,6 @@ export default function MotorOverheatArticlePage() {
             </div>
           </div>
 
-          <SeoBlock rows={seoRows} />
           <SummaryBox points={summaryPoints} />
 
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">

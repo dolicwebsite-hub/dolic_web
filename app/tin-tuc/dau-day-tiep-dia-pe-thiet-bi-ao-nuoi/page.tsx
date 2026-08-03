@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CalendarDays, ShieldCheck } from "lucide-react";
 import { PageFrame } from "@/components/site-chrome";
-import { Checklist, ContactCta, FillNote, ImagePlaceholder, InfoTable, LibraryBackButton, RecentArticles, SeoBlock, SummaryBox } from "../bao-duong-article-parts";
+import { Checklist, ContactCta, InfoTable, LibraryBackButton, RecentArticles, SummaryBox } from "../bao-duong-article-parts";
 
 const currentHref = "/tin-tuc/dau-day-tiep-dia-pe-thiet-bi-ao-nuoi";
 
@@ -10,16 +10,6 @@ export const metadata: Metadata = {
   description:
     "Dây tiếp địa PE phải đấu vào cọc tiếp địa riêng, không đấu vào dây trung tính. Hướng dẫn đấu nối an toàn cho máy bơm và thiết bị tạo oxy tại ao.",
 };
-
-const seoRows = [
-  { label: "Từ khóa chính", value: "đấu dây tiếp địa cho thiết bị ao nuôi" },
-  { label: "Từ khóa phụ", value: "dây tiếp địa PE là gì · cọc tiếp địa ao tôm · aptomat chống giật ao nuôi · an toàn điện trang trại thủy sản · tiếp địa máy quạt nước" },
-  { label: "Title tag", value: "Đấu dây tiếp địa PE đúng cách cho thiết bị ao nuôi (49 ký tự)" },
-  { label: "Meta description", value: "Dây tiếp địa PE phải đấu vào cọc tiếp địa riêng, không đấu vào dây trung tính. Hướng dẫn đấu nối an toàn cho máy bơm và thiết bị tạo oxy tại ao. (147 ký tự)" },
-  { label: "Slug", value: "/dau-day-tiep-dia-pe-thiet-bi-ao-nuoi" },
-  { label: "Danh mục", value: "Bảo hành · Bảo dưỡng" },
-  { label: "Liên kết nội bộ", value: "Bài “Đừng đổ nhầm dầu xe máy vào hộp số giảm tốc” · các bài an toàn điện tiếp theo khi có" },
-];
 
 const summaryPoints = [
   "Dây tiếp địa là dây màu xanh lá sọc vàng. Nó không tham gia vào việc chạy máy, chỉ tồn tại để bảo vệ tính mạng người dùng khi máy bị rò điện.",
@@ -73,7 +63,6 @@ export default function GroundingArticlePage() {
             </div>
           </div>
 
-          <SeoBlock rows={seoRows} />
           <SummaryBox points={summaryPoints} />
 
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">
@@ -98,14 +87,12 @@ export default function GroundingArticlePage() {
           </div>
 
           <InfoTable headers={["Lớp bảo vệ", "Làm gì"]} rows={protectionRows} />
-          <FillNote>[ĐIỀN - cần kỹ sư điện xác nhận] Khuyến cáo cụ thể của Dolic về chủng loại và thông số aptomat chống giật cho từng nhóm thiết bị, cùng chu kỳ kiểm tra nút test.</FillNote>
 
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">
             <h2>6. Danh mục kiểm tra an toàn điện tại ao</h2>
           </div>
 
           <Checklist items={safetyChecklist} />
-          <ImagePlaceholder label="Cọc tiếp địa và đầu cốt đấu nối tại trang trại" altText="Cọc tiếp địa cho thiết bị điện tại trang trại nuôi tôm" />
 
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">
             <h2>7. Khi nào phải gọi thợ điện</h2>

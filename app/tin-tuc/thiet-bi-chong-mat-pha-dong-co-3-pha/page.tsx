@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CalendarDays, Gauge } from "lucide-react";
 import { PageFrame } from "@/components/site-chrome";
-import { Checklist, ContactCta, ImagePlaceholder, InfoTable, LibraryBackButton, RecentArticles, SeoBlock, SummaryBox } from "../bao-duong-article-parts";
+import { Checklist, ContactCta, InfoTable, LibraryBackButton, RecentArticles, SummaryBox } from "../bao-duong-article-parts";
 
 const currentHref = "/tin-tuc/thiet-bi-chong-mat-pha-dong-co-3-pha";
 
@@ -10,16 +10,6 @@ export const metadata: Metadata = {
   description:
     "Mất pha khiến động cơ vẫn quay nhưng nóng lên rất nhanh và cháy cuộn dây. Thiết bị chống mất pha ngắt điện ngay khi nguồn bất thường.",
 };
-
-const seoRows = [
-  { label: "Từ khóa chính", value: "thiết bị chống mất pha" },
-  { label: "Từ khóa phụ", value: "mất pha động cơ 3 pha · rơ le bảo vệ pha · cháy mô-tơ do mất pha · bảo vệ điện máy tạo oxy · lệch pha sụt áp" },
-  { label: "Title tag", value: "Vì sao cần thiết bị chống mất pha cho động cơ 3 pha (51 ký tự)" },
-  { label: "Meta description", value: "Mất pha khiến động cơ vẫn quay nhưng nóng lên rất nhanh và cháy cuộn dây. Thiết bị chống mất pha ngắt điện ngay khi nguồn bất thường. (134 ký tự)" },
-  { label: "Slug", value: "/thiet-bi-chong-mat-pha-dong-co-3-pha" },
-  { label: "Danh mục", value: "Bảo hành · Bảo dưỡng" },
-  { label: "Liên kết nội bộ", value: "Bài “Mô-tơ ngừng do quá nhiệt” (bắt buộc) · Bài “Đấu dây tiếp địa PE đúng cách”" },
-];
 
 const summaryPoints = [
   "Khi mất một pha, động cơ ba pha vẫn quay tiếp - đó chính là điều nguy hiểm, vì người vận hành không nhận ra có sự cố.",
@@ -85,7 +75,6 @@ export default function PhaseLossArticlePage() {
             </div>
           </div>
 
-          <SeoBlock rows={seoRows} />
           <SummaryBox points={summaryPoints} />
 
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">
@@ -130,7 +119,6 @@ export default function PhaseLossArticlePage() {
           </div>
 
           <Checklist items={warningSigns} />
-          <ImagePlaceholder label="Thiết bị chống mất pha lắp trong tủ điện tại trang trại" altText="Thiết bị chống mất pha lắp trong tủ điện cho máy tạo oxy ao nuôi tôm" />
           <ContactCta title="Cần tư vấn giải pháp bảo vệ cho thiết bị của bạn?" />
           <RecentArticles currentHref={currentHref} />
         </div>

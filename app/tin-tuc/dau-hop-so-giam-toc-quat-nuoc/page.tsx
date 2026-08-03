@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CalendarDays, Wrench } from "lucide-react";
 import { PageFrame } from "@/components/site-chrome";
-import { Checklist, ContactCta, FillNote, InfoTable, LibraryBackButton, RecentArticles, SeoBlock, SummaryBox } from "../bao-duong-article-parts";
+import { Checklist, ContactCta, InfoTable, LibraryBackButton, RecentArticles, SummaryBox } from "../bao-duong-article-parts";
 
 const currentHref = "/tin-tuc/dau-hop-so-giam-toc-quat-nuoc";
 
@@ -10,16 +10,6 @@ export const metadata: Metadata = {
   description:
     "Dầu xe máy và dầu hộp số giảm tốc khác nhau hoàn toàn. Dùng sai loại làm mòn bánh răng và hỏng hộp số sớm - đây là cách chọn và thay dầu đúng.",
 };
-
-const seoRows = [
-  { label: "Từ khóa chính", value: "dầu hộp số giảm tốc quạt nước" },
-  { label: "Từ khóa phụ", value: "thay dầu hộp số quạt nước ao tôm · hộp số giảm tốc quạt nước bị hỏng · bảo dưỡng quạt nước ao tôm · dầu hộp số guồng quạt" },
-  { label: "Title tag", value: "Đừng đổ dầu xe máy vào hộp số giảm tốc quạt nước (48 ký tự)" },
-  { label: "Meta description", value: "Dầu xe máy và dầu hộp số giảm tốc khác nhau hoàn toàn. Dùng sai loại làm mòn bánh răng và hỏng hộp số sớm - đây là cách chọn và thay dầu đúng. (142 ký tự)" },
-  { label: "Slug", value: "/dau-hop-so-giam-toc-quat-nuoc" },
-  { label: "Danh mục", value: "Bảo hành · Bảo dưỡng" },
-  { label: "Liên kết nội bộ", value: 'Bài pillar "Tiết kiệm điện A-Z" - hộp số mòn làm tăng điện năng tiêu thụ' },
-];
 
 const summaryPoints = [
   "Dầu xe máy và dầu hộp số giảm tốc là hai loại hoàn toàn khác nhau, không thay thế cho nhau được.",
@@ -68,7 +58,6 @@ export default function GearOilArticlePage() {
             </div>
           </div>
 
-          <SeoBlock rows={seoRows} />
           <SummaryBox points={summaryPoints} />
 
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">
@@ -91,8 +80,6 @@ export default function GearOilArticlePage() {
             <h2>4. Vậy dùng dầu gì cho đúng</h2>
             <p>Nguyên tắc số một: dùng đúng loại dầu ghi trên nhãn hộp số hoặc trong tài liệu kỹ thuật kèm máy. Nếu nhãn đã mờ hoặc mất, hỏi lại nhà cung cấp trước khi đổ bất cứ thứ gì vào.</p>
           </div>
-
-          <FillNote>[ĐIỀN] Thông số dầu Dolic cấp kèm máy: tên loại dầu, cấp phân loại, độ nhớt, dung tích cần cho mỗi hộp số.</FillNote>
 
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">
             <p>Dolic trang bị sẵn dầu hộp số chuyên dụng và tặng kèm theo sản phẩm, để khách hàng dùng đúng loại ngay từ đầu mà không phải tự đi tìm.</p>
