@@ -55,6 +55,19 @@ export function InfoTable({ headers, rows }: { headers: string[]; rows: TableRow
   );
 }
 
+export function ArticleFigure({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <figure className="my-8 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+      <img src={src} alt={alt} className="w-full object-cover" />
+      {caption ? (
+        <figcaption className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-center text-sm italic leading-6 text-slate-600">
+          {caption}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
 export function Checklist({ items }: { items: string[] }) {
   return (
     <div className="my-8 grid gap-3 md:grid-cols-2">
@@ -96,15 +109,9 @@ export function RecentArticles({ currentHref }: { currentHref: string }) {
       <div className="grid gap-4 md:grid-cols-3">
         {recentArticles.map((post) => (
           <article key={post.title} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-48px_rgba(15,23,42,0.55)]">
-            {post.type === "Bảo hành / Bảo dưỡng" ? (
-              <div className="grid aspect-[4/3] place-items-center bg-[#075BB7] p-10">
-                <img src="/Logo-Dolic.png" alt="Dolic" className="w-full max-w-[260px] brightness-0 invert" />
-              </div>
-            ) : (
-              <div className="relative aspect-[4/3] bg-slate-100">
-                <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
-              </div>
-            )}
+            <div className="relative aspect-[4/3] bg-slate-100">
+              <img src={post.type === "Bảo hành / Bảo dưỡng" ? "/assets/articles/bao-hanh-cover.webp" : post.image} alt={post.title} className="h-full w-full object-cover" />
+            </div>
             <div className="p-5">
               <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{post.date ?? "Cập nhật tuần"}</span>
               <h3 className="mt-4 min-h-16 font-bold leading-6 text-slate-950">

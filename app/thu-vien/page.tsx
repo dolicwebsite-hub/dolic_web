@@ -52,15 +52,9 @@ export default function LibraryPage() {
                   <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     {topic.posts.map((post) => (
                       <article key={post.title} className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_70px_-48px_rgba(15,23,42,0.55)]">
-                        {isWarrantyTopic ? (
-                          <div className="grid aspect-[4/3] place-items-center bg-[#075BB7] p-10">
-                            <img src="/Logo-Dolic.png" alt="Dolic" className="w-full max-w-[260px] brightness-0 invert" />
-                          </div>
-                        ) : (
-                          <div className="relative aspect-[4/3] bg-slate-100">
-                            <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
-                          </div>
-                        )}
+                        <div className="relative aspect-[4/3] bg-slate-100">
+                          <img src={isWarrantyTopic ? "/assets/articles/bao-hanh-cover.webp" : post.image} alt={post.title} className="h-full w-full object-cover" />
+                        </div>
                         <div className="p-5">
                           <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{post.date ?? "Cập nhật tuần"}</span>
                           <h3 className="mt-4 min-h-14 font-bold leading-6">

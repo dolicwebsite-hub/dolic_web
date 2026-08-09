@@ -162,9 +162,9 @@ export default function SolutionsPage() {
       <section className="border-b border-slate-200 bg-white px-4 py-5 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-3 md:grid-cols-3">
           {platformBenefits.map(([value, label, desc], index) => (
-            <div key={label} className="motion-interactive lift-hover grid grid-cols-[82px_minmax(0,1fr)] gap-4 rounded-lg border border-cyan-100 bg-cyan-50/50 p-4" style={{ transitionDelay: `${index * 40}ms` }}>
+            <div key={label} className="motion-interactive lift-hover grid grid-cols-[minmax(82px,auto)_minmax(0,1fr)] gap-4 rounded-lg border border-cyan-100 bg-cyan-50/50 p-4" style={{ transitionDelay: `${index * 40}ms` }}>
               <div>
-                <p className="text-2xl font-bold text-[#0A2E5C]">{value}</p>
+                <p className="whitespace-nowrap text-2xl font-bold text-[#0A2E5C]">{value}</p>
                 <p className="mt-1 text-xs font-bold uppercase tracking-[0.08em] text-cyan-700">{label}</p>
               </div>
               <p className="text-sm leading-6 text-slate-600">{desc}</p>

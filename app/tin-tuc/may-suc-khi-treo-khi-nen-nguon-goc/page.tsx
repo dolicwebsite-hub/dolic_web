@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CalendarDays, CheckCircle2, MapPin, MessageCircle, Zap } from "lucide-react";
 import { PageFrame } from "@/components/site-chrome";
-import { LibraryBackButton, RecentArticles } from "../bao-duong-article-parts";
+import { ArticleFigure, LibraryBackButton, RecentArticles } from "../bao-duong-article-parts";
 
 export const metadata: Metadata = {
   title: "Máy sục khí treo khí nén Dolic: hành trình kiểm chứng",
@@ -52,10 +52,8 @@ const verificationConditions = [
 ];
 
 const relatedLinks = [
-  { label: "Nguyên lý hoạt động của máy sục khí treo khí nén", href: "/thu-vien" },
-  { label: "Tại sao sục khí treo khí nén tiết kiệm điện", href: "/thu-vien" },
-  { label: "Số liệu tiết kiệm điện đo tại trang trại Việt Nam", href: "/tin-tuc/dolic-tai-vietagros-2026" },
-  { label: "Tiết kiệm điện cho ao nuôi tôm: hướng dẫn toàn diện A-Z", href: "/thu-vien" },
+  { label: "Nguyên lý hoạt động của máy sục khí treo khí nén", href: "/tin-tuc/nguyen-ly-hoat-dong-may-suc-khi-treo-khi-nen" },
+  { label: "Tại sao sục khí treo khí nén tiết kiệm điện", href: "/tin-tuc/vi-sao-suc-khi-treo-khi-nen-tiet-kiem-dien" },
 ];
 
 export default function AirBearingOriginArticlePage() {
@@ -123,6 +121,12 @@ export default function AirBearingOriginArticlePage() {
               Trong hơn hai tháng, đoàn đã đến các vùng nuôi tôm trọng điểm gồm Phúc Kiến, Chiết Giang, Quảng Đông và Quảng Tây, gặp trực tiếp các trang trại nuôi tôm thẻ chân trắng ở cả quy mô lớn và nhỏ.
             </p>
           </div>
+
+          <ArticleFigure
+            src="/assets/articles/tiet-kiem-dien/khao-sat-trung-quoc.webp"
+            alt="Máy sục khí treo khí nén tại một vài vùng nuôi tôm ở Trung Quốc trong đợt khảo sát của Dolic"
+            caption="Máy sục khí treo khí nén tại một vài vùng nuôi Trung Quốc"
+          />
 
           <div className="mt-8 grid gap-3 md:grid-cols-2">
             {surveyQuestions.map((question) => (
@@ -208,6 +212,12 @@ export default function AirBearingOriginArticlePage() {
             </p>
           </div>
 
+          <ArticleFigure
+            src="/assets/articles/tiet-kiem-dien/lap-dat-nam-dinh.webp"
+            alt="Máy sục khí treo khí nén Dolic chạy kiểm chứng tại trang trại nuôi tôm ở Nam Định"
+            caption="Máy sục khí treo khí nén Dolic lắp đặt và chạy kiểm chứng tại trang trại Nam Định"
+          />
+
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8 prose-li:leading-8">
             <h2>6. Từ dữ liệu thực địa đến quyết định chuyển giao công nghệ</h2>
             <p>
@@ -217,6 +227,12 @@ export default function AirBearingOriginArticlePage() {
               Với Dolic, một thiết bị được người nuôi tin dùng không phải nhờ lời quảng cáo, mà nhờ bốn điều: hiệu quả vận hành thực tế, khả năng tiết kiệm điện, độ ổn định, và dịch vụ hậu mãi đi cùng người nuôi suốt quá trình sử dụng.
             </p>
           </div>
+
+          <ArticleFigure
+            src="/assets/articles/tiet-kiem-dien/san-xuat-hang-loat.webp"
+            alt="Máy nén khí Dolic được sản xuất liên tục phục vụ bà con nuôi trồng thủy sản"
+            caption="Máy nén khí Dolic được sản xuất liên tục phục vụ bà con nuôi trồng thủy sản"
+          />
 
           <div className="prose prose-slate mt-10 max-w-none prose-headings:text-slate-950 prose-p:leading-8">
             <p>

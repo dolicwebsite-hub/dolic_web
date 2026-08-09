@@ -28,7 +28,9 @@ export const libraryTopics: LibraryTopic[] = [
     title: "Giải pháp tiết kiệm điện",
     description: "Bài viết kỹ thuật giúp chọn công suất đúng và tối ưu chi phí điện theo từng mô hình ao.",
     posts: [
-      { title: "Máy sục khí treo khí nén Dolic: từ khảo sát thực địa đến kiểm chứng tại Việt Nam", image: "/assets/products/drive-full/may-suc-khi-treo-khi-nen.webp", href: "/tin-tuc/may-suc-khi-treo-khi-nen-nguon-goc", date: "30/07/2026" },
+      { title: "Máy sục khí treo khí nén Dolic: từ khảo sát thực địa đến kiểm chứng tại Việt Nam", image: "/assets/articles/tiet-kiem-dien/khao-sat-trung-quoc.webp", href: "/tin-tuc/may-suc-khi-treo-khi-nen-nguon-goc", date: "30/07/2026" },
+      { title: "Máy sục khí treo khí nén hoạt động như thế nào?", image: "/assets/articles/tiet-kiem-dien/cau-tao-cat-bo.webp", href: "/tin-tuc/nguyen-ly-hoat-dong-may-suc-khi-treo-khi-nen", date: "30/07/2026" },
+      { title: "Vì sao máy sục khí treo khí nén tiết kiệm điện?", image: "/assets/articles/tiet-kiem-dien/van-hanh-ao-tom.webp", href: "/tin-tuc/vi-sao-suc-khi-treo-khi-nen-tiet-kiem-dien", date: "30/07/2026" },
     ],
   },
   {

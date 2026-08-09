@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tin-tuc/dolic-tai-vietshrimp-asia-2026",
     "/tin-tuc/dolic-hoi-thao-co-dien-nong-nghiep-thong-minh-vnua",
     "/tin-tuc/may-suc-khi-treo-khi-nen-nguon-goc",
+    "/tin-tuc/nguyen-ly-hoat-dong-may-suc-khi-treo-khi-nen",
+    "/tin-tuc/vi-sao-suc-khi-treo-khi-nen-tiet-kiem-dien",
     "/tin-tuc/dau-hop-so-giam-toc-quat-nuoc",
     "/tin-tuc/dau-day-tiep-dia-pe-thiet-bi-ao-nuoi",
     "/tin-tuc/mo-to-qua-nhiet-tu-ngat-nguyen-nhan-cach-xu-ly",
