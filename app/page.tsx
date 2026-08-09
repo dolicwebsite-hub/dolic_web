@@ -28,12 +28,15 @@ const featurePanels = [
     desc: "120.000m2 ao nuôi là nơi Dolic kiểm chứng thiết bị và mức tiêu thụ điện trước khi tư vấn cho người nuôi.",
     href: "/trang-trai",
     image: "/assets/drive/experimental-farm/dolic-farm-real.png",
+    imagePosition: "left center",
   },
   {
     title: "Hiệu năng và tiết kiệm điện",
     desc: "Tập trung vào quạt nước, bơm, sục khí và phương án vận hành giúp giảm hao phí điện trong vụ nuôi.",
     href: "/giai-phap",
     image: "/assets/drive/performance/1JRKM8T8D_5FLBM0.jpg",
+    imagePosition: "left center",
+    imageScale: 1.08,
   },
   {
     title: "Từ sản phẩm đến giải pháp",
@@ -144,30 +147,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#F6F8F7] px-4 py-16 text-slate-950 md:px-8 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 max-w-3xl">
+      <section className="bg-[#F6F8F7] py-8 text-slate-950 md:py-12">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <div className="mb-6 max-w-3xl md:mb-8">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Dolic Vietnam</p>
               <h1 className="mt-3 text-3xl font-bold tracking-normal sm:text-4xl md:text-5xl">Thiết bị thuỷ sản được kiểm chứng tại trang trại thử nghiệm</h1>
             </div>
           </div>
+        </div>
 
-          <div className="mb-8 overflow-hidden rounded-md bg-[#061B35]">
-            <div className="relative aspect-[16/8] min-h-[320px]">
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                src="/assets/drive/experimental-farm/dolic-farm-video.mp4"
-                poster="/assets/drive/customer-farm/customer-aerator-installed.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,18,38,0.7),rgba(3,18,38,0.18))]" />
-            </div>
+        <div className="mb-6 overflow-hidden bg-[#061B35] md:mb-8">
+          <div className="relative aspect-[16/8] min-h-[320px]">
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              src="/assets/drive/experimental-farm/dolic-farm-video.mp4"
+              poster="/assets/drive/customer-farm/customer-aerator-installed.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,18,38,0.7),rgba(3,18,38,0.18))]" />
           </div>
+        </div>
 
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="grid gap-4 md:grid-cols-3">
             {featurePanels.map((item) => (
               <Link key={item.href} href={item.href} className="group overflow-hidden rounded-md bg-white shadow-[0_26px_80px_-58px_rgba(15,23,42,0.75)]">
@@ -178,6 +183,15 @@ export default function HomePage() {
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
+                    style={
+                      item.imagePosition || item.imageScale
+                        ? {
+                            objectPosition: item.imagePosition,
+                            transform: item.imageScale ? `scale(${item.imageScale})` : undefined,
+                            transformOrigin: item.imageScale ? "left center" : undefined,
+                          }
+                        : undefined
+                    }
                   />
                 </div>
                 <div className="p-5">

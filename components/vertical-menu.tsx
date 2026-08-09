@@ -28,9 +28,10 @@ export function VerticalMenu() {
 
   return (
     <>
-      <nav
+      <aside
+        role="navigation"
         aria-label={isEnglish ? "Quick navigation" : "Điều hướng nhanh"}
-        className="fixed left-4 top-1/2 z-40 hidden -translate-y-1/2 rounded-[18px] bg-[#1E2A39] px-3 py-4 shadow-[0_24px_55px_-28px_rgba(15,23,42,0.85)] ring-1 ring-white/10 md:flex md:flex-col md:gap-3"
+        className="dolic-vertical-menu-desktop fixed left-4 top-1/2 z-[80] hidden -translate-y-1/2 rounded-[18px] bg-[#1E2A39] px-3 py-4 shadow-[0_24px_55px_-28px_rgba(15,23,42,0.85)] ring-1 ring-white/10 md:flex md:flex-col md:gap-3"
       >
         {menuItems.map(({ label, href, icon: Icon }) => {
           const isActive = href === "/" ? pathname === href : pathname.startsWith(href);
@@ -56,12 +57,13 @@ export function VerticalMenu() {
         })}
         <span className="mx-auto my-1 h-px w-7 bg-white/12" aria-hidden="true" />
         <SocialLinks variant="vertical" tone="light" />
-      </nav>
+      </aside>
 
       {hideMobileQuickNav ? null : (
-        <nav
+        <aside
+          role="navigation"
           aria-label={isEnglish ? "Quick navigation mobile" : "Điều hướng nhanh mobile"}
-          className="fixed bottom-3 left-1/2 z-40 flex -translate-x-1/2 gap-1 rounded-[18px] bg-[#1E2A39]/96 p-1.5 shadow-[0_18px_42px_-24px_rgba(15,23,42,0.9)] ring-1 ring-white/10 backdrop-blur md:hidden"
+          className="dolic-vertical-menu-mobile fixed bottom-3 left-1/2 z-[80] flex -translate-x-1/2 gap-1 rounded-[18px] bg-[#1E2A39]/96 p-1.5 shadow-[0_18px_42px_-24px_rgba(15,23,42,0.9)] ring-1 ring-white/10 backdrop-blur md:hidden"
         >
           {menuItems.map(({ label, href, icon: Icon }) => {
             const isActive = pathname.startsWith(href);
@@ -80,7 +82,7 @@ export function VerticalMenu() {
               </Link>
             );
           })}
-        </nav>
+        </aside>
       )}
     </>
   );
