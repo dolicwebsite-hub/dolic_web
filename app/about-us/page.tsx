@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+  import type { Metadata } from "next";
 import { AboutLinearShowcase } from "@/components/about-linear-showcase";
 import { PageFrame } from "@/components/site-chrome";
 import { contactInfo } from "@/lib/site-data";

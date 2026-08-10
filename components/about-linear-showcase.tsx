@@ -93,8 +93,8 @@ const systems = [
   },
   {
     title: "Trang trại thực nghiệm",
-    image: "/assets/drive/customer-farm/customer-farm-2.jpg",
-    fit: "cover",
+    image: "/assets/drive/experimental-farm/trang-trai-thuc-nghiem.webp",
+    fit: "contain",
     text:
       "120.000m2 ao nuôi là nơi thiết bị được chạy thử,\n đo đạc và hiệu chỉnh trong điều kiện thật,\ntrước khi được tư vấn rộng rãi.",
     href: "/trang-trai",
