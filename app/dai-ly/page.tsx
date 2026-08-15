@@ -205,12 +205,14 @@ export default function DealerPage() {
               <ArrowRight className="h-4 w-4" />
             </button>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {contactInfo.offices.map((office) => (
-                <Link key={office.region} href={`tel:${office.hotline}`} className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-200 px-4 py-3 text-sm font-black text-[#0A2E5C] transition hover:border-cyan-500">
-                  <Phone className="h-4 w-4" />
-                  {office.displayHotline}
-                </Link>
-              ))}
+              <Link href={contactInfo.socials.zalo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md bg-[#0A2E5C] px-4 py-3 text-sm font-black text-white transition hover:bg-cyan-700">
+                <img src="https://img.icons8.com/?size=100&id=0m71tmRjlxEe&format=png&color=000000" alt="" aria-hidden="true" className="h-4 w-4 rounded-sm bg-white object-contain" />
+                Zalo OA
+              </Link>
+              <Link href={`tel:${contactInfo.offices[0].hotline}`} className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-200 px-4 py-3 text-sm font-black text-[#0A2E5C] transition hover:border-cyan-500">
+                <Phone className="h-4 w-4" />
+                {contactInfo.offices[0].displayHotline}
+              </Link>
             </div>
           </form>
         </div>

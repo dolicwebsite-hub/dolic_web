@@ -79,6 +79,10 @@ export default function ContactPage() {
                 <Phone className="h-4 w-4" />
                 Gọi tư vấn ngay
               </Link>
+              <Link href={contactInfo.socials.zalo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-white px-5 text-sm font-black text-[#0A2E5C] transition hover:bg-cyan-50">
+                <img src="https://img.icons8.com/?size=100&id=0m71tmRjlxEe&format=png&color=000000" alt="" aria-hidden="true" className="h-5 w-5 object-contain" />
+                Nhắn Zalo OA
+              </Link>
               <Link href="#tu-van-form" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-white/22 px-5 text-sm font-black text-white transition hover:bg-white/10">
                 Điền thông tin
                 <ArrowRight className="h-4 w-4" />
@@ -174,10 +178,16 @@ export default function ContactPage() {
                 <MapPin className="mt-1 h-5 w-5 shrink-0 text-cyan-300" />
                 {office.address}
               </p>
-              <Link href={`tel:${office.hotline}`} className="mt-5 inline-flex items-center gap-2 text-xl font-black text-cyan-200 transition hover:text-white">
-                <Phone className="h-5 w-5" />
-                {office.displayHotline}
-              </Link>
+              <div className="mt-5 flex flex-wrap gap-4">
+                <Link href={`tel:${office.hotline}`} className="inline-flex items-center gap-2 text-xl font-black text-cyan-200 transition hover:text-white">
+                  <Phone className="h-5 w-5" />
+                  {office.displayHotline}
+                </Link>
+                <Link href={contactInfo.socials.zalo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xl font-black text-cyan-200 transition hover:text-white">
+                  <img src="https://img.icons8.com/?size=100&id=0m71tmRjlxEe&format=png&color=000000" alt="" aria-hidden="true" className="h-5 w-5 rounded-sm bg-white object-contain" />
+                  Zalo OA
+                </Link>
+              </div>
             </article>
           ))}
           <div className="lg:col-span-2">

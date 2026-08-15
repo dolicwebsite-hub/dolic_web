@@ -67,7 +67,7 @@ export function HomeRegionProductSection() {
             <div className="mt-5 grid gap-2 text-sm leading-6 text-white/82 md:text-base">
               <p className="font-bold text-white">Văn phòng {activeRegion.office.region}</p>
               <p>{activeRegion.office.address}</p>
-              <p className="font-semibold text-cyan-200">{contactInfo.hotlineNotice}</p>
+              <p className="font-semibold text-cyan-200">Hotline: {activeRegion.office.displayHotline}</p>
             </div>
           </div>
 

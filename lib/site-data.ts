@@ -32,9 +32,8 @@ export const contactInfo = {
   email: "congtytnhhthuysandolic@gmail.com",
   fanpage: "CÔNG TY TNHH THUỶ SẢN DOLIC",
   tiktok: "THUỶ SẢN DOLIC",
-  hotlineNotice: "Hotline mới đang được đăng ký và sẽ được cập nhật sau.",
   socials: {
-    zalo: "https://zalo.me/0397581028",
+    zalo: "https://zalo.me/3798938306260249140",
     facebook: "https://www.facebook.com/share/1EmHbXzC78/?mibextid=wwXIfr",
     tiktok: "https://www.tiktok.com/search/user?q=THU%E1%BB%B6%20S%E1%BA%A2N%20DOLIC",
     youtube: "https://www.youtube.com",
@@ -44,14 +43,14 @@ export const contactInfo = {
     {
       region: "Miền Nam",
       address: "QL22/8/48/4 ấp Xuân Thới Đông 2, Tân Xuân, Hóc Môn, Thành phố Hồ Chí Minh",
-      hotline: "0397581028",
-      displayHotline: "0397 581 028",
+      hotline: "0869856985",
+      displayHotline: "08 6985 6985",
     },
     {
       region: "Miền Bắc",
       address: "Thôn Dĩnh Bạn, xã Bảo Đài, tỉnh Bắc Ninh",
-      hotline: "0352495893",
-      displayHotline: "0352 495 893",
+      hotline: "0869856985",
+      displayHotline: "08 6985 6985",
     },
   ],
 };
@@ -117,8 +116,8 @@ export const productCategories: ProductCategory[] = [
     products: [
       { name: "Máy cho ăn tự động 2 bao - 180 độ", model: "T150D-2", origin: "Trung Quốc", specs: "2 bao - 180 độ", price: "3.700.000", image: "/assets/products/drive-full/may-cho-an-2-bao.webp", status: "Một phần ảnh, đã có thông số, cần làm catalog", priority: "Phase 2" },
       { name: "Máy cho ăn tự động 4 bao - 180 độ", model: "T150D-4", origin: "Trung Quốc", specs: "4 bao - 180 độ", price: "5.200.000", image: "/assets/products/drive-full/may-cho-an-4-bao.webp", status: "Một phần ảnh, đã có thông số, cần làm catalog", priority: "Phase 2" },
-      { name: "Máy cho ăn tự động 6 bao - 360 độ sò trong", model: "JY-TM3601-DL1", origin: "Trung Quốc", specs: "1200W - 6 bao - 360 độ", price: "14.800.000", image: "/assets/products/drive-full/may-cho-an-6-bao-so-trong.webp", status: "Một phần ảnh, đã có thông số, cần làm catalog", priority: "Phase 2" },
-      { name: "Máy cho ăn tự động 6 bao - 360 độ sò ngoài", model: "JY-TM3601-DL2", origin: "Trung Quốc", specs: "1500W - 6 bao - 360 độ", price: "16.800.000", image: "/assets/products/drive-full/may-cho-an-6-bao-so-ngoai.webp", status: "Một phần ảnh, đã có thông số, cần làm catalog", priority: "Phase 2" },
+      { name: "Máy cho ăn tự động 6 bao - 360 độ sò trong", model: "JY-TM3601-DL1", origin: "Trung Quốc", specs: "1200W - 6 bao - 360 độ", price: "14.800.000", image: "/assets/products/drive-full/may-cho-an-6-bao-360-drive-link.png", status: "Một phần ảnh, đã có thông số, cần làm catalog", priority: "Phase 2" },
+      { name: "Máy cho ăn tự động 6 bao - 360 độ sò ngoài", model: "JY-TM3601-DL2", origin: "Trung Quốc", specs: "1500W - 6 bao - 360 độ", price: "16.800.000", image: "/assets/products/drive-full/may-cho-an-6-bao-360-drive-link.png", status: "Một phần ảnh, đã có thông số, cần làm catalog", priority: "Phase 2" },
     ],
   },
   {
