@@ -38,7 +38,7 @@ export default function AboutUsPage() {
     jobTitle: "Head of Marketing",
     worksFor: {
       "@type": "Organization",
-      name: "CÔNG TY TNHH THUỶ SẢN DOLIC",
+      name: "CÔNG TY TNHH DOLIC",
       url: siteUrl,
     },
     mainEntityOfPage: `${siteUrl}/about-us`,

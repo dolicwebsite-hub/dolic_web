@@ -30,7 +30,7 @@ export const navItems = [
 export const contactInfo = {
   website: "dolic.vn",
   email: "congtytnhhthuysandolic@gmail.com",
-  fanpage: "CÔNG TY TNHH THUỶ SẢN DOLIC",
+  fanpage: "CÔNG TY TNHH DOLIC",
   tiktok: "THUỶ SẢN DOLIC",
   socials: {
     zalo: "https://zalo.me/3798938306260249140",
@@ -48,7 +48,7 @@ export const contactInfo = {
     },
     {
       region: "Miền Bắc",
-      address: "Thôn Dĩnh Bạn, xã Bảo Đài, tỉnh Bắc Ninh",
+      address: "Thôn Dĩnh Bạn, xã Bảo Đài, thành phố Bắc Ninh",
       hotline: "0869856985",
       displayHotline: "08 6985 6985",
     },

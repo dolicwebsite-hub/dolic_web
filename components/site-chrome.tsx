@@ -131,7 +131,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">CÔNG TY TNHH THUỶ SẢN DOLIC</h2>
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">CÔNG TY TNHH DOLIC</h2>
             <div className="mt-4 grid gap-2.5">
               <p className="font-semibold text-cyan-50/80">Hotline miền Nam: {contactInfo.offices[0].displayHotline}</p>
               <p className="font-semibold text-cyan-50/80">Hotline miền Bắc: {contactInfo.offices[1].displayHotline}</p>
